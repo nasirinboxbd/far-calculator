@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<!-- চার্সেট ও ভিউপোর্ট -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<!-- প্রাথমিক SEO মেটা -->
+<title>রাজউক FAR ক্যালকুলেটর | FAR, ইউনিট ও তলা সংখ্যা এবং মৌজা-সাবজোন অনুসন্ধান</title>
+<meta name="description" content="DAP Gazette, 2025 ও ইমারত নির্মাণ বিধিমালা, ২০২৫ অনুসারে এরিয়া, প্লট ও ইনসেনটিভ FAR হিসাব করুন, MGC অনুযায়ী সর্বোচ্চ ইউনিট ও তলা সংখ্যা বের করুন এবং যেকোনো মৌজা রাজউকের কোন জোন-সাবজোনে পড়েছে তা খুঁজে দেখুন — সম্পূর্ণ একটি ফাইলেই।">
+<meta name="keywords" content="রাজউক, FAR ক্যালকুলেটর, FAR calculator, DAP Gazette 2025, ইমারত নির্মাণ বিধিমালা ২০২৫, ড্যাপ, মৌজা, জোন, সাবজোন, MGC, ইউনিট সংখ্যা, তলা সংখ্যা, ঢাকা, আশুলিয়া, সাভার, পূর্বাচল, মিরপুর, গুলশান, বাংলা">
+<meta name="author" content="রাজউক ডাটাবেস ভিত্তিক">
+<meta name="robots" content="index, follow">
+
+<!-- থিম কালার (মোবাইল ব্রাউজারের জন্য) -->
+<meta name="theme-color" content="#046a4e">
+
+<!-- ওপেন গ্রাফ (Facebook, LinkedIn ইত্যাদি) -->
+<meta property="og:title" content="রাজউক FAR ক্যালকুলেটর – FAR, ইউনিট, তলা সংখ্যা ও মৌজা-সাবজোন একসাথে">
+<meta property="og:description" content="এরিয়া/প্লট/ইনসেনটিভ FAR হিসাব করুন, MGC স্লাইডার দিয়ে সর্বোচ্চ ইউনিট ও তলা সংখ্যা বের করুন, আর মৌজা সার্চ করে জোন-সাবজোন জানুন — সব ডাটা এই ফাইলেই এম্বেডেড।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/rajuk-far-calculator">
+<meta property="og:image" content="https://yourdomain.com/og-image-rajuk-far.jpg"> <!-- একটি প্রতিনিধিত্বমূলক ছবির লিংক দিন -->
+<meta property="og:locale" content="bn_BD">
+
+<!-- টুইটার কার্ড -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="রাজউক FAR ক্যালকুলেটর | FAR, ইউনিট, তলা ও মৌজা-সাবজোন অনুসন্ধান">
+<meta name="twitter:description" content="ঢাকা ও আশেপাশের এলাকার জন্য FAR, ইউনিট, তলা সংখ্যা হিসাব এবং রাজউক মৌজা-সাবজোন ডাটাবেজ — একই টুলে।">
+<meta name="twitter:image" content="https://yourdomain.com/twitter-card-rajuk-far.jpg">
+
+<!-- অ্যাপল ও অন্যান্য মোবাইল ডিভাইসের জন্য -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root{
+  --ink:#0b2036;
+  --ink-soft:#132c47;
+  --forest:#046a4e;
+  --forest-dark:#034c38;
+  --forest-tint:#e7f5ef;
+  --amber:#b8790d;
+  --amber-tint:#fbf0dc;
+  --paper:#f2f6f4;
+  --line:#dfe7e2;
+  --card:#ffffff;
+  --text:#16241f;
+  --text-soft:#54655d;
+  --danger:#a3271e;
+  --danger-tint:#fbeceb;
+  --radius-lg:22px;
+  --radius-md:14px;
+  --radius-sm:9px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Noto Sans Bengali','Inter',sans-serif;
+  color:var(--text);
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:28px 28px;
+  padding:2rem 1rem 4rem;
+  min-height:100vh;
+}
+.mono{font-family:'JetBrains Mono',monospace}
+.shell{max-width:980px;margin:0 auto}
+
+/* ---------- Header ---------- */
+.masthead{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+  padding:0 .3rem 1.2rem;
+}
+.masthead .brand{display:flex;align-items:center;gap:.9rem}
+.brand-mark{
+  width:52px;height:52px;border-radius:14px;
+  background:linear-gradient(150deg,var(--forest),var(--forest-dark));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.4rem;
+  box-shadow:0 10px 20px -8px rgba(4,106,78,.55);
+  flex-shrink:0;
+}
+.brand h1{
+  margin:0;font-size:1.55rem;font-weight:800;color:var(--ink);
+  letter-spacing:.2px;
+}
+.brand p{margin:.15rem 0 0;color:var(--text-soft);font-size:.88rem;font-weight:500}
+.masthead .badge{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;font-weight:600;color:var(--forest-dark);
+  background:var(--forest-tint);border:1px solid #cbe6da;
+  padding:.35rem .7rem;border-radius:30px;
+  white-space:nowrap;
+}
+
+/* ---------- Dossier / Tabs ---------- */
+.dossier{position:relative}
+.tab-row{
+  display:flex;gap:.4rem;padding:0 1rem;position:relative;z-index:1;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.tab-row::-webkit-scrollbar{display:none}
+.tab-btn{
+  border:none;cursor:pointer;
+  background:#e3ece7;color:var(--text-soft);
+  font-family:'Noto Sans Bengali',sans-serif;
+  font-weight:700;font-size:.95rem;
+  padding:.85rem 1.4rem .7rem;
+  border-radius:16px 16px 0 0;
+  display:flex;align-items:center;gap:.55rem;
+  white-space:nowrap;flex-shrink:0;
+  transition:background .15s, color .15s, transform .15s;
+}
+.tab-btn i{font-size:.95rem}
+.tab-btn:hover{background:#d7e5dd}
+.tab-btn.active{
+  background:var(--card);color:var(--forest-dark);
+  transform:translateY(1px);
+}
+.card-body{
+  background:var(--card);
+  border-radius:0 20px 20px 20px;
+  box-shadow:0 25px 50px -20px rgba(11,32,54,.28);
+  padding:2rem 1.9rem 2.2rem;
+  position:relative;
+}
+.tab-panel{display:none;animation:fadeIn .25s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+footer.note{
+  text-align:center;color:var(--text-soft);
+  font-size:.78rem;margin-top:1.4rem;
+}
+
+/* ---------- Reference documents bar ---------- */
+.ref-bar{
+  background:var(--amber-tint);border:1px solid #f0dba8;
+  border-radius:16px;padding:.9rem 1.2rem;margin:0 .3rem 1.2rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.9rem;
+}
+.ref-note{
+  margin:0;font-size:.85rem;font-weight:600;color:#7a4e08;
+  display:flex;align-items:flex-start;gap:.5rem;max-width:560px;line-height:1.55;
+}
+.ref-note i{margin-top:.15rem;flex-shrink:0}
+.ref-links{display:flex;gap:.6rem;flex-wrap:wrap}
+.ref-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:#fff;border:1.5px solid var(--amber);color:var(--amber);
+  font-family:'Noto Sans Bengali',sans-serif;font-weight:700;font-size:.82rem;
+  padding:.55rem .95rem;border-radius:11px;text-decoration:none;
+  transition:background .15s, color .15s;white-space:nowrap;
+}
+.ref-btn:hover{background:var(--amber);color:#fff}
+@media(max-width:640px){
+  .ref-bar{flex-direction:column;align-items:flex-start}
+}
+</style>
+<style>
+/* ---------- Steps (calculator) ---------- */
+.step{
+  border-radius:var(--radius-lg);
+  padding:1.4rem 1.5rem 1.6rem;
+  margin-bottom:1.3rem;
+  border:1px solid var(--line);
+  background:#fbfdfc;
+  position:relative;
+}
+.step-head{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.step-num{
+  width:32px;height:32px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-weight:600;font-size:.9rem;
+  color:#fff;flex-shrink:0;
+}
+.step:nth-of-type(1) .step-num{background:var(--ink)}
+.step:nth-of-type(2) .step-num{background:var(--forest)}
+.step:nth-of-type(3) .step-num{background:var(--amber)}
+.step:nth-of-type(1){border-left:4px solid var(--ink)}
+.step:nth-of-type(2){border-left:4px solid var(--forest)}
+.step:nth-of-type(3){border-left:4px solid var(--amber)}
+.step-head h3{margin:0;font-size:1.05rem;font-weight:700;color:var(--ink)}
+.step-head span{display:block;font-size:.78rem;color:var(--text-soft);font-weight:500;margin-top:1px}
+
+.field-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.field label{
+  display:block;font-weight:600;font-size:.83rem;color:var(--text);margin-bottom:.4rem;
+}
+.field label .hint{font-weight:500;color:var(--text-soft);font-size:.76rem}
+.field input, .field select{
+  width:100%;padding:.72rem .85rem;border-radius:11px;
+  border:1.5px solid #d7e0db;background:#fff;
+  font-family:'Noto Sans Bengali','Inter',sans-serif;font-size:.95rem;color:var(--text);
+  transition:border-color .15s, box-shadow .15s;
+}
+.field input:focus, .field select:focus{
+  outline:none;border-color:var(--forest);
+  box-shadow:0 0 0 3px rgba(4,106,78,.14);
+}
+.block-info{
+  margin-top:.9rem;background:var(--forest-tint);border:1px solid #cbe6da;
+  border-radius:12px;padding:.8rem 1rem;font-size:.88rem;color:var(--forest-dark);
+  display:none;
+}
+.block-info.show{display:block}
+.block-info b{font-family:'JetBrains Mono',monospace}
+
+.toggle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.7rem;margin-top:1.1rem}
+.toggle{
+  display:flex;align-items:center;gap:.6rem;
+  background:#fff;border:1.5px solid #d7e0db;border-radius:12px;
+  padding:.65rem .9rem;cursor:pointer;font-size:.88rem;font-weight:600;color:var(--text);
+  transition:border-color .15s, background .15s;
+}
+.toggle:hover{border-color:var(--forest)}
+.toggle input{width:17px;height:17px;accent-color:var(--forest);margin:0}
+.toggle.checked{background:var(--forest-tint);border-color:var(--forest)}
+
+.ghost-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:#fff;border:1.5px dashed #b9cfc5;color:var(--forest-dark);
+  font-family:'Noto Sans Bengali',sans-serif;font-weight:700;font-size:.85rem;
+  padding:.6rem 1rem;border-radius:12px;cursor:pointer;margin-top:1rem;
+  transition:border-color .15s, background .15s;
+}
+.ghost-btn:hover{background:var(--forest-tint);border-color:var(--forest)}
+.ghost-btn:disabled{opacity:.5;cursor:not-allowed}
+.ghost-btn:disabled:hover{background:#fff;border-color:#b9cfc5}
+
+/* MGC slider */
+.mgc-slider-wrap{margin-top:.4rem}
+#mgcSlider{width:100%;height:6px;accent-color:var(--forest);cursor:pointer}
+.mgc-labels{display:flex;justify-content:space-between;align-items:center;margin-top:.6rem;font-size:.8rem;color:var(--text-soft);font-weight:600}
+.mgc-value{
+  font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700;
+  color:var(--forest-dark);background:var(--forest-tint);
+  padding:.2rem .8rem;border-radius:20px;
+}
+
+.calc-btn{
+  width:100%;padding:1.05rem;margin-top:1.6rem;
+  background:linear-gradient(135deg,var(--forest),var(--forest-dark));
+  color:#fff;border:none;border-radius:16px;
+  font-family:'Noto Sans Bengali',sans-serif;font-size:1.08rem;font-weight:700;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;
+  box-shadow:0 16px 30px -12px rgba(4,106,78,.55);
+  transition:transform .12s, box-shadow .12s;
+}
+.calc-btn:hover{transform:translateY(-1px);box-shadow:0 20px 34px -12px rgba(4,106,78,.6)}
+.calc-btn:active{transform:translateY(0)}
+
+/* ---------- Results ---------- */
+.result{display:none;margin-top:1.8rem}
+.result.show{display:block;animation:fadeIn .3s ease}
+.result-hero{
+  background:linear-gradient(150deg,var(--ink),var(--ink-soft));
+  border-radius:20px;padding:1.6rem 1.8rem;color:#fff;text-align:center;margin-bottom:1.3rem;
+  position:relative;overflow:hidden;
+}
+.result-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:20px 20px;
+}
+.result-hero *{position:relative}
+.result-hero .label{font-size:.85rem;font-weight:600;letter-spacing:.3px;color:#cfe4d9;margin-bottom:.3rem}
+.result-hero .value{font-family:'JetBrains Mono',monospace;font-size:3rem;font-weight:700;color:#fff;line-height:1}
+.result-hero .unit{font-size:1rem;color:#a9c9bb;margin-top:.35rem}
+
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem}
+.stat-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;
+}
+.stat-card .k{font-size:.76rem;color:var(--text-soft);font-weight:600;margin-bottom:.3rem}
+.stat-card .v{font-family:'JetBrains Mono',monospace;font-size:1.35rem;font-weight:700;color:var(--ink)}
+.stat-card.accent .v{color:var(--forest-dark)}
+.stat-card.warn .v{color:var(--danger)}
+
+.breakdown{margin-top:1.4rem}
+.breakdown h4{margin:0 0 .6rem;font-size:.92rem;font-weight:700;color:var(--ink)}
+.breakdown table{width:100%;border-collapse:collapse;font-size:.88rem}
+.breakdown th{
+  text-align:left;background:var(--forest-tint);color:var(--forest-dark);
+  padding:.55rem .8rem;font-weight:700;font-size:.8rem;
+}
+.breakdown th:first-child{border-radius:10px 0 0 10px}
+.breakdown th:last-child{border-radius:0 10px 10px 0;text-align:right}
+.breakdown td{padding:.55rem .8rem;border-bottom:1px solid var(--line)}
+.breakdown td:last-child{text-align:right;font-family:'JetBrains Mono',monospace;font-weight:600}
+.breakdown tr:last-child td{border-bottom:none}
+</style>
+<style>
+/* ---------- Mouza lookup tab ---------- */
+.mouza-intro{color:var(--text-soft);font-size:.9rem;margin:-.2rem 0 1.3rem;line-height:1.6}
+.search-wrapper{position:relative;margin-bottom:.4rem}
+.search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--forest);font-size:1.1rem;pointer-events:none}
+#searchInput{
+  width:100%;padding:1rem 1rem 1rem 3rem;font-size:1.05rem;
+  font-family:'Noto Sans Bengali',sans-serif;background:#fff;
+  border:1.8px solid #d7e0db;border-radius:16px;outline:none;font-weight:500;
+  transition:border-color .2s, box-shadow .2s;
+}
+#searchInput:focus{border-color:var(--forest);box-shadow:0 8px 20px -10px rgba(4,106,78,.35)}
+#searchInput:disabled{background:#f1f3f2;color:#9aa5a0}
+.suggestions-box{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;
+  border-radius:16px;box-shadow:0 20px 35px -10px rgba(11,32,54,.25);
+  max-height:320px;overflow-y:auto;z-index:50;border:1px solid var(--line);display:none;
+}
+.suggestions-box.show{display:block;animation:fadeIn .15s ease}
+.suggestion-item{
+  padding:.8rem 1.3rem;cursor:pointer;font-size:.96rem;font-weight:600;color:var(--ink);
+  border-bottom:1px solid #f0f4f2;transition:background .12s;
+}
+.suggestion-item:last-child{border-bottom:none}
+.suggestion-item:hover{background:var(--forest-tint);padding-left:1.6rem}
+.suggestion-item i{color:var(--forest);width:20px;margin-right:6px}
+
+.status-area{
+  display:flex;align-items:center;gap:.6rem;
+  background:#eef4f5;border-radius:14px;padding:.85rem 1.1rem;margin-top:1.1rem;
+  color:var(--forest-dark);font-size:.86rem;line-height:1.5;
+}
+.status-area.error{background:var(--danger-tint);color:var(--danger)}
+.status-area strong{font-weight:700}
+
+/* Modal */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(11,32,54,.55);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;z-index:1000;
+  visibility:hidden;opacity:0;transition:visibility .2s, opacity .25s ease;padding:1rem;
+}
+.modal-overlay.active{visibility:visible;opacity:1}
+.modal-container{
+  background:#fff;width:100%;max-width:820px;max-height:85vh;border-radius:22px;
+  overflow:hidden;transform:scale(.95);transition:transform .25s cubic-bezier(.2,.9,.4,1.1);
+  box-shadow:0 40px 70px rgba(11,32,54,.4);display:flex;flex-direction:column;
+}
+.modal-overlay.active .modal-container{transform:scale(1)}
+.modal-container.wide{max-width:1050px}
+.modal-header{
+  background:linear-gradient(150deg,var(--ink),var(--ink-soft));color:#fff;
+  padding:1.15rem 1.6rem;display:flex;justify-content:space-between;align-items:center;
+}
+.modal-header h3{font-size:1.3rem;font-weight:700;margin:0;word-break:break-word}
+.close-modal{background:rgba(255,255,255,.12);border:none;color:#fff;width:34px;height:34px;
+  border-radius:10px;font-size:1.1rem;cursor:pointer;transition:.15s;flex-shrink:0}
+.close-modal:hover{background:rgba(255,255,255,.25)}
+.modal-body{padding:1.6rem;overflow-y:auto;background:#fafcfb}
+.result-count{margin-bottom:.9rem;font-size:.88rem;color:var(--text-soft)}
+.result-count strong{color:var(--forest-dark)}
+.result-card{
+  background:#fff;border-radius:16px;margin-bottom:1.2rem;padding:1.1rem 1.2rem;
+  box-shadow:0 5px 14px rgba(11,32,54,.06);border-left:5px solid var(--forest);
+}
+.zone-tag{
+  font-weight:700;font-size:.92rem;background:var(--forest-tint);display:inline-block;
+  padding:.25rem .85rem;border-radius:30px;margin-bottom:.6rem;color:var(--forest-dark);
+}
+.subzone-id{font-family:'JetBrains Mono',monospace;background:#eef1fb;padding:.2rem .6rem;
+  border-radius:20px;font-size:.76rem;margin-left:.5rem}
+.status-badge{
+  display:inline-flex;align-items:center;gap:6px;font-weight:700;padding:.22rem .85rem;
+  border-radius:30px;font-size:.76rem;margin-top:.4rem;
+}
+.status-full{background:#c8f0e4;color:#006b4c}
+.status-partial{background:var(--amber-tint);color:var(--amber)}
+.boundary-box{
+  background:var(--paper);border-radius:12px;padding:.9rem 1rem;margin-top:.75rem;
+  font-size:.85rem;line-height:1.6;border:1px solid var(--line);color:#2c3e37;
+}
+.boundary-label{font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:.4rem;color:var(--forest-dark)}
+.no-results{color:var(--danger);font-size:.95rem}
+
+/* Data-table modals (blocks / mouza list) */
+.table-filter{position:relative;margin-bottom:1rem}
+.table-filter i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--forest);font-size:.95rem}
+.table-filter input{
+  width:100%;padding:.65rem .8rem .65rem 2.4rem;border-radius:11px;
+  border:1.5px solid #d7e0db;font-family:'Noto Sans Bengali',sans-serif;font-size:.9rem;
+  outline:none;transition:border-color .15s;
+}
+.table-filter input:focus{border-color:var(--forest)}
+.table-scroll{overflow:auto;max-height:56vh;border:1px solid var(--line);border-radius:14px}
+.data-table{width:100%;border-collapse:collapse;font-size:.83rem;white-space:nowrap}
+.data-table thead th{
+  position:sticky;top:0;background:var(--forest-tint);color:var(--forest-dark);
+  text-align:left;padding:.6rem .8rem;font-weight:700;font-size:.78rem;z-index:2;
+  border-bottom:2px solid #cbe6da;
+}
+.data-table tbody td{padding:.55rem .8rem;border-bottom:1px solid var(--line);color:var(--text)}
+.data-table tbody tr:hover{background:#f4faf7}
+.data-table tbody tr.clickable{cursor:pointer}
+.data-table td.mono, .data-table th.mono{font-family:'JetBrains Mono',monospace}
+.zone-group-row td{
+  background:var(--ink);color:#fff;font-weight:700;padding:.5rem .8rem;
+  white-space:normal;
+}
+.subzone-group-row td{
+  background:#eef2f0;color:var(--forest-dark);font-weight:700;padding:.4rem .8rem;
+  white-space:normal;font-size:.78rem;
+}
+.table-empty{padding:1.2rem;text-align:center;color:var(--text-soft);font-size:.9rem}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#eef2f0;border-radius:10px}
+::-webkit-scrollbar-thumb{background:var(--forest);border-radius:10px}
+
+@media(max-width:640px){
+  .result-hero .value{font-size:2.2rem}
+  .card-body{padding:1.4rem 1.1rem 1.7rem}
+  .tab-btn{font-size:.85rem;padding:.75rem 1rem .6rem}
+  .masthead{padding:0 .1rem 1rem}
+  .brand h1{font-size:1.28rem}
+  .brand p{font-size:.8rem}
+  .step{padding:1.1rem 1.1rem 1.3rem}
+  .field-grid{grid-template-columns:1fr}
+  .toggle-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .modal-header{padding:1rem 1.2rem}
+  .modal-header h3{font-size:1.1rem}
+  .modal-body{padding:1.1rem}
+  .breakdown table{font-size:.82rem}
+}
+@media(max-width:420px){
+  body{padding:1.2rem .6rem 3rem}
+  .brand-mark{width:44px;height:44px;font-size:1.15rem}
+  .brand h1{font-size:1.1rem}
+  .masthead .badge{font-size:.66rem;padding:.3rem .55rem}
+  .result-hero{padding:1.2rem 1.1rem}
+  .result-hero .value{font-size:1.85rem}
+  .stat-grid{grid-template-columns:1fr}
+  .ref-btn{font-size:.76rem;padding:.5rem .8rem}
+  .calc-btn{font-size:.98rem;padding:.9rem}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <div class="masthead">
+    <div class="brand">
+      <div class="brand-mark"><i class="fas fa-drafting-compass"></i></div>
+      <div>
+        <h1>রাজউক FAR ক্যালকুলেটর</h1>
+        <p>এরিয়া, প্লট ও ইনসেনটিভ FAR নির্ণয় এবং মৌজা–সাবজোন নির্দেশিকা</p>
+      </div>
+    </div>
+    <span class="badge mono">DAP · RAJUK</span>
+  </div>
+
+  <div class="ref-bar">
+    <p class="ref-note">
+      <i class="fas fa-circle-info"></i>
+      বিদ্রঃ এখানে DAP Gazette, 2025 ও ইমারত নির্মাণ বিধিমালা, ২০২৫ অনুসারে সকল হিসাব সম্পন্ন হয়।
+    </p>
+    <div class="ref-links">
+      <a class="ref-btn" href="dap-2025.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-pdf"></i> DAP Gazette, 2025
+      </a>
+      <a class="ref-btn" href="bidhimala-2025.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-pdf"></i> ইমারত নির্মাণ বিধিমালা, ২০২৫
+      </a>
+    </div>
+  </div>
+
+  <div class="dossier">
+    <div class="tab-row">
+      <button class="tab-btn active" id="tabBtnCalc" onclick="switchTab('calc')">
+        <i class="fas fa-ruler-combined"></i> FAR ক্যালকুলেটর
+      </button>
+      <button class="tab-btn" id="tabBtnBonus" onclick="switchTab('bonus')">
+        <i class="fas fa-building"></i> ইউনিট ও তলা সংখ্যা
+      </button>
+      <button class="tab-btn" id="tabBtnPdf" onclick="switchTab('pdf')">
+    <i class="fas fa-file-pdf"></i> PDF রিপোর্ট
+</button>
+      <button class="tab-btn" id="tabBtnMouza" onclick="switchTab('mouza')">
+        <i class="fas fa-map-marked-alt"></i> মৌজা কোন সাবজোনে?
+      </button>
+      
+    </div>
+
+    <div class="card-body">
+
+      <!-- ===================== CALCULATOR TAB ===================== -->
+      <section id="calcTab" class="tab-panel active">
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-num">১</div>
+            <div><h3>এরিয়া FAR</h3><span>জোনাল ব্লক নির্বাচন করুন অথবা এরিয়া FAR সরাসরি লিখুন</span></div>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label>ব্লক নির্বাচন করুন</label>
+              <select id="blockSelect"><option value="">-- ব্লক নির্বাচন করুন --</option></select>
+            </div>
+            <div class="field" id="areaFarFieldWrap">
+  <label>এরিয়া FAR <span class="hint">(নিজে লিখতে বা পরিবর্তন করতে পারবেন)</span></label>
+  <input id="areaFarInput" type="number" step="0.001" placeholder="যেমন: 3.400">
+</div>
+          </div>
+          <button type="button" class="ghost-btn" id="viewBlocksBtn" onclick="openBlocksModal()">
+            <i class="fas fa-table-list"></i> সকল ব্লকের তালিকা দেখুন
+          </button>
+          <div id="blockInfo" class="block-info"></div>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-num">২</div>
+            <div><h3>প্লট FAR</h3><span>প্লটের ধরন ও রাস্তার প্রস্থ দিন</span></div>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label>সাবটাইপ</label>
+              <select id="subType">
+                <option value="">নির্বাচন করুন</option>
+                <option value="central_dhaka">Central Dhaka</option>
+                <option value="periphery_dhaka">Periphery Dhaka</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>টাইপ</label>
+              <select id="type" onchange="toggleA6Option()">
+                <option value="">নির্বাচন করুন</option>
+                <option>A1</option><option>A2</option><option>A3</option>
+                <option>A4</option><option>A5</option><option>A6</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>বিদ্যমান রাস্তার প্রস্থ W1 (মিটার)</label>
+              <input id="w1" type="number" step="0.01" placeholder="যেমন: 6">
+            </div>
+            <div class="field">
+              <label>রাস্তা প্রশস্তকরণের প্রস্তাবনা আছে কি?</label>
+              <select id="roadWideningProposal" onchange="toggleRoadWidening()">
+                <option value="no">না</option>
+                <option value="yes">হ্যাঁ</option>
+              </select>
+            </div>
+            <div class="field" id="w2FieldWrap" style="display:none">
+              <label>প্রস্তাবিত রাস্তার প্রস্থ W2 (মিটার)</label>
+              <input id="w2" type="number" step="0.01" placeholder="যেমন: 9">
+            </div>
+            <div class="field" id="surrenderedLandFieldWrap" style="display:none">
+  <label>প্রস্তাবিত রাস্তার জন্য সমর্পিত জমি <span class="hint">(বর্গফুট)</span></label>
+  <input id="surrenderedLand" type="number" step="0.01" value="0" placeholder="যেমন: 200">
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-num">৩</div>
+            <div><h3>ইনসেনটিভ FAR</h3><span>প্লটের আয়তন ও প্রযোজ্য সুবিধাসমূহ নির্বাচন করুন</span></div>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label>প্রস্তাবিত রাস্তার জন্য সমর্পিত জায়গা বাদে জমির পরিমাণ(কাঠা)</label>
+              <input id="plotKatha" type="number" step="0.01" placeholder="যেমন: 5">
+            </div>
+            <div class="field" id="a6OptionFieldWrap">
+              <label>A6 অপশন</label>
+              <select id="a6Option">
+                <option value="">প্রযোজ্য নয়</option>
+                <option value="units">৫টি ইউনিট সংরক্ষণ</option>
+                <option value="floorSpace">৫% ফ্লোর স্পেস সংরক্ষণ</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>TOD ইনসেনটিভ</label>
+              <input id="tod" type="number" step="0.01" placeholder="0">
+            </div>
+            <div class="field">
+              <label>TDR ইনসেনটিভ</label>
+              <input id="tdr" type="number" step="0.01" placeholder="0">
+            </div>
+            <div class="field">
+              <label>FAR ক্রয় ইনসেনটিভ</label>
+              <input id="purchase" type="number" step="0.01" placeholder="0">
+            </div>
+            <div class="field">
+              <label>FAR ডিসইনসেনটিভ</label>
+              <input id="dis" type="number" step="0.01" value="0">
+            </div>
+          </div>
+          <div class="toggle-grid">
+            <label class="toggle"><input type="checkbox" id="green"><i class="fas fa-leaf" style="color:var(--forest)"></i> গ্রিন বিল্ডিং</label>
+            <label class="toggle"><input type="checkbox" id="open"><i class="fas fa-tree" style="color:var(--forest)"></i> পাবলিক ওপেন স্পেস</label>
+            <label class="toggle"><input type="checkbox" id="school"><i class="fas fa-school" style="color:var(--forest)"></i> স্কুল</label>
+            <label class="toggle"><input type="checkbox" id="play"><i class="fas fa-futbol" style="color:var(--forest)"></i> খেলার মাঠ / পার্ক</label>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calculateAll()">
+          <i class="fas fa-calculator"></i> চূড়ান্ত FAR হিসাব করুন
+        </button>
+
+        <div id="result" class="result">
+          <div class="result-hero">
+            <div class="label">অনুমোদিত FAR (Approved FAR)</div>
+            <div class="value" id="approvedFar">0.000</div>
+            <div class="unit" id="approvedFarNote">সর্বোচ্চ FAR ও ভিত্তি FARের মধ্যে ইনসেনটিভ সমন্বয়ের ফলাফল</div>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card"><div class="k">এরিয়া FAR</div><div class="v" id="areaFar">0.000</div></div>
+            <div class="stat-card"><div class="k">বিদ্যমান রাস্তার FAR (W1)</div><div class="v" id="w1Far">0.000</div></div>
+            <div class="stat-card" id="w2FarStatCard"><div class="k">প্রস্তাবিত রাস্তার FAR (W2)</div><div class="v" id="w2Far">0.000</div></div>
+            <div class="stat-card"><div class="k" id="plotFarLabel">প্লট FAR</div><div class="v" id="plotFar">0.000</div></div>
+            <div class="stat-card accent"><div class="k">বেস FAR</div><div class="v" id="baseFar">0.000</div></div>
+            <div class="stat-card accent"><div class="k">সর্বোচ্চ FAR</div><div class="v" id="maxFar">0.000</div></div>
+            <div class="stat-card"><div class="k">ইনসেনটিভ FAR</div><div class="v" id="incFar">0.000</div></div>
+            <div class="stat-card warn"><div class="k">FAR ডিসইনসেনটিভ</div><div class="v" id="disFar">0.000</div></div>
+          </div>
+
+          <div class="breakdown">
+            <h4>ইনসেনটিভ ব্রেকডাউন</h4>
+            <table>
+              <thead><tr><th>ইনসেনটিভ</th><th>FAR</th></tr></thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== MOUZA LOOKUP TAB ===================== -->
+      <section id="mouzaTab" class="tab-panel">
+        <p class="mouza-intro">
+          <i class="fas fa-circle-info" style="color:var(--forest)"></i>
+          কোন মৌজা রাজউকের কোন জোন ও সাবজোনে পড়েছে তা জানতে নিচে মৌজার নাম লিখুন। টাইপ করার সাথে সাথে সাজেশন আসবে; সাজেশনে ক্লিক করলে পূর্ণ/আংশিক অবস্থা, জোন, সাবজোন ও সীমানা দেখা যাবে।
+        </p>
+        <div class="search-wrapper">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="মৌজার তথ্য লোড হচ্ছে..." autocomplete="off" disabled>
+          <div id="suggestionsList" class="suggestions-box"></div>
+        </div>
+        <div id="statusArea" class="status-area">
+          <i class="fas fa-spinner fa-pulse"></i> মৌজার তথ্য প্রস্তুত করা হচ্ছে...
+        </div>
+        <button type="button" class="ghost-btn" id="viewMouzaListBtn" onclick="openMouzaListModal()" disabled>
+          <i class="fas fa-list-ul"></i> সকল মৌজার তালিকা দেখুন
+        </button>
+      </section>
+
+      <!-- ===================== UNITS & FLOORS TAB ===================== -->
+      <section id="bonusTab" class="tab-panel">
+        <p class="mouza-intro">
+          <i class="fas fa-circle-info" style="color:var(--forest)"></i>
+          প্রথমে "FAR ক্যালকুলেটর" ট্যাবে ব্লক/এরিয়া FAR নির্বাচন করে চূড়ান্ত FAR হিসাব করুন এবং প্লট আয়তন (কাঠা) দিন। এই ট্যাবে MGC নির্ধারণ করে মেঝের ক্ষেত্রফল, ইউনিট সংখ্যা ও তলা সংখ্যা দেখতে পাবেন।
+          <br><span class="hint">হিসাবে ধরা হয়েছে, ১ কাঠা = ৭২০ বর্গফুট।</span>
+        </p>
+
+        <div class="step">
+          <div class="step-head">
+            <div class="step-num"><i class="fas fa-sliders-h"></i></div>
+            <div><h3>Maximum Ground Coverage (MGC)</h3><span>স্লাইডার টেনে MGC নির্ধারণ করুন (সর্বনিম্ন ২০% — সর্বোচ্চ ৭৫%)</span></div>
+          </div>
+          <div class="mgc-slider-wrap">
+            <input type="range" id="mgcSlider" min="20" max="75" step="1" value="50">
+            <div class="mgc-labels">
+              <span>20%</span>
+              <span class="mgc-value" id="mgcValue">50%</span>
+              <span>75%</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calculateBonus()">
+          <i class="fas fa-calculator"></i> ইউনিট ও তলা সংখ্যা হিসাব করুন
+        </button>
+
+        <div id="bonusPrereqWarning" class="status-area error" style="display:none;margin-top:1.2rem">
+          <i class="fas fa-triangle-exclamation"></i>
+          <span>অনুগ্রহ করে প্রথমে "FAR ক্যালকুলেটর" ট্যাবে চূড়ান্ত FAR হিসাব করুন।</span>
+        </div>
+
+        <div id="bonusResult" class="result">
+          <div class="result-hero">
+            <div class="label">মোট তলার সংখ্যা</div>
+            <div class="value" id="totalFloorsDisplay">G+0</div>
+            <div class="unit">গ্রাউন্ড ফ্লোর + অতিরিক্ত তলা</div>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card"><div class="k">অনুমোদিত FAR</div><div class="v" id="bonusApprovedFar">0.000</div></div>
+            <div class="stat-card"><div class="k">প্লট আয়তন (কাঠা)</div><div class="v" id="bonusPlotKatha">0.00</div></div>
+            <div class="stat-card"><div class="k">সমর্পিত জমি (বর্গফুট)</div><div class="v" id="bonusSurrLand">0.00</div></div>
+            <div class="stat-card"><div class="k">সমর্পিত জমি বাদে প্লট (কাঠা)</div><div class="v" id="netPlotKatha">0.000</div></div>
+            <div class="stat-card accent"><div class="k">অনুমোদিত FAR অনুযায়ী মেঝের ক্ষেত্রফল (বর্গফুট)</div><div class="v" id="approvedFloorArea">0</div></div>
+            <div class="stat-card"><div class="k">প্রণোদনা মেঝের ক্ষেত্রফল (বর্গফুট)</div><div class="v" id="incentiveFloorArea">0</div></div>
+            <div class="stat-card accent"><div class="k">মোট অনুমোদিত মেঝের ক্ষেত্রফল (বর্গফুট)</div><div class="v" id="totalFloorArea">0</div></div>
+            <div class="stat-card"><div class="k">সর্বোচ্চ আবাসিক ইউনিট সংখ্যা</div><div class="v" id="maxUnits">0</div></div>
+            <div class="stat-card accent"><div class="k">প্রণোদনাসহ সর্বোচ্চ ইউনিট সংখ্যা</div><div class="v" id="maxUnitsIncentive">0</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PDF REPORT TAB ===================== -->
+
+<section id="pdfTab" class="tab-panel">
+
+  <p class="mouza-intro">
+    <i class="fas fa-file-pdf" style="color:#B71C1C"></i>
+    FAR ক্যালকুলেটরের সকল তথ্য একটি সুন্দর A4 PDF রিপোর্ট হিসেবে ডাউনলোড করুন।
+  </p>
+
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num"><i class="fas fa-download"></i></div>
+      <div>
+        <h3>PDF রিপোর্ট ডাউনলোড</h3>
+        <span>এক ক্লিকে সুন্দরভাবে সাজানো রিপোর্ট ডাউনলোড করুন।</span>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="downloadPDF()">
+      <i class="fas fa-file-pdf"></i>
+      PDF রিপোর্ট ডাউনলোড করুন
+    </button>
+
+  </div>
+
+</section>
+    </div>
+  </div>
+
+  <footer class="note">রাজউক FAR ক্যালকুলেটর ও মৌজা নির্দেশিকা · সকল ডাটা ও লজিক এই ফাইলের মধ্যেই সংরক্ষিত<br>Developed by MD NASIR UDDIN,AAO,RAJUK</footer>
+</div>
+
+<!-- Mouza detail modal -->
+<div id="resultModal" class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h3 id="modalMouzaName">—</h3>
+      <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="modalBodyContent" class="modal-body"></div>
+  </div>
+</div>
+
+<!-- All blocks list modal -->
+<div id="blocksModal" class="modal-overlay">
+  <div class="modal-container wide">
+    <div class="modal-header">
+      <h3><i class="fas fa-table-list"></i>&nbsp; সকল ব্লকের তালিকা</h3>
+      <button class="close-modal" id="closeBlocksModalBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="table-filter">
+        <i class="fas fa-search"></i>
+        <input type="text" id="blocksFilterInput" placeholder="ব্লকের নাম, এলাকা বা আইডি দিয়ে খুঁজুন...">
+      </div>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="mono">আইডি</th><th>নাম</th><th>এলাকা</th><th>ধরন</th>
+              <th class="mono">PPA</th><th class="mono">সাইজ</th><th class="mono">ইউনিট</th><th class="mono">এরিয়া FAR</th>
+            </tr>
+          </thead>
+          <tbody id="blocksTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- All mouza list modal -->
+<div id="mouzaListModal" class="modal-overlay">
+  <div class="modal-container wide">
+    <div class="modal-header">
+      <h3><i class="fas fa-list-ul"></i>&nbsp; সকল মৌজার তালিকা</h3>
+      <button class="close-modal" id="closeMouzaListModalBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="table-filter">
+        <i class="fas fa-search"></i>
+        <input type="text" id="mouzaListFilterInput" placeholder="মৌজার নাম, জোন বা সাবজোন দিয়ে খুঁজুন...">
+      </div>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr><th>মৌজার নাম</th><th class="mono">জোন</th><th class="mono">সাবজোন</th><th>অবস্থা</th></tr>
+          </thead>
+          <tbody id="mouzaListTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="mouzaDataJson">{"RAJUK_Zonal_Database":[{"zone_no":"১","zone_name":"আশুলিয়া-সাভার-বাইপাইল-জিরাবো-উত্তরা","sub_zones":[{"sub_zone_id":"১/১","boundary":"চেরাগ আলী বাসস্টপ- ফিশনস রোড- টঙ্গী রেইল স্টেশন রোড- টঙ্গী ঘোড়াশাল হাইওয়ে- টঙ্গী শিল্পাঞ্চল টঙ্গী স্টেশন রোড বাসস্টপ- ঢাকা ময়মনসিংহ মহা সড়ক- এয়ারপোর্ট স্টেশন এর দক্ষিণ সীমানা -জসীম উদ্দিন সড়ক -উত্তরা সেক্টর ৩, সেক্টর ৫ এর সীমানা- রাজউক উত্তরা এপার্টমেন্ট প্রকল্পের দক্ষিণ সীমানা দিয়ে বিরুলিয়া ব্রিজ-বিরুলিয়া রোড- তুরাগ নদী- ধৌর মোড় -টঙ্গী শিল্পাঞ্চল এর উত্তর সীমানা- চেরাগ আলী বাসস্টপ। তবে সাভার ক্যান্টনমেন্ট বোর্ড এর আইন দ্বারা চিহ্নিত এলাকা সাব-জোন ১/৩ এর মোট এলাকার অন্তর্ভুক্ত হবে না।","mouzas":[{"mouza_name":"আব্দুল্লাহপুর","status":"অংশ"},{"mouza_name":"আরিজপুর","status":"পূর্ণ"},{"mouza_name":"আনুতিয়া","status":"পূর্ণ"},{"mouza_name":"আইচ পাড়া","status":"পূর্ণ"},{"mouza_name":"বাইলজুরী","status":"পূর্ণ"},{"mouza_name":"বড় কাকর","status":"অংশ"},{"mouza_name":"বাউনিয়া","status":"অংশ"},{"mouza_name":"ভাটুলিয়া","status":"পূর্ণ"},{"mouza_name":"চকদিগুন","status":"অংশ"},{"mouza_name":"চাকুলী","status":"অংশ"},{"mouza_name":"চন্ডালভোগ","status":"পূর্ণ"},{"mouza_name":"ছোট কাঠাল দিয়া","status":"পূর্ণ"},{"mouza_name":"দত্ত পাড়া","status":"অংশ"},{"mouza_name":"দেউল","status":"অংশ"},{"mouza_name":"ধৌর","status":"পূর্ণ"},{"mouza_name":"দিয়াবাড়ী","status":"অংশ"},{"mouza_name":"দ্বিগুন","status":"অংশ"},{"mouza_name":"ফায়দাবাদ","status":"অংশ"},{"mouza_name":"গ্রাম ভাটুলিয়া","status":"অংশ"},{"mouza_name":"হিমার দিঘী","status":"পূর্ণ"},{"mouza_name":"কামারপাড়া","status":"পূর্ণ"},{"mouza_name":"মাসিমপুর","status":"পূর্ণ"},{"mouza_name":"মরকুন","status":"পূর্ণ"},{"mouza_name":"নলভোগ","status":"পূর্ণ"},{"mouza_name":"পশ্চিমখান","status":"অংশ"},{"mouza_name":"রাজাবাড়ী","status":"পূর্ণ"},{"mouza_name":"রানাভোলা","status":"পূর্ণ"},{"mouza_name":"রোসাডিয়া","status":"পূর্ণ"},{"mouza_name":"শৈলার গতি","status":"পূর্ণ"},{"mouza_name":"সোনপুর","status":"অংশ"},{"mouza_name":"টঙ্গী","status":"পূর্ণ"}]},{"sub_zone_id":"১/২","boundary":"ধৌর মোড়- তুরাগ নদী-বিরুলিয়া ব্রিজ- বিরুলিয়া আরকান রোড- আরকান বাজার বাসস্ট্যান্ড - বিরুলিয়া রোড- সাভার বাসস্টপ- সাভার বাজার রোড- সাভার উপজেলার সীমানা- ধলেশ্বরী ব্রিজ- ঢাকা আরিচা হাইওয়ে-বিস্মাইল বাসস্ট্যান্ড- বাসাইদ- বড় আশুলিয়া- টোম্পাবাড়ি বাসস্টপ- ধৌর মোড়।","mouzas":[{"mouza_name":"আগলা","status":"অংশ"},{"mouza_name":"আইচানোয়াদ্দা","status":"অংশ"},{"mouza_name":"আকুরান","status":"অংশ"},{"mouza_name":"আগলা পাড়া","status":"পূর্ণ"},{"mouza_name":"আটি চাঁদগাঁও","status":"অংশ"},{"mouza_name":"আটকপাড়া","status":"পূর্ণ"},{"mouza_name":"বাড্ডা","status":"পূর্ণ"},{"mouza_name":"বাঘধনিয়া","status":"অংশ"},{"mouza_name":"বাকরাল","status":"পূর্ণ"},{"mouza_name":"বড় আশুলিয়া","status":"অংশ"},{"mouza_name":"বড় কাকর","status":"অংশ"},{"mouza_name":"বড় ওয়ালিয়া","status":"পূর্ণ"},{"mouza_name":"বড় পাড়াগাঁও","status":"পূর্ণ"},{"mouza_name":"বাসাইদ","status":"পূর্ণ"},{"mouza_name":"বেলমা","status":"পূর্ণ"},{"mouza_name":"ভাটপাড়া","status":"পূর্ণ"},{"mouza_name":"বিল বারিল","status":"পূর্ণ"},{"mouza_name":"বিরুলিয়া","status":"অংশ"},{"mouza_name":"চক বাসাইদ","status":"পূর্ণ"},{"mouza_name":"চক চাদাম","status":"পূর্ণ"},{"mouza_name":"চাকলগাঁও","status":"পূর্ণ"},{"mouza_name":"চাদগাঁও","status":"পূর্ণ"},{"mouza_name":"চারিগাঁও","status":"পূর্ণ"},{"mouza_name":"চৌবাডিয়া","status":"পূর্ণ"},{"mouza_name":"ছোট অমরপুর","status":"পূর্ণ"},{"mouza_name":"ছোট কাকর","status":"পূর্ণ"},{"mouza_name":"ছোট কালিয়াঁকৈর","status":"অংশ"},{"mouza_name":"ডাবর দয়া","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ বলরামপুর","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ কাঞ্চনপুর","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ কৃষ্ণপুর","status":"অংশ"},{"mouza_name":"দক্ষিণ ধলক","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ সিন্দুরিয়া","status":"পূর্ণ"},{"mouza_name":"দামপাড়া","status":"পূর্ণ"},{"mouza_name":"ডিক্রিরটেক","status":"পূর্ণ"},{"mouza_name":"দেওগাঁও","status":"পূর্ণ"},{"mouza_name":"দেউল","status":"অংশ"},{"mouza_name":"ধনিয়া","status":"অংশ"},{"mouza_name":"গৌরিপুর","status":"পূর্ণ"},{"mouza_name":"গেরুয়া","status":"পূর্ণ"},{"mouza_name":"ঘোড়াদিয়া","status":"পূর্ণ"},{"mouza_name":"ঘুঘুদিয়া","status":"পূর্ণ"},{"mouza_name":"গ্রাম ভাটুলিয়া","status":"অংশ"},{"mouza_name":"গোয়ালন্দী","status":"পূর্ণ"},{"mouza_name":"জালেশ্বর","status":"পূর্ণ"},{"mouza_name":"জ্যামসিং","status":"পূর্ণ"},{"mouza_name":"কলমা","status":"পূর্ণ"},{"mouza_name":"খাগান","status":"পূর্ণ"},{"mouza_name":"ছলিয়া","status":"পূর্ণ"},{"mouza_name":"ছিয়াটা","status":"পূর্ণ"},{"mouza_name":"খন্দকারটি","status":"পূর্ণ"},{"mouza_name":"কীর্তিনোয়াদ্দা","status":"পূর্ণ"},{"mouza_name":"কুরগাঁও","status":"পূর্ণ"},{"mouza_name":"মদনপুর","status":"অংশ"},{"mouza_name":"মল্লিকেরটেক","status":"পূর্ণ"},{"mouza_name":"মিরোর চাঁদগাঁও","status":"পূর্ণ"},{"mouza_name":"মিরোরটেক","status":"পূর্ণ"},{"mouza_name":"মোহনপুর","status":"অংশ"},{"mouza_name":"নয়াবাড়ী","status":"পূর্ণ"},{"mouza_name":"পাচুরদুয়া","status":"পূর্ণ"},{"mouza_name":"পাথালিয়া","status":"পূর্ণ"},{"mouza_name":"পশ্চিম সদরপুর","status":"পূর্ণ"},{"mouza_name":"পাওয়ালিয়া","status":"অংশ"},{"mouza_name":"পূর্ব সদরপুর","status":"পূর্ণ"},{"mouza_name":"রাজাসন","status":"অংশ"},{"mouza_name":"রাজিবাড়ী","status":"পূর্ণ"},{"mouza_name":"রোস্তমপুর","status":"পূর্ণ"},{"mouza_name":"সাদুল্লাহপুর","status":"পূর্ণ"},{"mouza_name":"সাইপাড়া","status":"পূর্ণ"},{"mouza_name":"শাকরান","status":"পূর্ণ"},{"mouza_name":"সামাইর","status":"অংশ"},{"mouza_name":"সাভার","status":"অংশ"},{"mouza_name":"সেনওয়ালিয়া","status":"অংশ"},{"mouza_name":"সুয়াবাদ","status":"পূর্ণ"},{"mouza_name":"সুপ্তিপ","status":"পূর্ণ"},{"mouza_name":"চাকপুর","status":"অংশ"},{"mouza_name":"টাটি","status":"অংশ"},{"mouza_name":"টাটি বাড়ী","status":"অংশ"},{"mouza_name":"উত্তর দত্তপাড়া","status":"পূর্ণ"},{"mouza_name":"উত্তর ধলক","status":"অংশ"},{"mouza_name":"উঃ রামচন্দ্রপুর","status":"অংশ"},{"mouza_name":"উত্তর সিন্দুরিয়া","status":"পূর্ণ"},{"mouza_name":"জিনজিরা","status":"পূর্ণ"}]},{"sub_zone_id":"১/৩","boundary":"ধলেশ্বরী ব্রিজ- সাভার উপজেলার সীমানা- শ্রীপুর রোড- ঢাকা জেলার সীমানা-তুরাগ নদী- ঢাকা আশুলিয়া হাইওয়ে- তুরাগ নদী-ধৌর মোড়- জিরাবো বাজার- সাব-জোন ১/২ এর উত্তর সীমানা - ধলেশ্বরী ব্রিজ।","mouzas":[{"mouza_name":"আগলা","status":"অংশ"},{"mouza_name":"আটি চাঁদগাঁও","status":"অংশ"},{"mouza_name":"বাঘধনিয়া","status":"অংশ"},{"mouza_name":"বাইপাইল","status":"পূর্ণ"},{"mouza_name":"বড় আশুলিয়া","status":"অংশ"},{"mouza_name":"বড় রাঙ্গামাটিয়া","status":"পূর্ণ"},{"mouza_name":"ব্যাসন","status":"পূর্ণ"},{"mouza_name":"বাঁশবাড়ী","status":"পূর্ণ"},{"mouza_name":"বিষ্ণুপুরটি","status":"পূর্ণ"},{"mouza_name":"ছোট গোবিন্দপুর","status":"পূর্ণ"},{"mouza_name":"চিত্র সাইশ","status":"পূর্ণ"},{"mouza_name":"দেহরা","status":"পূর্ণ"},{"mouza_name":"ধলপুর","status":"অংশ"},{"mouza_name":"ধনাইদ","status":"পূর্ণ"},{"mouza_name":"ধনঞ্জয়পুর","status":"পূর্ণ"},{"mouza_name":"ধনিয়া","status":"অংশ"},{"mouza_name":"দিয়াখালী","status":"পূর্ণ"},{"mouza_name":"এনায়েতপুর","status":"পূর্ণ"},{"mouza_name":"গনকবড়ী","status":"পূর্ণ"},{"mouza_name":"গোবিন্দ বাড়ী","status":"পূর্ণ"},{"mouza_name":"হাড়ুনশা","status":"পূর্ণ"},{"mouza_name":"ইয়ারকান্দি","status":"অংশ"},{"mouza_name":"জিরাব","status":"পূর্ণ"},{"mouza_name":"কামালশী","status":"পূর্ণ"},{"mouza_name":"কুঠুরিয়া","status":"পূর্ণ"},{"mouza_name":"মনসুখাবাদ","status":"পূর্ণ"},{"mouza_name":"নলম","status":"পূর্ণ"},{"mouza_name":"নলম বাগবাড়ী","status":"পূর্ণ"},{"mouza_name":"পলাশবাড়ী","status":"পূর্ণ"},{"mouza_name":"পাওয়ালিয়া","status":"অংশ"},{"mouza_name":"পূর্ব নরসিংহপুর","status":"পূর্ণ"},{"mouza_name":"পূর্ব শৈলডুবি","status":"পূর্ণ"},{"mouza_name":"রুদ্রপুর","status":"পূর্ণ"},{"mouza_name":"সরু পাইতলী","status":"পূর্ণ"},{"mouza_name":"সাতাইশকাসদি","status":"পূর্ণ"},{"mouza_name":"সেনওয়ালিয়া","status":"অংশ"},{"mouza_name":"শ্রীখন্ডিয়া","status":"পূর্ণ"},{"mouza_name":"তৈয়বপুর","status":"পূর্ণ"},{"mouza_name":"তাজপুর","status":"পূর্ণ"},{"mouza_name":"টাকপুর","status":"অংশ"},{"mouza_name":"টাটি বাড়ী","status":"অংশ"},{"mouza_name":"উনাইল","status":"পূর্ণ"},{"mouza_name":"উত্তর ধলক","status":"অংশ"},{"mouza_name":"উঃ রামচন্দ্রপুর","status":"অংশ"}]}]},{"zone_no":"২","zone_name":"পূর্বাচল নিউ টাউন-খিলক্ষেত-উত্তরখান-দক্ষিণখান","sub_zones":[{"sub_zone_id":"২/১","boundary":"কসাইবাড়ি রেলক্রসিং- দক্ষিণখান বাজার- কীটকুড়া - বড়কাউ (পূর্বাচল পশ্চিম সীমানা)- উত্তরে টঙ্গী খাল (ঢাকা উত্তর সীমানা)।","mouzas":[{"mouza_name":"আব্দুল্লাহপুর","status":"অংশ"},{"mouza_name":"আমাইয়া","status":"পূর্ণ"},{"mouza_name":"আনুল","status":"পূর্ণ"},{"mouza_name":"ভাটুলিয়া","status":"অংশ"},{"mouza_name":"চান্দুরখান","status":"পূর্ণ"},{"mouza_name":"ছোট পলাশিয়া","status":"পূর্ণ"},{"mouza_name":"দক্ষিণখান","status":"অংশ"},{"mouza_name":"ফায়দাবাদ","status":"অংশ"},{"mouza_name":"গোবিন্দপুর","status":"পূর্ণ"},{"mouza_name":"কাসকড়া","status":"অংশ"},{"mouza_name":"মৈষাবাড়ী","status":"অংশ"},{"mouza_name":"মৌসার","status":"পূর্ণ"},{"mouza_name":"মৌসাইদ","status":"পূর্ণ"},{"mouza_name":"নয়াখোলা","status":"পূর্ণ"},{"mouza_name":"নিমা","status":"পূর্ণ"},{"mouza_name":"নিমাঁচক","status":"পূর্ণ"},{"mouza_name":"পলাশিয়া","status":"পূর্ণ"},{"mouza_name":"পশ্চিমখান","status":"অংশ"},{"mouza_name":"পুরাতৈল","status":"পূর্ণ"},{"mouza_name":"সোনপুর","status":"অংশ"},{"mouza_name":"সুনবান্টা","status":"অংশ"},{"mouza_name":"তালিয়া","status":"পূর্ণ"},{"mouza_name":"তালনা","status":"অংশ"},{"mouza_name":"উজানপুর","status":"পূর্ণ"},{"mouza_name":"উত্তরখান","status":"অংশ"}]},{"sub_zone_id":"২/২","boundary":"উত্তরে সাব-জোন ২/১ এর সীমানা- দক্ষিণে কুড়িল থেকে বালুনদী (৩০০ ফিট রোড)- পূর্বে পূর্বাচল সীমানা- পশ্চিমে ঢাকা ময়মনসিংহ রোড।","mouzas":[{"mouza_name":"বাওথার","status":"পূর্ণ"},{"mouza_name":"বরুয়া","status":"অংশ"},{"mouza_name":"ভাটুরিয়া","status":"অংশ"},{"mouza_name":"দক্ষিণখান","status":"অংশ"},{"mouza_name":"দেলনা","status":"পূর্ণ"},{"mouza_name":"ডুমনি","status":"অংশ"},{"mouza_name":"জোয়ারসাহারা","status":"অংশ"},{"mouza_name":"কাসকড়া","status":"অংশ"},{"mouza_name":"মাস্তল","status":"অংশ"},{"mouza_name":"তালনা","status":"অংশ"},{"mouza_name":"উত্তরখান","status":"অংশ"}]},{"sub_zone_id":"২/৩","boundary":"বড়কাউ- পূর্বাচল এর উত্তর অংশের সীমানা রূপগঞ্জ উপজেলা সীমানা-পুর্বে শীতলক্ষ্যা নদী- পূর্বাচলের দক্ষিণ অংশের খাল - কাঞ্চন ব্রীজ - পূর্বাচল এক্সপ্রেসওয়ে -টঙ্গী খাল- বালু ব্রীজ- টঙ্গী খাল- বড়কাউ (পূর্বাচল নতুন শহর- এবং - পূর্বাচলের পূর্ব পাশের নারায়ণগঞ্জ জেলার অংশ)।","mouzas":[{"mouza_name":"আগলা","status":"পূর্ণ"},{"mouza_name":"বাঘবের","status":"অংশ"},{"mouza_name":"বাঘপাড়া","status":"পূর্ণ"},{"mouza_name":"বেলদী","status":"পূর্ণ"},{"mouza_name":"বশিন্দা","status":"পূর্ণ"},{"mouza_name":"বড়আহমদিয়া","status":"পূর্ণ"},{"mouza_name":"বড়কাউ","status":"পূর্ণ"},{"mouza_name":"বেলদী","status":"পূর্ণ"},{"mouza_name":"ভোলানাথপুর","status":"পূর্ণ"},{"mouza_name":"বাড়িয়াদী","status":"পূর্ণ"},{"mouza_name":"ব্রাহ্মণখালী","status":"অংশ"},{"mouza_name":"চাহিরপাড়া","status":"পূর্ণ"},{"mouza_name":"দাউদপুর","status":"পূর্ণ"},{"mouza_name":"দেবগ্রাম","status":"পূর্ণ"},{"mouza_name":"দুয়ারি","status":"পূর্ণ"},{"mouza_name":"গলান","status":"পূর্ণ"},{"mouza_name":"গুতিয়াব","status":"অংশ"},{"mouza_name":"হালকুড়","status":"পূর্ণ"},{"mouza_name":"হারারবাড়ী","status":"পূর্ণ"},{"mouza_name":"হিরনাল","status":"পূর্ণ"},{"mouza_name":"কাকনীবাহ","status":"পূর্ণ"},{"mouza_name":"কালনী","status":"পূর্ণ"},{"mouza_name":"কামালকাঠি","status":"পূর্ণ"},{"mouza_name":"কামতা","status":"পূর্ণ"},{"mouza_name":"কেউতুন","status":"পূর্ণ"},{"mouza_name":"খৈসার","status":"পূর্ণ"},{"mouza_name":"কলিঙ্গা","status":"পূর্ণ"},{"mouza_name":"কুলিয়াদী","status":"পূর্ণ"},{"mouza_name":"লক্ষণমনোহরপুর","status":"পূর্ণ"},{"mouza_name":"লক্ষণশিনুলিয়া","status":"পূর্ণ"},{"mouza_name":"মাধবপুর","status":"অংশ"},{"mouza_name":"মাইজগাও","status":"পূর্ণ"},{"mouza_name":"মৈষাবাড়ী","status":"অংশ"},{"mouza_name":"নওগ্রাম","status":"অংশ"},{"mouza_name":"নওগাঁও","status":"পূর্ণ"},{"mouza_name":"পাড়াবর্তা","status":"পূর্ণ"},{"mouza_name":"পাতিরা","status":"অংশ"},{"mouza_name":"পিতলগঞ্জ","status":"অংশ"},{"mouza_name":"পশি","status":"অংশ"},{"mouza_name":"পুটিনা","status":"পূর্ণ"},{"mouza_name":"রঘুরামপুর","status":"পূর্ণ"},{"mouza_name":"রাপুরা","status":"অংশ"},{"mouza_name":"রোহিলা","status":"পূর্ণ"},{"mouza_name":"শিমুলতলা","status":"পূর্ণ"},{"mouza_name":"সোলপিনা","status":"পূর্ণ"},{"mouza_name":"টেকপাড়াখোরিয়া","status":"পূর্ণ"},{"mouza_name":"টেংরা","status":"পূর্ণ"},{"mouza_name":"তিনোলোপ","status":"পূর্ণ"},{"mouza_name":"তীরমারা","status":"পূর্ণ"},{"mouza_name":"ইউসুফগঞ্জ","status":"অংশ"}]}]},{"zone_no":"৩","zone_name":"সাভার পৌরসভা-হেমায়েতপুর-পল্লবী-ঢাকা সেনানিবাস-শেওড়াপাড়া-মিরপুর-১","sub_zones":[{"sub_zone_id":"৩/১","boundary":"ঢাকা বিমানবন্দর রেলওয়ে স্টেশন এর পশ্চিম পাশ কুড়িল বিশ্বরোড -তেজগাঁও রেলওয়ে (ঢাকা এলিভেটেড এক্সপ্রেসওয়ে)- স্বাধীনতা সরণী- মিরপুর রোড ১৪- মিরপুর ১৪ বাসস্টপ- মিরপুর রোড ১০- মিরপুর ১০ বাসস্টপ - বেগম রোকেয়া সরণী- মিরপুর ১১ বাস স্ট্যান্ড- লিঙ্ক ভিটা রোড- গ্রাফিক্স মোড়- চিড়িয়াখানা সড়ক- মিরপুর বেড়িবাঁধ সড়ক- তুরাগ নদী- বিরুলিয়া ব্রিজ- উত্তরা থার্ড ফেজ খাল- কালীবাড়ী স্ট্যান্ড- ধলেশ্বরী রোড-ঢাকা বিমানবন্দর রেলওয়ে স্টেশন।","mouzas":[{"mouza_name":"আগলা","status":"পূর্ণ"},{"mouza_name":"বাউনিয়া","status":"অংশ"},{"mouza_name":"চকদিগুন","status":"অংশ"},{"mouza_name":"চাকুলী","status":"অংশ"},{"mouza_name":"ধামালকোট","status":"অংশ"},{"mouza_name":"দ্বিগুন","status":"অংশ"},{"mouza_name":"দুয়ারীপাড়া","status":"পূর্ণ"},{"mouza_name":"গজানচটবাড়ী","status":"পূর্ণ"},{"mouza_name":"ইব্রাহীমপুর","status":"অংশ"},{"mouza_name":"জোয়ারসাহারা","status":"অংশ"},{"mouza_name":"লালাসরাই","status":"অংশ"},{"mouza_name":"মহালাবাড়ী","status":"অংশ"},{"mouza_name":"মাতুল","status":"পূর্ণ"},{"mouza_name":"নবাবের বাগ","status":"অংশ"},{"mouza_name":"পশ্চিমখান","status":"অংশ"},{"mouza_name":"পাওতুল","status":"পূর্ণ"},{"mouza_name":"সামাইর","status":"অংশ"},{"mouza_name":"সেকেরকদলী","status":"পূর্ণ"},{"mouza_name":"সেনপাড়া পর্বতা","status":"অংশ"}]},{"sub_zone_id":"৩/২","boundary":"বনানী বাসস্ট্যান্ড- উত্তরে সাব-জোন ৩/১ এর সীমানা- নবাবেরবাগ- মিরপুর বেড়িবাঁধ সড়ক- তুরাগ নদীর দক্ষিনাশে- আমিনবাজার ব্রিজ- গাবতলী - মিরপুর রোড - শিমুলতলা বাসস্ট্যান্ড -সৈয়দ মাহবুব মোরশেদ রোড- আগারগাঁও বাসস্টপ- বিমানবন্দর সড়ক- ঢাকা এলিভেটেড এক্সপ্রেসওয়ে-বনানী বাসস্ট্যান্ড।","mouzas":[{"mouza_name":"আনন্দনগর","status":"পূর্ণ"},{"mouza_name":"বনপাড়া","status":"পূর্ণ"},{"mouza_name":"বিসিল","status":"পূর্ণ"},{"mouza_name":"বড় সায়েক","status":"অংশ"},{"mouza_name":"ছোট নবাবাজার","status":"পূর্ণ"},{"mouza_name":"ছোট সায়েক","status":"অংশ"},{"mouza_name":"ছোটদিয়াবাড়ী","status":"পূর্ণ"},{"mouza_name":"হরিরামপুর","status":"পূর্ণ"},{"mouza_name":"ইব্রাহীমপুর","status":"অংশ"},{"mouza_name":"জহরাবাদ","status":"পূর্ণ"},{"mouza_name":"কাফরুল","status":"অংশ"},{"mouza_name":"খোঁজারবাগ","status":"পূর্ণ"},{"mouza_name":"লালাসরাই","status":"পূর্ণ"},{"mouza_name":"মহালাবাড়ী","status":"অংশ"},{"mouza_name":"মিরপুর","status":"অংশ"},{"mouza_name":"মহাখালী","status":"অংশ"},{"mouza_name":"মোহাম্মদপুর","status":"অংশ"},{"mouza_name":"নবাবের বাগ","status":"অংশ"},{"mouza_name":"নয়াবাশান","status":"অংশ"},{"mouza_name":"পাইকপাড়া","status":"অংশ"},{"mouza_name":"পশ্চিমকান্দর","status":"পূর্ণ"},{"mouza_name":"পূর্ব কান্দর","status":"পূর্ণ"},{"mouza_name":"সেনপাড়া পর্বতা","status":"অংশ"},{"mouza_name":"উত্তর কাউন্দিয়া","status":"অংশ"}]},{"sub_zone_id":"৩/৩","boundary":"বিরুলিয়া ব্রিজ- বিরুলিয়া আরকান রোড- আরকান বাজার বাসস্ট্যান্ড - বিরুলিয়া রোড- সাভার বাসস্টপ- সাভার বাজার রোড- নামা বাজার- ধলেশ্বরী নদী (আলিপুর ব্রিজ)- বুড়িগঙ্গা - ঢাকা আরিচা হাইওয়ে- বলিয়াপুর বাসস্ট্যান্ড।","mouzas":[{"mouza_name":"আইচানোয়াদ্দা","status":"অংশ"},{"mouza_name":"আকুরান","status":"অংশ"},{"mouza_name":"আনন্দপুর","status":"পূর্ণ"},{"mouza_name":"বানিয়াবাড়ী","status":"পূর্ণ"},{"mouza_name":"বাণশাতরা","status":"পূর্ণ"},{"mouza_name":"বলিয়ামপুর","status":"অংশ"},{"mouza_name":"বনগ্রাম","status":"পূর্ণ"},{"mouza_name":"বড় বলিমেহরা","status":"পূর্ণ"},{"mouza_name":"বড় কাকর","status":"অংশ"},{"mouza_name":"বারুইগ্রাম","status":"পূর্ণ"},{"mouza_name":"বাহা","status":"পূর্ণ"},{"mouza_name":"বরৈতৈল","status":"পূর্ণ"},{"mouza_name":"বেগুনবাড়ী","status":"অংশ"},{"mouza_name":"ভাকুরতা","status":"অংশ"},{"mouza_name":"ভারারী","status":"পূর্ণ"},{"mouza_name":"ভোজনা","status":"পূর্ণ"},{"mouza_name":"বিলবাঘিল","status":"পূর্ণ"},{"mouza_name":"বিলবাশিন","status":"পূর্ণ"},{"mouza_name":"বিলামালিয়া","status":"অংশ"},{"mouza_name":"বিরুলিয়া","status":"অংশ"},{"mouza_name":"চাইরা","status":"অংশ"},{"mouza_name":"চাকুলিয়া","status":"পূর্ণ"},{"mouza_name":"চান্দপাড়া","status":"পূর্ণ"},{"mouza_name":"চর নয়ারনপুর","status":"অংশ"},{"mouza_name":"চাউলিয়া","status":"পূর্ণ"},{"mouza_name":"চর আলগী","status":"অংশ"},{"mouza_name":"চর নয়ারনপুর","status":"অংশ"},{"mouza_name":"ছোট বলিমোহরা","status":"অংশ"},{"mouza_name":"ছোট কালিয়াঁকৈর","status":"অংশ"},{"mouza_name":"ছোটওয়ালিয়া","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ দরিয়াপুর","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ দত্তপাড়া","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ কৃষ্ণপুর","status":"অংশ"},{"mouza_name":"দক্ষিণরামচন্দ্রপুর","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ শ্যামপুর","status":"পূর্ণ"},{"mouza_name":"দেওয়ানবাড়ী","status":"পূর্ণ"},{"mouza_name":"ধল্লা","status":"পূর্ণ"},{"mouza_name":"দিয়া নাটিয়া","status":"পূর্ণ"},{"mouza_name":"ফুলবাড়ী","status":"পূর্ণ"},{"mouza_name":"পাঘারিয়া","status":"পূর্ণ"},{"mouza_name":"গেন্দা","status":"পূর্ণ"},{"mouza_name":"গের্দা","status":"পূর্ণ"},{"mouza_name":"হরিন ধরা","status":"পূর্ণ"},{"mouza_name":"হাড়ুরিয়া","status":"পূর্ণ"},{"mouza_name":"ইমামন্দিপুর","status":"পূর্ণ"},{"mouza_name":"ইসাকাবাদ","status":"পূর্ণ"},{"mouza_name":"জানুর","status":"পূর্ণ"},{"mouza_name":"জানুর শিবগতি","status":"পূর্ণ"},{"mouza_name":"জানুর মুড়িপাড়া","status":"পূর্ণ"},{"mouza_name":"কমলাপুর","status":"পূর্ণ"},{"mouza_name":"কাসি বলিমোহরা","status":"পূর্ণ"},{"mouza_name":"কর্ণপাড়া","status":"পূর্ণ"},{"mouza_name":"কাতলপুর","status":"পূর্ণ"},{"mouza_name":"কোণ্ডা","status":"অংশ"},{"mouza_name":"কুলাসুর","status":"পূর্ণ"},{"mouza_name":"কুমার খোদা","status":"পূর্ণ"},{"mouza_name":"কুমান","status":"পূর্ণ"},{"mouza_name":"মজিপুর","status":"পূর্ণ"},{"mouza_name":"মোস্তাপাড়া","status":"পূর্ণ"},{"mouza_name":"মুড়খাচোলা","status":"অংশ"},{"mouza_name":"নয়ারচর","status":"পূর্ণ"},{"mouza_name":"নথখালী","status":"পূর্ণ"},{"mouza_name":"নাটেপাড়া","status":"পূর্ণ"},{"mouza_name":"নিকরাইল","status":"পূর্ণ"},{"mouza_name":"পানপাড়া","status":"পূর্ণ"},{"mouza_name":"পিপুলিয়া","status":"পূর্ণ"},{"mouza_name":"পূর্ব ভবানীপুর","status":"পূর্ণ"},{"mouza_name":"পূর্ব গোপালপুর","status":"পূর্ণ"},{"mouza_name":"পুড়ালিয়া","status":"পূর্ণ"},{"mouza_name":"রাজঘাট","status":"পূর্ণ"},{"mouza_name":"রাজারবাগ","status":"পূর্ণ"},{"mouza_name":"রাজাসন","status":"অংশ"},{"mouza_name":"সাধাপুর","status":"পূর্ণ"},{"mouza_name":"সাদুল্লাহপুর","status":"পূর্ণ"},{"mouza_name":"শলীপুর","status":"অংশ"},{"mouza_name":"সামাইর","status":"অংশ"},{"mouza_name":"সারুলিয়া","status":"পূর্ণ"},{"mouza_name":"সাভার","status":"অংশ"},{"mouza_name":"সেরপুর","status":"অংশ"},{"mouza_name":"সিরাজঝেরটেক","status":"পূর্ণ"},{"mouza_name":"সীতাশ্চর","status":"পূর্ণ"},{"mouza_name":"টাটি","status":"অংশ"},{"mouza_name":"তেজস কোনা","status":"পূর্ণ"},{"mouza_name":"উত্তর কাউন্দিয়া","status":"অংশ"},{"mouza_name":"উত্তর শ্যামপুর","status":"পূর্ণ"},{"mouza_name":"উত্তর উমোদড়া","status":"পূর্ণ"}]}]},{"zone_no":"৪","zone_name":"ভুলতা-জলসিড়ি আবাসন-বারিধারা-গুলশান-আফতাবনগর","sub_zones":[{"sub_zone_id":"৪/১","boundary":"কুড়িল-ঢাকা এলিভেটেড এক্সপ্রেসওয়ে (পূর্ব পাশ)- বনানী বাসস্ট্যান্ড- কামাল আতাতুর্ক এভিনিউ- গুলশান ০২- নতুন বাজার-মাদানী এভিনিউ- বেরাইদ- জলসিঁড়ি বালু নদী ব্রিজ- বালু নদী- নীলা মার্কেট- পূর্বাচল এক্সপ্রেসওয়ে- কুড়িল।","mouzas":[{"mouza_name":"বনানী আ/এ","status":"অংশ"},{"mouza_name":"বড় বেরাইদ","status":"অংশ"},{"mouza_name":"বড়কাটাসলদিয়া","status":"অংশ"},{"mouza_name":"বরুয়া","status":"অংশ"},{"mouza_name":"ভাটারা","status":"অংশ"},{"mouza_name":"ছোট বেরাইদ","status":"অংশ"},{"mouza_name":"ধামালকোট","status":"অংশ"},{"mouza_name":"ডুমনি","status":"অংশ"},{"mouza_name":"গুলশান আ/এ","status":"অংশ"},{"mouza_name":"জোয়ারসাহারা","status":"অংশ"},{"mouza_name":"মাস্তল","status":"অংশ"},{"mouza_name":"পাতিরা","status":"অংশ"},{"mouza_name":"সামাইর","status":"অংশ"},{"mouza_name":"সাতারকুল","status":"অংশ"},{"mouza_name":"ইউসুফগঞ্জ","status":"অংশ"}]},{"sub_zone_id":"৪/২","boundary":"উত্তরে কালশী- গুলশান ২-নতুনবাজার- মাদানি এভিনিউ- বেরাইদ জলসিড়ি বালু নদী ব্রীজ, পূর্বে বালু নদী- দক্ষিণে বেগুনবাড়ি খাল-হাতিরঝিল, পশ্চিমে তেজগাঁও রেল লাইন।","mouzas":[{"mouza_name":"বাড্ডা","status":"অংশ"},{"mouza_name":"বনানী আ/এ","status":"অংশ"},{"mouza_name":"বড় বেরাইদ","status":"অংশ"},{"mouza_name":"বড়কাটাসলদিয়া","status":"অংশ"},{"mouza_name":"ভাটারা","status":"অংশ"},{"mouza_name":"ছোট বেরাইদ","status":"অংশ"},{"mouza_name":"গজারিয়া","status":"পূর্ণ"},{"mouza_name":"গুলশান আ/এ","status":"অংশ"},{"mouza_name":"করারৈল","status":"পূর্ণ"},{"mouza_name":"মেরাডিয়া","status":"অংশ"},{"mouza_name":"মহাখালী","status":"অংশ"},{"mouza_name":"নাছিরাবাদ","status":"অংশ"},{"mouza_name":"নিপুন আগারগাঁও","status":"পূর্ণ"},{"mouza_name":"নন্দীপাড়া","status":"অংশ"},{"mouza_name":"পশ্চিম হারারাদিয়া","status":"পূর্ণ"},{"mouza_name":"পূর্বহারারাদিয়া","status":"পূর্ণ"},{"mouza_name":"সাতারকুল","status":"অংশ"},{"mouza_name":"সুতিভোলা","status":"পূর্ণ"},{"mouza_name":"তেজগাঁও","status":"অংশ"},{"mouza_name":"তেজগাঁও সি/এ","status":"পূর্ণ"},{"mouza_name":"উলুন","status":"অংশ"}]},{"sub_zone_id":"৪/৩","boundary":"রামপুরা খাল- পশ্চিমে বালু নদীর - বেরাইদ - জলসিড়ি বালু নদী ব্রীজ- নীলা মার্কেট - পূর্বাচল এক্সপ্রেসওয়ে (পূর্বাচল এর দক্ষিণ অংশের সীমানা)- কাঞ্চন সেতু -রূপগঞ্জ উপজেলা সীমানা (ভুলতা এলাকা) -দক্ষিণে পূর্ব গ্রাম ঘাট- পারাগাও বাজার- রামপুরা খাল-বালু নদী।","mouzas":[{"mouza_name":"আধুরিয়া","status":"পূর্ণ"},{"mouza_name":"আড়িয়াব","status":"অংশ"},{"mouza_name":"আমলান","status":"পূর্ণ"},{"mouza_name":"আওতিয়াব","status":"পূর্ণ"},{"mouza_name":"বাঘবের","status":"অংশ"},{"mouza_name":"বনীমাদী","status":"পূর্ণ"},{"mouza_name":"বড় বেরাইদ","status":"অংশ"},{"mouza_name":"বরালুপাড়াগাও","status":"অংশ"},{"mouza_name":"বাড়ীয়াধনী","status":"পূর্ণ"},{"mouza_name":"বড়পা","status":"অংশ"},{"mouza_name":"বরুনা","status":"পূর্ণ"},{"mouza_name":"বসুলিয়া","status":"পূর্ণ"},{"mouza_name":"বোরাক","status":"পূর্ণ"},{"mouza_name":"ভাওলা","status":"পূর্ণ"},{"mouza_name":"ভুলকুর","status":"পূর্ণ"},{"mouza_name":"ভুলতা","status":"পূর্ণ"},{"mouza_name":"বিংরাব","status":"পূর্ণ"},{"mouza_name":"রামকৃষ্ণও","status":"অংশ"},{"mouza_name":"রামনাথপুর","status":"অংশ"},{"mouza_name":"চরগোপালপুর","status":"পূর্ণ"},{"mouza_name":"ছোটবনিয়ান্দি","status":"পূর্ণ"},{"mouza_name":"ছোটদাড়িকান্দি","status":"পূর্ণ"},{"mouza_name":"ছোটপলাশোগোপ","status":"পূর্ণ"},{"mouza_name":"দরিকান্দি","status":"পূর্ণ"},{"mouza_name":"দত্তেরকান্দি","status":"পূর্ণ"},{"mouza_name":"দৈবে","status":"পূর্ণ"},{"mouza_name":"গাবতলীহাট","status":"পূর্ণ"},{"mouza_name":"গরীবপুর","status":"পূর্ণ"},{"mouza_name":"গজারিয়া","status":"পূর্ণ"},{"mouza_name":"গোলাকান্দাইল","status":"পূর্ণ"},{"mouza_name":"গুতিয়াব","status":"অংশ"},{"mouza_name":"হরিনাধাম","status":"পূর্ণ"},{"mouza_name":"জাঙ্গীর","status":"পূর্ণ"},{"mouza_name":"কর্নগোপ","status":"পূর্ণ"},{"mouza_name":"কায়েমপুর","status":"পূর্ণ"},{"mouza_name":"কায়েতপাড়া","status":"পূর্ণ"},{"mouza_name":"কেয়ারিয়া","status":"পূর্ণ"},{"mouza_name":"কেরানীগঞ্জ","status":"অংশ"},{"mouza_name":"খাসদাব","status":"পূর্ণ"},{"mouza_name":"লক্ষণযাত্রা বাড়ী","status":"পূর্ণ"},{"mouza_name":"মদনা","status":"পূর্ণ"},{"mouza_name":"মাকিনা","status":"পূর্ণ"},{"mouza_name":"মন্ডলখালী","status":"পূর্ণ"},{"mouza_name":"মাসাব","status":"অংশ"},{"mouza_name":"মাছিমাবাদ","status":"পূর্ণ"},{"mouza_name":"মিরকুটি","status":"পূর্ণ"},{"mouza_name":"মিরকুটিমাও","status":"পূর্ণ"},{"mouza_name":"মীঠাব","status":"পূর্ণ"},{"mouza_name":"মোগলান","status":"পূর্ণ"},{"mouza_name":"মুড়াপাড়া","status":"পূর্ণ"},{"mouza_name":"মশুরাগ্রাম","status":"পূর্ণ"},{"mouza_name":"নওগ্রাম","status":"অংশ"},{"mouza_name":"নাওড়া","status":"পূর্ণ"},{"mouza_name":"নরাব","status":"পূর্ণ"},{"mouza_name":"নারসিংগেল","status":"পূর্ণ"},{"mouza_name":"নোয়াগাঁও","status":"অংশ"},{"mouza_name":"পানাব","status":"পূর্ণ"},{"mouza_name":"পাচুইখী","status":"পূর্ণ"},{"mouza_name":"পাড়াগাঁও","status":"পূর্ণ"},{"mouza_name":"পারাইন","status":"পূর্ণ"},{"mouza_name":"পিতলগঞ্জ","status":"অংশ"},{"mouza_name":"পোড়াব","status":"পূর্ণ"},{"mouza_name":"পশি","status":"অংশ"},{"mouza_name":"রূপগঞ্জ","status":"পূর্ণ"},{"mouza_name":"সাহাপুর","status":"পূর্ণ"},{"mouza_name":"সাওঘাট","status":"পূর্ণ"},{"mouza_name":"শরীফগঞ্জ","status":"পূর্ণ"},{"mouza_name":"শিবগঞ্জ","status":"পূর্ণ"},{"mouza_name":"তালাসকোট","status":"পূর্ণ"},{"mouza_name":"টেকনৈয়াদ্দা","status":"পূর্ণ"},{"mouza_name":"তৈতলার","status":"পূর্ণ"},{"mouza_name":"উলাব","status":"অংশ"},{"mouza_name":"উত্তরপুংসী","status":"অংশ"},{"mouza_name":"ইউসুফগঞ্জ","status":"অংশ"}]}]},{"zone_no":"৫","zone_name":"মোহাম্মদপুর-হাজারীবাগ-কামরাঙ্গীরচর-কলাতিয়া","sub_zones":[{"sub_zone_id":"৫/১","boundary":"মহাখালি বাস স্টপ- সাব-জোন ৩/২ এর দক্ষিন সীমানা- - সাব-জোন ৩/৩ এর দক্ষিন সীমানা- - ঢাকা জেলা সীমানা- কালিগঙ্গা নদী- ধলেশ্বরী নদী- চুনার চর ঘাট- ইটাখোলা ব্রিজ- ইসলামবাগ রোড- বুড়িগঙ্গা নদী- বসিলা ব্রিজ- বসিলা রোড- আসাদ এভিনিউ- মিরপুর রোড- মানিক মিয়া এভিনিউ- খামার বাড়ি রোড- কাজী নজরুল ইসলাম এভিনিউ- তেজতুরী বাজার এভিনিউ- ঢাকা এলিভেটেড এক্সপ্রেসওয়ে - তেজগাঁও রেইললাইন- মহাখালি বাস টার্মিনাল।","mouzas":[{"mouza_name":"আদাবর চক","status":"পূর্ণ"},{"mouza_name":"বলিয়ামপুর","status":"অংশ"},{"mouza_name":"বড় বরদেশী","status":"পূর্ণ"},{"mouza_name":"বড়কান্দি","status":"অংশ"},{"mouza_name":"বেগুনবাড়ী","status":"অংশ"},{"mouza_name":"চাকুরতা","status":"অংশ"},{"mouza_name":"বিলামালিয়া","status":"অংশ"},{"mouza_name":"বড় সায়েক","status":"অংশ"},{"mouza_name":"চাইরা","status":"অংশ"},{"mouza_name":"চর নয়ারনপুর","status":"অংশ"},{"mouza_name":"চর আলগী","status":"অংশ"},{"mouza_name":"চর নয়ারনপুর","status":"অংশ"},{"mouza_name":"ছোট সায়েক","status":"অংশ"},{"mouza_name":"চুনারচর","status":"অংশ"},{"mouza_name":"ফাতেমা নগর","status":"পূর্ণ"},{"mouza_name":"হজরতপুর","status":"অংশ"},{"mouza_name":"জগন্নাথপুর","status":"অংশ"},{"mouza_name":"কাফরুল","status":"অংশ"},{"mouza_name":"কাটানপুর","status":"অংশ"},{"mouza_name":"খোশখানা","status":"পূর্ণ"},{"mouza_name":"মিরপুর","status":"অংশ"},{"mouza_name":"মহাখালী","status":"অংশ"},{"mouza_name":"মোহাম্মদপুর","status":"অংশ"},{"mouza_name":"মুড়খাচোলা","status":"অংশ"},{"mouza_name":"নন্দারবাগ","status":"অংশ"},{"mouza_name":"পাইকপাড়া","status":"অংশ"},{"mouza_name":"পাচঁলি","status":"পূর্ণ"},{"mouza_name":"রামচন্দ্রপুর","status":"পূর্ণ"},{"mouza_name":"শলীপুর","status":"অংশ"},{"mouza_name":"শেরেবাংলানগর","status":"অংশ"},{"mouza_name":"শ্রীখন্ড","status":"অংশ"},{"mouza_name":"শ্যামলাপুর","status":"অংশ"},{"mouza_name":"তেজগাঁও","status":"অংশ"},{"mouza_name":"তেজতুরী বাজার","status":"অংশ"},{"mouza_name":"তুরাগ","status":"পূর্ণ"},{"mouza_name":"উত্তর বাহেরচর","status":"অংশ"},{"mouza_name":"উত্তর কাউন্দিয়া","status":"অংশ"},{"mouza_name":"উত্তর আদাবর","status":"পূর্ণ"},{"mouza_name":"ওয়াশপুর","status":"অংশ"}]},{"sub_zone_id":"৫/২","boundary":"তেজগাঁও রেইললাইন - শহীদ তাজউদ্দীন আহমেদ সরণী- শহিদ ক্যাপ্টেন মনসুর আলী সড়ক- কাকরাইল মোড়- কাকরাইল রোড- মাওলানা ভাসানী সড়ক- কদম ফোয়ারা- শিক্ষা ভবনের পশ্চিম সীমানা- শিক্ষা চত্বর- হাইকোর্ট স্ট্রিট- দোয়েল চত্বর - কাজী নজরুল ইসলাম এভিনিউ-টিএসসি মোড়- নীলক্ষেত সড়ক- নীলক্ষেত বুক মার্কেট দক্ষিণ সীমানা- নিউ মার্কেট পিলখানা রোড- গানকটুলি রোড- হাজারীবাগ বাসস্টপ - ঝাউচর বাজার- কেরানীগঞ্জ উপজেলা সীমানা- বুড়িগঙ্গা নদী- আটি বাজার মোড়- আটি বাজার কলাতিয়া রোড- চন্ডিগুর- ধলেশ্বরী নদী- রাজউক সীমানা- সাব-জোন ৫/১ এর দক্ষিণ সীমানা- ফার্মগেট রেলগেট- তেজগাঁও রেইললাইন।","mouzas":[{"mouza_name":"আহাদিপুর","status":"পূর্ণ"},{"mouza_name":"আর্চাইন","status":"পূর্ণ"},{"mouza_name":"আলি নগর","status":"পূর্ণ"},{"mouza_name":"আটি","status":"অংশ"},{"mouza_name":"বাগনোয়াদ্দা","status":"পূর্ণ"},{"mouza_name":"বেলনা","status":"অংশ"},{"mouza_name":"বড়মগবাজার","status":"অংশ"},{"mouza_name":"বটৈকান্দি","status":"অংশ"},{"mouza_name":"বাইরালী","status":"পূর্ণ"},{"mouza_name":"বালিরগাঁও","status":"পূর্ণ"},{"mouza_name":"বড় জয়নগর","status":"পূর্ণ"},{"mouza_name":"বড় মনোহরিয়া","status":"পূর্ণ"},{"mouza_name":"বেলনা","status":"অংশ"},{"mouza_name":"বেউতা","status":"পূর্ণ"},{"mouza_name":"ভান্ডারখোলা","status":"অংশ"},{"mouza_name":"বীরবলকান্দি","status":"পূর্ণ"},{"mouza_name":"চর চামারদহ","status":"অংশ"},{"mouza_name":"ছোট মনোহরিয়া","status":"পূর্ণ"},{"mouza_name":"ছাগলকান্দি","status":"পূর্ণ"},{"mouza_name":"ছোট মনোহরিয়া","status":"পূর্ণ"},{"mouza_name":"চন্ডীপুর","status":"অংশ"},{"mouza_name":"ছোটশিকারীটোলা","status":"পূর্ণ"},{"mouza_name":"চুনারচর","status":"অংশ"},{"mouza_name":"দক্ষিণ বাহেরচর","status":"পূর্ণ"},{"mouza_name":"দঃ সোনাটেঙ্গর","status":"অংশ"},{"mouza_name":"দেউলী","status":"পূর্ণ"},{"mouza_name":"ধানমন্ডি","status":"পূর্ণ"},{"mouza_name":"ফতে নগর","status":"পূর্ণ"},{"mouza_name":"ঘাটচর","status":"পূর্ণ"},{"mouza_name":"গজমহল","status":"অংশ"},{"mouza_name":"হজরতপুর","status":"অংশ"},{"mouza_name":"গোপালহাটি","status":"পূর্ণ"},{"mouza_name":"জগন্নাথপুর","status":"অংশ"},{"mouza_name":"জৈনপুর","status":"অংশ"},{"mouza_name":"কারাইপ","status":"অংশ"},{"mouza_name":"কলাতিয়া","status":"পূর্ণ"},{"mouza_name":"কালুনগর","status":"অংশ"},{"mouza_name":"কীশারিয়া","status":"পূর্ণ"},{"mouza_name":"কাটাপুর","status":"অংশ"},{"mouza_name":"কাওরান","status":"পূর্ণ"},{"mouza_name":"কাওরান","status":"পূর্ণ"},{"mouza_name":"খাড়া কান্দি","status":"অংশ"},{"mouza_name":"লাসমটিয়া আ/এ","status":"পূর্ণ"},{"mouza_name":"মধ্যের চর","status":"অংশ"},{"mouza_name":"মাসুমপুর","status":"পূর্ণ"},{"mouza_name":"মানিকনগর","status":"পূর্ণ"},{"mouza_name":"মুন্সিনোয়াদ্দা","status":"পূর্ণ"},{"mouza_name":"মুড়খাচোলা","status":"অংশ"},{"mouza_name":"নূতনচর","status":"পূর্ণ"},{"mouza_name":"নজিরপুর","status":"পূর্ণ"},{"mouza_name":"নতুন পল্টনের লাইন","status":"অংশ"},{"mouza_name":"পিটা ঢাকা","status":"পূর্ণ"},{"mouza_name":"রাজাবাজার","status":"পূর্ণ"},{"mouza_name":"রাজপুরী","status":"পূর্ণ"},{"mouza_name":"রমনা","status":"অংশ"},{"mouza_name":"রায়তা","status":"পূর্ণ"},{"mouza_name":"সলিমুল্লাহবাদ","status":"অংশ"},{"mouza_name":"সরাইজাফরাবাদ","status":"পূর্ণ"},{"mouza_name":"সেলনা","status":"পূর্ণ"},{"mouza_name":"শেরেবাংলানগর","status":"অংশ"},{"mouza_name":"সিয়ালি","status":"অংশ"},{"mouza_name":"শিবপুর","status":"পূর্ণ"},{"mouza_name":"শুকরাবাদ","status":"পূর্ণ"},{"mouza_name":"শ্রীখন্ড","status":"পূর্ণ"},{"mouza_name":"শ্রীখন্ড","status":"অংশ"},{"mouza_name":"সুলতানগঞ্জ","status":"অংশ"},{"mouza_name":"শ্যামলাপুর","status":"অংশ"},{"mouza_name":"তারা নগর","status":"পূর্ণ"},{"mouza_name":"তেজতুরী বাজার","status":"অংশ"},{"mouza_name":"টোটাইল","status":"পূর্ণ"},{"mouza_name":"উল্টা","status":"অংশ"},{"mouza_name":"উত্তর বাহেরচর","status":"অংশ"},{"mouza_name":"উঃ সোনাটেঙ্গর","status":"পূর্ণ"},{"mouza_name":"ওয়াশপুর","status":"অংশ"}]},{"sub_zone_id":"৫/৩","boundary":"কদমতলী গোল চত্বর- কেরানীগঞ্জ হাইওয়ে- কানায়োলা বাসস্টপ- কেরানীগঞ্জ হাইওয়ে রোড- রোহিতপুর - ঢাকা শিল্প এলাকার উত্তরাংশ-কেরানীগঞ্জ উপজেলা সীমানা- সাব-জোন ৫/২ সীমানা- শিক্ষা চত্বর- আব্দুল গণি রোড- জিরো পয়েন্ট- বঙ্গবন্ধু এভিনিউ- গোলাপ শাহ মাজার মোড়- কাপ্পান বাজার মোড়- সৈয়দ কামরুজ্জামান সরণী- ফুলবাড়িয়া টার্মিনাল- শহীদ সৈয়দ নজরুল ইসলাম সরণী- নয়া বাজার মোড়- নবাব ইউসুফ সড়ক- বাবু বাজার ব্রিজ- কদমতলী গোল চত্বর- মাওলানা ভাসানী সড়ক।","mouzas":[{"mouza_name":"আটি","status":"অংশ"},{"mouza_name":"বাচানম্মা","status":"পূর্ণ"},{"mouza_name":"বাইনলা","status":"পূর্ণ"},{"mouza_name":"বেলনা","status":"অংশ"},{"mouza_name":"বলসস্তা","status":"পূর্ণ"},{"mouza_name":"বড় শিকারী টোলা","status":"পূর্ণ"},{"mouza_name":"বরিসুর","status":"অংশ"},{"mouza_name":"বেলনা","status":"অংশ"},{"mouza_name":"ভান্ডারখোলা","status":"অংশ"},{"mouza_name":"ভারারিয়া","status":"পূর্ণ"},{"mouza_name":"বাঁশতৈল","status":"পূর্ণ"},{"mouza_name":"ব্রাহ্মনকিতা","status":"অংশ"},{"mouza_name":"চর চামারদহ","status":"অংশ"},{"mouza_name":"চরকামরাঙ্গী","status":"পূর্ণ"},{"mouza_name":"চর রঘুনাথপুর","status":"পূর্ণ"},{"mouza_name":"চন্ডীপুর","status":"অংশ"},{"mouza_name":"ডাকপাড়া","status":"অংশ"},{"mouza_name":"দঃ সোনাটেঙ্গর","status":"অংশ"},{"mouza_name":"ঢাকা","status":"অংশ"},{"mouza_name":"ধর্মপুর","status":"অংশ"},{"mouza_name":"এনায়েতগঞ্জ","status":"পূর্ণ"},{"mouza_name":"গদারবাগ","status":"অংশ"},{"mouza_name":"গজমহল","status":"অংশ"},{"mouza_name":"গোপপাড়া","status":"অংশ"},{"mouza_name":"হাজারীবাগ","status":"পূর্ণ"},{"mouza_name":"জৈনপুর","status":"অংশ"},{"mouza_name":"কালিন্দি","status":"অংশ"},{"mouza_name":"কালুনগর","status":"অংশ"},{"mouza_name":"খাড়া কান্দি","status":"অংশ"},{"mouza_name":"কোনা খোলা","status":"অংশ"},{"mouza_name":"লালবাগ","status":"পূর্ণ"},{"mouza_name":"মধ্যের চর","status":"অংশ"},{"mouza_name":"মালঞ্চ","status":"পূর্ণ"},{"mouza_name":"মান্দাইল","status":"অংশ"},{"mouza_name":"মতিঝিল","status":"অংশ"},{"mouza_name":"মুগারচর","status":"অংশ"},{"mouza_name":"নবাবচর","status":"পূর্ণ"},{"mouza_name":"নাগধা","status":"পূর্ণ"},{"mouza_name":"নাপিয়াদি","status":"পূর্ণ"},{"mouza_name":"নয়াগাঁও","status":"পূর্ণ"},{"mouza_name":"নতুন পল্টনের লাইন","status":"অংশ"},{"mouza_name":"রমনা","status":"অংশ"},{"mouza_name":"রোহিতপুর","status":"অংশ"},{"mouza_name":"সাকতা","status":"অংশ"},{"mouza_name":"সলিমুল্লাহবাদ","status":"অংশ"},{"mouza_name":"সরসপুর","status":"পূর্ণ"},{"mouza_name":"সিয়ালি","status":"অংশ"},{"mouza_name":"সোনাটকান্দা","status":"অংশ"},{"mouza_name":"সুবানসুর","status":"অংশ"},{"mouza_name":"উল্টা","status":"অংশ"},{"mouza_name":"জিনজিরা","status":"অংশ"}]}]},{"zone_no":"৬","zone_name":"মগবাজার-কমলাপুর-মাতুয়াইল-ডেমরা-তারাবো","sub_zones":[{"sub_zone_id":"৬/১","boundary":"হাতিরঝিল মোড়- মৌচাক মগবাজার ফ্লাইওভার- মগবাজার সার্কেল - মগবাজার রোড- শহীদ ক্যাপ্টেন মনসুর আলী এভিনিউ- কাকরাইল সার্কেল- কাকরাইল রোড- মৎস্য ভবন বাসস্টপ- কদম ফোয়ারা- শিক্ষা ভবন- আব্দুল গণি রোড- জিরো পয়েন্ট- বঙ্গবন্ধু এভিনিউ- কাপ্পান মোড়-গুলিস্তান রোড- মেয়র মোহাম্মদ হানিফ ফ্লাইওভার- ঢাকা সিলেট মহাসড়ক- যাত্রাবাড়ি বাসস্টপ- ঢাকা ডেমরা হাইওয়ে- কোনপাড়া বাসস্টপ- দামড়িপাড়া খাল- মানিকদিয়া ব্রীজ-নাগদারপাড় সেতু- ত্রিমোহনী ব্রিজ- সাব-জোন ৪/২ এর দক্ষিণ সীমানা- হাতিরঝিল মোড়।","mouzas":[{"mouza_name":"বাড্ডা","status":"অংশ"},{"mouza_name":"বড়মগবাজার","status":"অংশ"},{"mouza_name":"ব্রাহ্মনচিরন","status":"পূর্ণ"},{"mouza_name":"দক্ষিণগাঁও","status":"অংশ"},{"mouza_name":"দামড়ীপাড়া","status":"অংশ"},{"mouza_name":"গোড়ান","status":"পূর্ণ"},{"mouza_name":"হাসানপুর","status":"পূর্ণ"},{"mouza_name":"যাত্রাবাড়ী","status":"অংশ"},{"mouza_name":"কাকরাইল","status":"অংশ"},{"mouza_name":"কাজীবাগ","status":"পূর্ণ"},{"mouza_name":"মান্ডা","status":"পূর্ণ"},{"mouza_name":"মাতুয়াইল","status":"অংশ"},{"mouza_name":"মেরাডিিয়া","status":"অংশ"},{"mouza_name":"মতিঝিল","status":"অংশ"},{"mouza_name":"নন্দীপাড়া","status":"অংশ"},{"mouza_name":"পাড়ারপাড়","status":"অংশ"},{"mouza_name":"পুরাতন পল্টনের লাইন","status":"অংশ"},{"mouza_name":"রাজারবাগ","status":"পূর্ণ"},{"mouza_name":"রমনা","status":"অংশ"},{"mouza_name":"শহর শিল্পপাও","status":"পূর্ণ"},{"mouza_name":"শান্তিনগর","status":"পূর্ণ"},{"mouza_name":"সিদ্ধেশ্বরী","status":"পূর্ণ"},{"mouza_name":"উলুন","status":"অংশ"},{"mouza_name":"উঃ ব্রাহ্মণচিরন","status":"পূর্ণ"},{"mouza_name":"ওয়ারী","status":"অংশ"}]},{"sub_zone_id":"৬/২","boundary":"যাত্রাবাড়ি বাসস্টপ- যাত্রাবাড়ি গুলিস্তান ফ্লাইওভার- কাজলা বাসস্টপ- ঢাকা চট্টগ্রাম মহাসড়ক(মুক্তি সরণী)- সাইনবোর্ড- কাঁচপুর ব্রীজ-শীতলক্ষ্যা নদী- পূর্ব গ্রাম ঘাট- সাব-জোন ৪/৩ এর সীমানা- সাব-জোন ৪/২ এর সীমানা- ত্রিমোহনী ব্রিজ- সাব-জোন ৬/১ সীমানা (পূর্ব ও দক্ষিন)।","mouzas":[{"mouza_name":"আমুলিয়া","status":"পূর্ণ"},{"mouza_name":"আটি","status":"অংশ"},{"mouza_name":"বালুশিনপাড়া","status":"পূর্ণ"},{"mouza_name":"বালুরতৈলপুর","status":"পূর্ণ"},{"mouza_name":"বামৈল","status":"পূর্ণ"},{"mouza_name":"বরালুপাড়াগাও","status":"অংশ"},{"mouza_name":"ছাতিয়ান","status":"পূর্ণ"},{"mouza_name":"ডগাইর","status":"পূর্ণ"},{"mouza_name":"দক্ষিণগাঁও","status":"অংশ"},{"mouza_name":"দামড়ীপাড়া","status":"অংশ"},{"mouza_name":"দেইলা","status":"পূর্ণ"},{"mouza_name":"ডেমরা","status":"পূর্ণ"},{"mouza_name":"ধনিয়া","status":"অংশ"},{"mouza_name":"ঘোপদদ্দিন","status":"পূর্ণ"},{"mouza_name":"গৌরনগর","status":"পূর্ণ"},{"mouza_name":"যাত্রাবাড়ী","status":"অংশ"},{"mouza_name":"জোকা","status":"পূর্ণ"},{"mouza_name":"কায়েতপাড়া","status":"পূর্ণ"},{"mouza_name":"কামাইরপাড়","status":"পূর্ণ"},{"mouza_name":"কেডুডালা","status":"পূর্ণ"},{"mouza_name":"কেরানীগঞ্জ","status":"অংশ"},{"mouza_name":"খোর্দ ঘোষপাড়া","status":"অংশ"},{"mouza_name":"মাতুয়াইল","status":"অংশ"},{"mouza_name":"মেদিপুর","status":"পূর্ণ"},{"mouza_name":"নাছিরাবাদ","status":"অংশ"},{"mouza_name":"নন্দীপাড়া","status":"অংশ"},{"mouza_name":"নয়াইখাদ","status":"পূর্ণ"},{"mouza_name":"পাড়ারপাড়","status":"অংশ"},{"mouza_name":"পশ্চিম দুর্গাপুর","status":"পূর্ণ"},{"mouza_name":"পশ্চিমগাঁও","status":"পূর্ণ"},{"mouza_name":"পাইট","status":"পূর্ণ"},{"mouza_name":"পূর্বগাঁও","status":"পূর্ণ"},{"mouza_name":"পূর্ব দুর্গাপুর","status":"পূর্ণ"},{"mouza_name":"সারুলিয়া","status":"পূর্ণ"},{"mouza_name":"শিমরাইল","status":"অংশ"},{"mouza_name":"সিদ্ধিরগঞ্জ","status":"অংশ"},{"mouza_name":"সুয়া","status":"পূর্ণ"},{"mouza_name":"তুলসীভিটা","status":"পূর্ণ"},{"mouza_name":"উলাব","status":"অংশ"},{"mouza_name":"উত্তর দুর্গাপুর","status":"পূর্ণ"}]},{"sub_zone_id":"৬/৩","boundary":"পূর্ব গ্রাম ঘাট - শীতলক্ষ্যা নদী- কাঁচপুর ব্রিজ - কাঁচপুর বাসস্টপ- ঢাকা চট্টগ্রাম মহাসড়ক- বন্দর উপজেলা সীমানা- ব্রহ্মপুত্র নদী- মদনপুর- দাসেরকান্দি (রাজউক এর পূর্ব সীমানা) - মহাজামপুর রোড- মাসাবোয়াজার বাসস্টপ- বড়পা বাসস্টপ- ঢাকা সিলেট মহাসড়ক- বাগবাড়ি ব্রিজ- পূর্ব গ্রাম ঘাট।","mouzas":[{"mouza_name":"আড়িয়াব","status":"অংশ"},{"mouza_name":"আলমপুর","status":"পূর্ণ"},{"mouza_name":"বাগুরী","status":"পূর্ণ"},{"mouza_name":"বাতুন","status":"পূর্ণ"},{"mouza_name":"বরাব","status":"পূর্ণ"},{"mouza_name":"বড়গাঁও","status":"পূর্ণ"},{"mouza_name":"বাটৈ বাড়ী","status":"পূর্ণ"},{"mouza_name":"বড়পা","status":"অংশ"},{"mouza_name":"বেহাঁকৈল","status":"পূর্ণ"},{"mouza_name":"ভরত","status":"পূর্ণ"},{"mouza_name":"ভারগাঁও","status":"পূর্ণ"},{"mouza_name":"চাপাতলি","status":"অংশ"},{"mouza_name":"চক্রাইল","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ কুপ্পী","status":"পূর্ণ"},{"mouza_name":"দাস নোয়াগাঁও","status":"পূর্ণ"},{"mouza_name":"দিঘীরপাব","status":"পূর্ণ"},{"mouza_name":"ফুলর","status":"অংশ"},{"mouza_name":"হাতুবাপাড়া","status":"পূর্ণ"},{"mouza_name":"জাজাল","status":"অংশ"},{"mouza_name":"জাঙ্গুডু","status":"পূর্ণ"},{"mouza_name":"কলমপাড়া","status":"পূর্ণ"},{"mouza_name":"কাঁচপুর","status":"অংশ"},{"mouza_name":"কেডুডালা","status":"অংশ"},{"mouza_name":"খাদন","status":"পূর্ণ"},{"mouza_name":"খাসপাড়া","status":"অংশ"},{"mouza_name":"কুটিয়ামোড়া","status":"পূর্ণ"},{"mouza_name":"কুমানু","status":"পূর্ণ"},{"mouza_name":"লালাটি","status":"পূর্ণ"},{"mouza_name":"মদনপুর","status":"অংশ"},{"mouza_name":"মনহর পীর বাগ","status":"অংশ"},{"mouza_name":"মৈসটৈক","status":"পূর্ণ"},{"mouza_name":"মাসাব","status":"অংশ"},{"mouza_name":"মৌকুলী","status":"পূর্ণ"},{"mouza_name":"নীতের চর","status":"অংশ"},{"mouza_name":"নানাখি","status":"পূর্ণ"},{"mouza_name":"নায়ানপুর","status":"অংশ"},{"mouza_name":"নয়ানপুর","status":"পূর্ণ"},{"mouza_name":"নওগাঁও","status":"অংশ"},{"mouza_name":"নোয়াপাড়া","status":"পূর্ণ"},{"mouza_name":"পঞ্চমী ঘাট","status":"পূর্ণ"},{"mouza_name":"সাদীপুর","status":"পূর্ণ"},{"mouza_name":"সৈকফলা","status":"পূর্ণ"},{"mouza_name":"সিয়াব","status":"পূর্ণ"},{"mouza_name":"শিরব","status":"পূর্ণ"},{"mouza_name":"সুতলাড়া","status":"পূর্ণ"},{"mouza_name":"তারাব","status":"পূর্ণ"},{"mouza_name":"টাকৈ","status":"পূর্ণ"},{"mouza_name":"উত্তর উজানপুর","status":"অংশ"},{"mouza_name":"উত্তরা গুপ্সী","status":"অংশ"}]}]},{"zone_no":"৭","zone_name":"কেরানীগঞ্জ-সদরঘাট-ঝিলমিল আবাসিক এলাকা-রোহিতপুর","sub_zones":[{"sub_zone_id":"৭/১","boundary":"বাবুবাজার ব্রিজ-বুড়িগঙ্গা নদী-পাগলা ফেরী ঘাট-ঢাকা মহানগর সীমানা-সাইনবোর্ড বাসস্টপ- সাব-জোন ৬/২ এর সীমানা- যাত্রাবাড়ি বাসস্টপ- সাব-জোন ৬/১ এর সীমানা- কাপ্তান বাজার মোড়- সাব-জোন ৫/৩ এর সীমানা- বাবুবাজার ব্রিজ।","mouzas":[{"mouza_name":"আইলবভর","status":"পূর্ণ"},{"mouza_name":"দয়াগঞ্জ","status":"পূর্ণ"},{"mouza_name":"দেলনাপাড়া","status":"অংশ"},{"mouza_name":"ঢাকা","status":"অংশ"},{"mouza_name":"ঢাকা","status":"অংশ"},{"mouza_name":"ধনিয়া","status":"অংশ"},{"mouza_name":"গেণ্ডারিিয়া","status":"পূর্ণ"},{"mouza_name":"যাত্রাবাড়ী","status":"অংশ"},{"mouza_name":"জুরাইন","status":"অংশ"},{"mouza_name":"কদমতলী","status":"অংশ"},{"mouza_name":"মাতুয়াইল","status":"অংশ"},{"mouza_name":"মতিঝিল","status":"অংশ"},{"mouza_name":"পাগলা","status":"অংশ"},{"mouza_name":"সুত্রাপুর","status":"পূর্ণ"},{"mouza_name":"শ্যামপুর","status":"পূর্ণ"},{"mouza_name":"ওয়ারী","status":"অংশ"}]},{"sub_zone_id":"৭/২","boundary":"বাবুবাজার ব্রিজ- রোড R820- কদমতলী বাসস্ট্যান্ড- সাব-জোন ৫/৩ এর দক্ষিন সীমানা- বিসিক রোড- ধলেশ্বরী নদী- ঢাকা মাওয়া হাইওয়ে- ধলেশ্বরী ব্রিজ- ঢাকা মাওয়া ঢাকা এক্সপ্রেসওয়ে- পোস্তগোলা সেতু- বুড়িগঙ্গা নদী- বাবুবাজার ব্রিজ।","mouzas":[{"mouza_name":"আব্দুল্লাহপুর","status":"অংশ"},{"mouza_name":"আমুশুর","status":"পূর্ণ"},{"mouza_name":"বাঘৈর","status":"অংশ"},{"mouza_name":"বাগাসুর","status":"পূর্ণ"},{"mouza_name":"বরিসুর","status":"অংশ"},{"mouza_name":"বান্টা","status":"পূর্ণ"},{"mouza_name":"বোয়ালী","status":"পূর্ণ"},{"mouza_name":"ব্রাহ্মনকিতা","status":"অংশ"},{"mouza_name":"চর গণপলিয়া","status":"অংশ"},{"mouza_name":"চর কোন্ডালিয়া","status":"অংশ"},{"mouza_name":"চুনকুটিয়া","status":"পূর্ণ"},{"mouza_name":"ডাকপাড়া","status":"অংশ"},{"mouza_name":"ধনিয়াসুর","status":"পূর্ণ"},{"mouza_name":"ধর্মসুর","status":"অংশ"},{"mouza_name":"ধীতপুর","status":"পূর্ণ"},{"mouza_name":"গদারবাগ","status":"অংশ"},{"mouza_name":"গোপপাড়া","status":"অংশ"},{"mouza_name":"ইকরিয়া","status":"অংশ"},{"mouza_name":"কাকালিয়া","status":"পূর্ণ"},{"mouza_name":"কালীগঞ্জ","status":"অংশ"},{"mouza_name":"কালিন্দি","status":"অংশ"},{"mouza_name":"কাজীরগাঁও","status":"অংশ"},{"mouza_name":"কোনা খোলা","status":"অংশ"},{"mouza_name":"কুসলিরচক","status":"পূর্ণ"},{"mouza_name":"মান্দাইল","status":"অংশ"},{"mouza_name":"মিরোরবাগ","status":"পূর্ণ"},{"mouza_name":"মুগারচর","status":"অংশ"},{"mouza_name":"নাইয়াটোলা","status":"অংশ"},{"mouza_name":"নোয়াদ্ধা","status":"অংশ"},{"mouza_name":"পোখল","status":"পূর্ণ"},{"mouza_name":"রায়তা","status":"পূর্ণ"},{"mouza_name":"রোহিতপুর","status":"অংশ"},{"mouza_name":"সাকতা","status":"অংশ"},{"mouza_name":"সোনাকান্দা","status":"অংশ"},{"mouza_name":"শুভড্যা","status":"পূর্ণ"},{"mouza_name":"তেঘরিয়া","status":"অংশ"},{"mouza_name":"ঠাকুরপুর","status":"পূর্ণ"},{"mouza_name":"জিনজিরা","status":"অংশ"}]},{"sub_zone_id":"৭/৩","boundary":"পোস্তগোলা সেতু- বুড়িগঙ্গা নদী-পাগলা ফেরী ঘাট- বুড়িগঙ্গা নদী- ধলেশ্বরী নদী- নারায়ণগঞ্জ জেলা সীমানা- ধলেশ্বরী ব্রিজ- ঢাকা মাওয়া এক্সপ্রেসওয়ে- পোস্তগোলা সেতু।","mouzas":[{"mouza_name":"আব্দুল্লাহপুর","status":"অংশ"},{"mouza_name":"আইচ্যা","status":"পূর্ণ"},{"mouza_name":"আলীশ্বরটেক","status":"পূর্ণ"},{"mouza_name":"আড়াকুল","status":"পূর্ণ"},{"mouza_name":"আটোনা","status":"পূর্ণ"},{"mouza_name":"বাঘৈর","status":"অংশ"},{"mouza_name":"বালুচর","status":"পূর্ণ"},{"mouza_name":"বেয়ারা","status":"পূর্ণ"},{"mouza_name":"ভবানীগঞ্জ","status":"পূর্ণ"},{"mouza_name":"বীরবাঘৈর","status":"পূর্ণ"},{"mouza_name":"ব্রাহ্মনগাঁও","status":"অংশ"},{"mouza_name":"চন্দ্রমাধব","status":"পূর্ণ"},{"mouza_name":"চর আলীনগর","status":"পূর্ণ"},{"mouza_name":"চর বড়বাগাদি","status":"পূর্ণ"},{"mouza_name":"চর বাক্তারবালী","status":"অংশ"},{"mouza_name":"চর গণপলিয়া","status":"অংশ"},{"mouza_name":"চর গঙ্গা প্রসাদ","status":"পূর্ণ"},{"mouza_name":"চর গরকুল","status":"পূর্ণ"},{"mouza_name":"চর ইসাদি","status":"পূর্ণ"},{"mouza_name":"চর সহরাদি","status":"পূর্ণ"},{"mouza_name":"চর শ্রীধরদি","status":"পূর্ণ"},{"mouza_name":"দানানগর","status":"পূর্ণ"},{"mouza_name":"ধলপুর","status":"অংশ"},{"mouza_name":"দোলেশ্বর","status":"পূর্ণ"},{"mouza_name":"ঘোনাকান্দা","status":"পূর্ণ"},{"mouza_name":"গোপচর","status":"অংশ"},{"mouza_name":"হাজারীবাগ","status":"পূর্ণ"},{"mouza_name":"ইকরিয়া","status":"অংশ"},{"mouza_name":"জাঞ্জিরা","status":"পূর্ণ"},{"mouza_name":"কাটুয়াইল","status":"পূর্ণ"},{"mouza_name":"কোন্ডা","status":"অংশ"},{"mouza_name":"মজিদবোরুয়ারা","status":"পূর্ণ"},{"mouza_name":"মিরগঞ্জ","status":"অংশ"},{"mouza_name":"মোটবাড়ী","status":"পূর্ণ"},{"mouza_name":"নাইয়াটোলা","status":"অংশ"},{"mouza_name":"নোয়াদ্ধা","status":"অংশ"},{"mouza_name":"পানগাঁও","status":"পূর্ণ"},{"mouza_name":"পশ্চিমদি","status":"পূর্ণ"},{"mouza_name":"পুবদি","status":"পূর্ণ"},{"mouza_name":"পূর্ব বাঘৈর","status":"পূর্ণ"},{"mouza_name":"সাওরাইল","status":"পূর্ণ"},{"mouza_name":"তেঘরিয়া","status":"অংশ"},{"mouza_name":"উরাইল","status":"পূর্ণ"}]}]},{"zone_no":"৮","zone_name":"পাগলা-ফতুল্লা-চাষাড়া-নারায়ণগঞ্জ সিটি কর্পোরেশন","sub_zones":[{"sub_zone_id":"৮/১","boundary":"সাইনবোর্ড বাসস্টপ- ঢাকা নারায়ণগঞ্জ সংযোগ সড়ক-ঢাকা নারায়ণগঞ্জ গেট- নারায়ণগঞ্জ হাইওয়ে- নারায়ণগঞ্জ police লাইন- মুসলিম নগর সেন্ট্রাল মসজিদ- বিসিক সড়ক- বক্তাবালি রোড-চর রাজাপুর রোড- ধলেশ্বরী নদী- সাব-জোন ৭/৩ এর সীমানা (পূর্ব)- পাগলা ফেরী ঘাট- সাব-জোন ৭/১ এর সীমানা- সাইনবোর্ড বাসস্টপ।","mouzas":[{"mouza_name":"আলীনগঞ্জ","status":"পূর্ণ"},{"mouza_name":"আলীনগর","status":"পূর্ণ"},{"mouza_name":"বাগ বেনী দাস","status":"পূর্ণ"},{"mouza_name":"চর বক্তাবালী","status":"অংশ"},{"mouza_name":"চাষারা","status":"অংশ"},{"mouza_name":"দুইশাইল","status":"অংশ"},{"mouza_name":"দাপা ইদ্রাকপুর","status":"পূর্ণ"},{"mouza_name":"দেউলপাড়া","status":"অংশ"},{"mouza_name":"ধর্মগঞ্জ","status":"পূর্ণ"},{"mouza_name":"ঘোপাতিয়া","status":"অংশ"},{"mouza_name":"ফতুল্লা","status":"অংশ"},{"mouza_name":"ফাজিলপুর","status":"অংশ"},{"mouza_name":"হরিহরপাড়া","status":"পূর্ণ"},{"mouza_name":"ইসদাইর","status":"অংশ"},{"mouza_name":"জালকুড়ী","status":"অংশ"},{"mouza_name":"খানপুর","status":"পূর্ণ"},{"mouza_name":"থানপুর","status":"পূর্ণ"},{"mouza_name":"খিজিরপুর","status":"অংশ"},{"mouza_name":"কুতুবপুর","status":"অংশ"},{"mouza_name":"লামাপাড়া","status":"পূর্ণ"},{"mouza_name":"মান দাইর","status":"অংশ"},{"mouza_name":"পাগলা","status":"অংশ"},{"mouza_name":"পিলকুনি","status":"পূর্ণ"},{"mouza_name":"শিয়া চর","status":"পূর্ণ"},{"mouza_name":"শ্রীধরদি","status":"পূর্ণ"},{"mouza_name":"উত্তর আজমতপুর","status":"পূর্ণ"}]},{"sub_zone_id":"৮/২","boundary":"চাষাড়া গোল চত্বর- ডেমরা নারায়ণগঞ্জ রোড- নবীগঞ্জ ফেরী ঘাট -শীতলক্ষ্যা নদী- নবীগঞ্জ ঘাট- টি হোসেন রোড- নবীগঞ্জ বাসস্টপ- কাইকেরটেক রোড- কাইকেরটেক ব্রিজ- কাইকেরটেক রোড- মদ্যপাড়া বাসস্টেশন- সোনারগাঁও রোড- রাজউক সীমানা- ব্রহ্মপুত্র নদী- ঢাকা চট্টগ্রাম মহাসড়ক- লাঙ্গলবন্দ বাসস্ট্যান্ড - ঢাকা চট্টগ্রাম মহাসড়ক- মদনপুর বাসস্ট্যান্ড - কাঁচপুর ব্রিজ- সাব-জোন ৬/২ এর সীমানা- সাইনবোর্ড মোড়- সাব-জোন ৮/১ এর সীমানা- চাষাড়া গোল চত্বর।","mouzas":[{"mouza_name":"আলাপদি","status":"পূর্ণ"},{"mouza_name":"আমৈনর","status":"পূর্ণ"},{"mouza_name":"আশফদি","status":"পূর্ণ"},{"mouza_name":"আটি","status":"অংশ"},{"mouza_name":"আজিজপুর","status":"পূর্ণ"},{"mouza_name":"বারকপুর","status":"পূর্ণ"},{"mouza_name":"বাগ নয়ানগর","status":"পূর্ণ"},{"mouza_name":"বাগবাড়ী","status":"পূর্ণ"},{"mouza_name":"বাগ নজিরপুর","status":"পূর্ণ"},{"mouza_name":"বালীগাঁও","status":"পূর্ণ"},{"mouza_name":"বন্দর","status":"পূর্ণ"},{"mouza_name":"বঙ্গ শাসন","status":"পূর্ণ"},{"mouza_name":"বড় নগর","status":"অংশ"},{"mouza_name":"বড় সাদিপুর","status":"পূর্ণ"},{"mouza_name":"বারপাড়া","status":"পূর্ণ"},{"mouza_name":"বাড়ী মজলিস","status":"পূর্ণ"},{"mouza_name":"ভাগলপুর","status":"অংশ"},{"mouza_name":"ভৈরবদি","status":"পূর্ণ"},{"mouza_name":"কাফুরিদি","status":"পূর্ণ"},{"mouza_name":"কাকিয়ার টেক","status":"পূর্ণ"},{"mouza_name":"কালিনগঞ্জ","status":"অংশ"},{"mouza_name":"কামারগাঁও","status":"পূর্ণ"},{"mouza_name":"কামতাল","status":"পূর্ণ"},{"mouza_name":"কাঁচপুর","status":"অংশ"},{"mouza_name":"কাজিরগাঁও","status":"অংশ"},{"mouza_name":"কেওডালা","status":"অংশ"},{"mouza_name":"থানপুর","status":"অংশ"},{"mouza_name":"খাসপাড়া","status":"অংশ"},{"mouza_name":"খিজিরপুর","status":"অংশ"},{"mouza_name":"খোর্দ ঘোষপাড়া","status":"অংশ"},{"mouza_name":"কুড়িপাড়া","status":"পূর্ণ"},{"mouza_name":"কুশাসন","status":"পূর্ণ"},{"mouza_name":"কুশিয়ার","status":"অংশ"},{"mouza_name":"কুতুবপুর","status":"অংশ"},{"mouza_name":"লহ্মা কুতুবপুর","status":"অংশ"},{"mouza_name":"লহ্মণ খোলা","status":"পূর্ণ"},{"mouza_name":"ভাজনদি","status":"অংশ"},{"mouza_name":"তাটিপাড়া","status":"অংশ"},{"mouza_name":"ভুঁইঘর","status":"অংশ"},{"mouza_name":"বিমিপাড়া","status":"অংশ"},{"mouza_name":"বীরহিমর কান্দি","status":"পূর্ণ"},{"mouza_name":"চক করমুল্লা","status":"পূর্ণ"},{"mouza_name":"চাপাতলি","status":"অংশ"},{"mouza_name":"চর সফি খাঁ","status":"পূর্ণ"},{"mouza_name":"চর উটুকান্দি","status":"পূর্ণ"},{"mouza_name":"ছোট বন্দরা","status":"পূর্ণ"},{"mouza_name":"ছোট কুষ্ণাদি","status":"পূর্ণ"},{"mouza_name":"ছোট মায়ের চর","status":"পূর্ণ"},{"mouza_name":"ছোট সাদিপুর","status":"পূর্ণ"},{"mouza_name":"ছোট শিল মন্দি","status":"পূর্ণ"},{"mouza_name":"চিলরবাগ","status":"অংশ"},{"mouza_name":"দক্ষিণ চর","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ কুপ্পাচিত্র","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ চণ্ডি বরদি","status":"পূর্ণ"},{"mouza_name":"দারুগোলা","status":"পূর্ণ"},{"mouza_name":"দাসের গাঁও","status":"পূর্ণ"},{"mouza_name":"ডিঙ্গাবাগ","status":"পূর্ণ"},{"mouza_name":"দেউলী","status":"পূর্ণ"},{"mouza_name":"দেউলপাড়া","status":"অংশ"},{"mouza_name":"ধামগড়","status":"পূর্ণ"},{"mouza_name":"ধনকুন্ডী","status":"পূর্ণ"},{"mouza_name":"ফুলর","status":"অংশ"},{"mouza_name":"বিহিরদি","status":"পূর্ণ"},{"mouza_name":"গোয়ালন্দি","status":"অংশ"},{"mouza_name":"গোবিন্দকূল","status":"পূর্ণ"},{"mouza_name":"গোদনাইল","status":"পূর্ণ"},{"mouza_name":"গোদনাইল 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"হাবিবপুর","status":"অংশ"},{"mouza_name":"চাষাড়া","status":"অংশ"},{"mouza_name":"হরিপুর","status":"পূর্ণ"},{"mouza_name":"হাজীগঞ্জ","status":"পূর্ণ"},{"mouza_name":"হাজীগঞ্জ 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"ফতুল্লা","status":"অংশ"},{"mouza_name":"ইসদাইর","status":"অংশ"},{"mouza_name":"থানপুর","status":"পূর্ণ"},{"mouza_name":"জগন্নাথি","status":"পূর্ণ"},{"mouza_name":"ঝগড়া খোলা","status":"পূর্ণ"},{"mouza_name":"জালকুড়ী","status":"অংশ"},{"mouza_name":"জঙ্গল","status":"অংশ"},{"mouza_name":"কাবিলগঞ্জ","status":"অংশ"},{"mouza_name":"কায়েমপুর","status":"পূর্ণ"},{"mouza_name":"লাল আলাপদি","status":"অংশ"},{"mouza_name":"লম্বরদি","status":"অংশ"},{"mouza_name":"মাধবপুর","status":"অংশ"},{"mouza_name":"মগবাজার","status":"পূর্ণ"},{"mouza_name":"মজিবরবাড়ী","status":"অংশ"},{"mouza_name":"মলি-কের পাড়া","status":"পূর্ণ"},{"mouza_name":"মনহর পীর বাগ","status":"অংশ"},{"mouza_name":"মীরের চর","status":"অংশ"},{"mouza_name":"মিঠাদি","status":"পূর্ণ"},{"mouza_name":"মিঠাপুর","status":"পূর্ণ"},{"mouza_name":"মুয়ার চর","status":"পূর্ণ"},{"mouza_name":"মোকারবা","status":"অংশ"},{"mouza_name":"মুক্তারপুর","status":"পূর্ণ"},{"mouza_name":"মুসাপুর","status":"পূর্ণ"},{"mouza_name":"নবিগঞ্জ","status":"অংশ"},{"mouza_name":"নবিগঞ্জ ম খন্ড","status":"অংশ"},{"mouza_name":"নাঙ্গলবন্দ","status":"অংশ"},{"mouza_name":"নারায়ন দিয়া","status":"পূর্ণ"},{"mouza_name":"নেহুরুদ্দা","status":"পূর্ণ"},{"mouza_name":"নজিরগাঁও","status":"পূর্ণ"},{"mouza_name":"পলাশদি","status":"পূর্ণ"},{"mouza_name":"রহমতপুর","status":"পূর্ণ"},{"mouza_name":"রামদি","status":"পূর্ণ"},{"mouza_name":"রতনদি","status":"পূর্ণ"},{"mouza_name":"সাটিরপুর","status":"পূর্ণ"},{"mouza_name":"সরাইল","status":"পূর্ণ"},{"mouza_name":"সাতেঙ্গ","status":"পূর্ণ"},{"mouza_name":"সেরি পুর","status":"অংশ"},{"mouza_name":"সতরাদি","status":"পূর্ণ"},{"mouza_name":"শিমরাইল","status":"অংশ"},{"mouza_name":"সিদ্ধিরগঞ্জ","status":"অংশ"},{"mouza_name":"শিল মন্দি","status":"পূর্ণ"},{"mouza_name":"সোনালী","status":"পূর্ণ"},{"mouza_name":"শ্রী নিবাসদি","status":"পূর্ণ"},{"mouza_name":"শ্রীরামপুর","status":"অংশ"},{"mouza_name":"শুশুকদি","status":"পূর্ণ"},{"mouza_name":"তরা","status":"অংশ"},{"mouza_name":"তিশগাঁও","status":"অংশ"},{"mouza_name":"পিরুদি","status":"পূর্ণ"},{"mouza_name":"উলুকান্দি","status":"পূর্ণ"},{"mouza_name":"উত্তমদি","status":"পূর্ণ"},{"mouza_name":"উত্তর চন্ডি বরদি","status":"পূর্ণ"},{"mouza_name":"উত্তর চাদপুর","status":"অংশ"},{"mouza_name":"উত্তর কুলচরির","status":"পূর্ণ"},{"mouza_name":"উত্তর নদ্যা","status":"পূর্ণ"}]},{"sub_zone_id":"৮/৩","boundary":"চাষাড়া গোল চত্বর- সাব-জোন ৮/২ এর সীমানা (দক্ষিণ)- রাজউক সীমানা- ধলেশ্বরী নদী/ সাব-জোন ৭/৩ এর সীমানা- চর রাজাপুর রোড- মুসলিম নগর সেন্ট্রাল মসজিদ- সাব-জোন ৮/১ এর সীমানা (দক্ষিণ)- চাষাড়া গোল চত্বর।","mouzas":[{"mouza_name":"আয়মা কদম রসুল (ম খন্ড)","status":"পূর্ণ"},{"mouza_name":"বাথাইয়া কান্দি","status":"পূর্ণ"},{"mouza_name":"বলেট চক","status":"পূর্ণ"},{"mouza_name":"বালিয়া","status":"পূর্ণ"},{"mouza_name":"কদর","status":"পূর্ণ"},{"mouza_name":"বন্দর কৃষ্ণপুরা","status":"পূর্ণ"},{"mouza_name":"বড় বাইরবালী","status":"পূর্ণ"},{"mouza_name":"বড় বিবি খালিসা","status":"পূর্ণ"},{"mouza_name":"বড় দেওভোগ","status":"পূর্ণ"},{"mouza_name":"বড় নগর","status":"অংশ"},{"mouza_name":"বাটৈভোগ","status":"পূর্ণ"},{"mouza_name":"বরুনদি","status":"পূর্ণ"},{"mouza_name":"বেজেরগাঁও","status":"পূর্ণ"},{"mouza_name":"ভগবানগঞ্জ 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"ভাজনদি","status":"অংশ"},{"mouza_name":"ভট্টিয়ার চক","status":"পূর্ণ"},{"mouza_name":"টিটি কান্দি","status":"পূর্ণ"},{"mouza_name":"বিবি জোড়া","status":"পূর্ণ"},{"mouza_name":"বিল বোরারা","status":"পূর্ণ"},{"mouza_name":"বিমিপাড়া","status":"অংশ"},{"mouza_name":"চাইর দোনা","status":"পূর্ণ"},{"mouza_name":"চক বইররা","status":"পূর্ণ"},{"mouza_name":"চর অর্জুনদি","status":"পূর্ণ"},{"mouza_name":"চর এলাহি নগর","status":"পূর্ণ"},{"mouza_name":"চর ফতেপুর","status":"পূর্ণ"},{"mouza_name":"চর গোয়ালন্দি","status":"পূর্ণ"},{"mouza_name":"চাষারা","status":"অংশ"},{"mouza_name":"চাষাড়া 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":" চেল্লার চর","status":"পূর্ণ"},{"mouza_name":"ছোট বাইরবালি","status":"পূর্ণ"},{"mouza_name":"চিলরবাগ","status":"অংশ"},{"mouza_name":"চিনারদী","status":"পূর্ণ"},{"mouza_name":"চৌধুরীর গাঁও","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ বন্দর কৃষ্ণপুরা (মিঃখন্ড)","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ চাদপুর","status":"পূর্ণ"},{"mouza_name":"দক্ষিণ কুলচরির","status":"অংশ"},{"mouza_name":"দরিয়া কান্দি","status":"পূর্ণ"},{"mouza_name":"দপদোপিয়া","status":"পূর্ণ"},{"mouza_name":"দেওভোগ 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"দীঘলদী","status":"পূর্ণ"},{"mouza_name":"দুধ ঘাটা","status":"পূর্ণ"},{"mouza_name":"দুর্গা প্রসাদ কান্দি","status":"পূর্ণ"},{"mouza_name":"ইসদাইর","status":"অংশ"},{"mouza_name":"ইট খোলা","status":"পূর্ণ"},{"mouza_name":"কাউচর","status":"পূর্ণ"},{"mouza_name":"জিতৈরা","status":"পূর্ণ"},{"mouza_name":"কাবিলগঞ্জ","status":"অংশ"},{"mouza_name":"কল্লাপদি","status":"পূর্ণ"},{"mouza_name":"কাশিপুর","status":"পূর্ণ"},{"mouza_name":"থানপুর","status":"অংশ"},{"mouza_name":"কুল চৈত্র","status":"পূর্ণ"},{"mouza_name":"কুশিয়ার","status":"অংশ"},{"mouza_name":"লাল আলাপদি","status":"অংশ"},{"mouza_name":"লাল কুষ্ণাদি","status":"পূর্ণ"},{"mouza_name":"লম্বরদি","status":"অংশ"},{"mouza_name":"লামারিটিন","status":"পূর্ণ"},{"mouza_name":"মদনগঞ্জ","status":"পূর্ণ"},{"mouza_name":"মাধবপাশা","status":"পূর্ণ"},{"mouza_name":"মাজুনি","status":"পূর্ণ"},{"mouza_name":"মজিবরবাড়ী","status":"অংশ"},{"mouza_name":"মকরের গাঁও","status":"পূর্ণ"},{"mouza_name":"মাস দাইর","status":"অংশ"},{"mouza_name":"মসিনাবন্দ","status":"পূর্ণ"},{"mouza_name":"মসিনাবন্দ 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"মেনিধারী","status":"পূর্ণ"},{"mouza_name":"মীর বহর কান্দি","status":"পূর্ণ"},{"mouza_name":"মীরকুন্ডী","status":"পূর্ণ"},{"mouza_name":"মীরকুন্ডিত চর","status":"পূর্ণ"},{"mouza_name":"মোহনপুর","status":"অংশ"},{"mouza_name":"মহিষ খোলা","status":"পূর্ণ"},{"mouza_name":"মুয়ার চর","status":"অংশ"},{"mouza_name":"মুরাফলী","status":"পূর্ণ"},{"mouza_name":"মোকারবা","status":"অংশ"},{"mouza_name":"নবিগঞ্জ","status":"অংশ"},{"mouza_name":"নবিগঞ্জ 'ম' খন্ড","status":"অংশ"},{"mouza_name":"নবিনগর","status":"পূর্ণ"},{"mouza_name":"নামঘর","status":"পূর্ণ"},{"mouza_name":"নারায়নগঞ্জ","status":"অংশ"},{"mouza_name":"নয়াচর গোবিন্দপুর","status":"পূর্ণ"},{"mouza_name":"নিসং","status":"পূর্ণ"},{"mouza_name":"নোয়াদ্ধা","status":"অংশ"},{"mouza_name":"নুরপন্দি","status":"পূর্ণ"},{"mouza_name":"পাইকপাড়া 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"পাঁচকানি","status":"পূর্ণ"},{"mouza_name":"একরামপুর","status":"পূর্ণ"},{"mouza_name":"একরামপুর","status":"পূর্ণ"},{"mouza_name":"এনায়েতনগর","status":"পূর্ণ"},{"mouza_name":"এনায়েতনগর","status":"পূর্ণ"},{"mouza_name":"ফরদি","status":"পূর্ণ"},{"mouza_name":"গন্ডাকুল বন্দর","status":"পূর্ণ"},{"mouza_name":"গজারিয়া পাড়","status":"পূর্ণ"},{"mouza_name":"ঘাডমোড়া","status":"পূর্ণ"},{"mouza_name":"ঘোড়ার চক","status":"পূর্ণ"},{"mouza_name":"ঘোষের চর","status":"পূর্ণ"},{"mouza_name":"গোয়ালবন্দ","status":"পূর্ণ"},{"mouza_name":"গোয়ালবন্দ 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"গোবিন্দ মন্ডলী","status":"পূর্ণ"},{"mouza_name":"গনপাড়া","status":"পূর্ণ"},{"mouza_name":"গোপচর","status":"অংশ"},{"mouza_name":"গুপারা ঘাট","status":"পূর্ণ"},{"mouza_name":"হাবিবপুর","status":"অংশ"},{"mouza_name":"হারদি","status":"পূর্ণ"},{"mouza_name":"হাজিপুর","status":"পূর্ণ"},{"mouza_name":"হাজরাদি","status":"পূর্ণ"},{"mouza_name":"হোসেনপুর","status":"পূর্ণ"},{"mouza_name":"হোসেনপুর চক","status":"পূর্ণ"},{"mouza_name":"ইমামন্দির ছাট","status":"পূর্ণ"},{"mouza_name":"পাঁচানি","status":"পূর্ণ"},{"mouza_name":"পিরিজপুর","status":"পূর্ণ"},{"mouza_name":"রাম গোবিন্দগাঁও","status":"পূর্ণ"},{"mouza_name":"সাবদী","status":"পূর্ণ"},{"mouza_name":"সৈয়দপুর","status":"অংশ"},{"mouza_name":"সৈয়দপুর 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"সেল সারদি","status":"পূর্ণ"},{"mouza_name":"শম্ভুপুরা","status":"পূর্ণ"},{"mouza_name":"শীতলক্ষ্যা","status":"অংশ"},{"mouza_name":"সোনাকান্দা 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"সোনাকান্দা","status":"পূর্ণ"},{"mouza_name":"সোনাপুর 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"শ্রীরামপুর","status":"অংশ"},{"mouza_name":"শুভকরদি","status":"পূর্ণ"},{"mouza_name":"তাহেরপুর কাদিরগাঁও","status":"পূর্ণ"},{"mouza_name":"তমোদরদি","status":"পূর্ণ"},{"mouza_name":"তর তরিয়া","status":"পূর্ণ"},{"mouza_name":"তাতুয়া কান্দি","status":"পূর্ণ"},{"mouza_name":"তৈতকান্দিয়া","status":"পূর্ণ"},{"mouza_name":"তিন দোনা","status":"পূর্ণ"},{"mouza_name":"তিশগাঁও","status":"অংশ"},{"mouza_name":"উত্তর বন্দর কৃষ্ণপুরা 'ম' খন্ড","status":"পূর্ণ"},{"mouza_name":"উত্তর সাবদী","status":"পূর্ণ"}]}]}]}</script>
+<script>
+/* =========================================================
+   PART A — TAB SWITCHING
+   ========================================================= */
+function switchTab(tab){
+  document.getElementById('calcTab').classList.toggle('active', tab==='calc');
+  document.getElementById('mouzaTab').classList.toggle('active', tab==='mouza');
+  document.getElementById('bonusTab').classList.toggle('active', tab==='bonus');
+  document.getElementById('tabBtnCalc').classList.toggle('active', tab==='calc');
+  document.getElementById('tabBtnMouza').classList.toggle('active', tab==='mouza');
+  document.getElementById('tabBtnBonus').classList.toggle('active', tab==='bonus');
+}
+
+/* =========================================================
+   PART B — FAR CALCULATOR DATA & LOGIC (unchanged from far.html)
+   ========================================================= */
+           const blocks=[{id: "01", name: "সংরক্ষিত", area: "বিমান বন্দর", type: "-", ppa: "0", size: "0", unit: "0.0", far: "0.0"},
+            {id: "02", name: "জিঞ্জিরা, কালিন্দি, আগানগর", area: "আগানগর, কালিন্দী, শুভাঢ্যা, জিঞ্জিরা ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "940", unit: "2.3", far: "3.0"},
+            {id: "03", name: "বসুন্ধরা আবাসিক এলাকা", area: "DNCC-17, 40, 42, 43 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1480", unit: "2.0", far: "4.1"},
+            {id: "04", name: "দক্ষিণখান", area: "DNCC-44 (অংশ), 45, 46, 48 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1200", unit: "1.9", far: "3.1"},
+            {id: "05", name: "ফরিদাবাদ", area: "DNCC-47, 50", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1000", unit: "2.2", far: "3.1"},
+            {id: "06", name: "কাউলা", area: "DNCC-17, 49 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "1150", unit: "2.0", far: "3.2"},
+            {id: "07", name: "উত্তরা 1ম ও 2য় পর্ব", area: "DNCC-1, 51 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "300", size: "1630", unit: "2.0", far: "4.5"},
+            {id: "08", name: "কামারপাড়া", area: "DNCC-53, 54 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "280", size: "980", unit: "2.3", far: "3.1"},
+            {id: "09", name: "মিরপুর", area: "DNCC- 2-8, 12-14, 16, 52 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1300", unit: "1.9", far: "3.4"},
+            {id: "10", name: "কেরানীগঞ্জ, তারানগর, ভাকুর্তা", area: "আলীরটেক, আমিন বাজার, হযরতপুর, কালতিয়া ইত্যাদি", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "860", unit: "2.1", far: "2.5"},
+            {id: "11", name: "আনন্দনগর বেড়িবাঁধ", area: "DNCC-8, 9, 10 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "950", unit: "2.0", far: "2.6"},
+            {id: "12", name: "শেওড়াপাড়া", area: "DNCC-10-14, 16, 28 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1150", unit: "1.9", far: "3.0"},
+            {id: "13", name: "ইব্রাহিমপুর পূর্ব শেওড়াপাড়া", area: "DNCC-14, 16 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1150", unit: "1.9", far: "3.0"},
+            {id: "14", name: "বাউনিয়া", area: "DNCC-3, 4, 15 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1200", unit: "2.1", far: "3.5"},
+            {id: "15", name: "খিলক্ষেত ভাটারা", area: "DNCC-17, 18, 40 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1180", unit: "1.9", far: "3.1"},
+            {id: "16", name: "বারidhara", area: "DNCC-18, 39, 40 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1880", unit: "1.8", far: "4.7"},
+            {id: "17", name: "গুলশান বনানী", area: "DNCC-19 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "2100", unit: "1.9", far: "5.5"},
+            {id: "18", name: "বাইপাইল, আশুলিয়া", area: "আশুলিয়া, ধামসোনা, শিমুলিয়া ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "930", unit: "2.1", far: "2.7"},
+            {id: "19", name: "কড়াইল", area: "DNCC-19 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1050", unit: "1.4", far: "2.0"},
+            {id: "20", name: "মহাখালী ডিওএইচএস", area: "DNCC-20 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "200", size: "1580", unit: "2.0", far: "4.4"},
+            {id: "21", name: "নিকেতন", area: "DNCC-19, 20, 24 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "280", size: "1500", unit: "1.8", far: "3.8"},
+            {id: "22", name: "মহাখালী", area: "DNCC-20 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "960", unit: "2.5", far: "3.3"},
+            {id: "23", name: "রামপুরা", area: "DNCC-18, 21, 22, 38, 39 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1180", unit: "2.2", far: "3.6"},
+            {id: "24", name: "তেজগাঁও আই এ", area: "DNCC-24, 25 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "1040", unit: "2.3", far: "3.3"},
+            {id: "25", name: "মোহাম্মদপুর", area: "DNCC-29, 31, 32 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "300", size: "1100", unit: "2.2", far: "3.4"},
+            {id: "26", name: "বনগ্রাম", area: "বনগ্রাম, তেঁতুলঝোড়া (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "150", size: "450", unit: "1.6", far: "2.1"},
+            {id: "27", name: "বাইতুল আমান", area: "DNCC-10, 11, 33, 33 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1080", unit: "2.1", far: "3.2"},
+            {id: "28", name: "মগবাজার", area: "DNCC-22, 35, 36; DSCC-8, 9, 19", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1050", unit: "2.2", far: "3.2"},
+            {id: "29ক", name: "পুরাতন ঢাকা", area: "DSCC-24, 25, 50-54, 58-62", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1000", unit: "2.4", far: "3.3"},
+            {id: "29খ", name: "দনিয়া-মুরাদপুর", area: "DSCC-52, 53, 58, 59, 61, 62 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1000", unit: "2.4", far: "3.3"},
+            {id: "30", name: "গ্রিন মডেল টাউন", area: "DSCC-63, 71, 72, 73 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1350", unit: "2.1", far: "3.9"},
+            {id: "31", name: "সাতারকুল, নাসিরাবাদ", area: "DNCC-37, 41, 42; DSCC-70, 75", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "1050", unit: "1.3", far: "1.9"},
+            {id: "32", name: "বাসাবো, খিলগাঁও", area: "DNCC-22, 23; DSCC-1-7, 40, 48, 73-75", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1160", unit: "2.1", far: "3.4"},
+            {id: "33", name: "বন্দর, মদনপুর", area: "বন্দর, কাঁচপুর, কলাগাছিয়া ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "860", unit: "2.1", far: "2.5"},
+            {id: "34", name: "রমনা, ঢাকা বিশ্ববিদ্যালয়", area: "DSCC-8-11, 13, 16-22, 26", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "1040", unit: "2.3", far: "3.3"},
+            {id: "35", name: "পান্থপথ", area: "DNCC-26, 27; DSCC-14, 16, 17, 18", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "240", size: "1100", unit: "2.2", far: "3.4"},
+            {id: "36", name: "ধানমন্ডি আবাসিক", area: "DNCC-31, 32, 34; DSCC-15, 17, 18", type: "পরিকল্পিত এলাকা", ppa: "220", size: "2000", unit: "1.8", far: "5.0"},
+            {id: "37", name: "নারায়নগঞ্জ সেন্টার", area: "NCC-8, 10, 11-17, এনায়েতনগর, ফতুল্লা ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1060", unit: "2.4", far: "3.5"},
+            {id: "38", name: "টঙ্গী", area: "GCC-43, 44, 45, 54, 55, 57 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "990", unit: "2.3", far: "3.2"},
+            {id: "39", name: "বিরুলিয়া", area: "বিরুলিয়া ইউনিয়ন, সাভার ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "175", size: "946", unit: "1.8", far: "2.4"},
+            {id: "40", name: "গোপনগনর, এনসিসি 27", area: "NCC-5, 6, 18-27, গোপনগনর ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "930", unit: "2.1", far: "2.7"},
+            {id: "41", name: "দাশেরকান্দি, কায়েতপাড়া", area: "কায়েত পাড়া ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "175", size: "950", unit: "1.8", far: "2.4"},
+            {id: "42ক",name: "মাতুয়াইল, সারুলিয়া", area: "DSCC-63, 64, 65-70 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "1280", unit: "1.9", far: "3.4"},
+            {id: "42খ", name: "কুতুবপুর, ফতুল্লা", area: "NCC-1-4, 7, 9, কুতুবপুর ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "1280", unit: "1.9", far: "3.4"},
+            {id: "43", name: "পাখালিয়া", area: "পাখালিয়া ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "930", unit: "2.1", far: "2.7"},
+            {id: "44", name: "রুপগঞ্জ, ইসাপুর", area: "রুপগঞ্জ ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "930", unit: "2.1", far: "2.7"},
+            {id: "45", name: "ভুলতা, গোলাকান্দাইল", area: "ভুলতা, গোলাকান্দাইল, মুড়াপাড়া ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "930", unit: "2.1", far: "2.7"},
+            {id: "46", name: "সাভার পৌরসভা", area: "SP-1-9, তেঁতুলঝোড়া ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1050", unit: "2.3", far: "3.4"},
+            {id: "47", name: "ঝিলমিল আবাসিক এলাকা", area: "ঝিলমিল আবাসিক এলাকা", type: "পরিকল্পিত এলাকা", ppa: "200", size: "1600", unit: "1.9", far: "4.3"},
+            {id: "48", name: "হেমায়েতপুর", area: "তেঁতুলঝোড়া ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "890", unit: "2.3", far: "2.8"},
+            {id: "49", name: "তারাবো পৌরসভা", area: "TP-1-9 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "940", unit: "2.3", far: "3.0"},
+            {id: "50", name: "জলসিড়ি", area: "জলসিড়ি আবাসন", type: "পরিকল্পিত এলাকা", ppa: "200", size: "1400", unit: "2.1", far: "4.1"},
+            {id: "51", name: "বাড্ডা", area: "DNCC-37, 38, 39 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1160", unit: "2.1", far: "3.4"},
+            {id: "52", name: "আফতাবনগর, বনশ্রী", area: "DNCC-22, 37; DSCC-3, 74 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1600", unit: "1.7", far: "3.7"},
+            {id: "53", name: "ইউনাইটেড, সানভ্যালী", area: "DNCC-41, 42, 43 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "300", size: "1680", unit: "1.9", far: "3.7"},
+            {id: "54", name: "পূর্বাচল আবাসিক এলাকা", area: "পূর্বাচল নতুন শহর", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1680", unit: "1.9", far: "4.5"},
+            {id: "55", name: "উত্তরা 3য় পর্ব", area: "DNCC-52, 53 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1760", unit: "1.9", far: "4.7"},
+            {id: "56", name: "পি ও এইচ এস ও স্বর্ণালী", area: "DNCC-43, 44, 48 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1660", unit: "1.9", far: "4.1"},
+            {id: "57", name: "নলভোগ", area: "DNCC-52, 53 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "900", unit: "2.0", far: "2.6"},
+            {id: "58", name: "কল্যাণপুর-রিটেনশন", area: "কল্যাণপুর-রিটেনশন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "0", size: "0", unit: "0.0", far: "0.0"},
+            {id: "59", name: "বসিলা, চন্দ্রিমা", area: "DNCC-33, 44-47; DSCC-33-37 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "980", unit: "2.3", far: "3.1"},
+            {id: "60", name: "খিলক্ষেত আবাসিক এলাকা", area: "DNCC-43, 44 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "250", size: "1650", unit: "1.7", far: "4.4"},
+            {id: "61", name: "মিরপুর ডি ও এইচ এস", area: "DNCC-02, 52 (অংশ)", type: "পরিকল্পিত এলাকা", ppa: "220", size: "2040", unit: "1.7", far: "4.8"},
+            {id: "62", name: "পাইকপাড়া, টোলারবাগ", area: "DNCC-10, 11, 12 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "300", size: "1250", unit: "1.9", far: "3.3"},
+            {id: "63", name: "কাউন্দিয়া, আমিনবাজার", area: "কাউন্দিয়া ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "175", size: "1100", unit: "1.3", far: "2.0"},
+            {id: "64", name: "কাঁচকুড়া মইনারটেক", area: "DNCC-43 (অংশ), 44 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "890", unit: "2.1", far: "2.6"},
+            {id: "65", name: "পল্লবী 2", area: "DNCC-8, 52 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1400", unit: "1.7", far: "3.3"},
+            {id: "66", name: "ঘাটারচর", area: "তারানগর, শাক্তা (অংশ) ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "220", size: "1150", unit: "2.0", far: "3.2"},
+            {id: "67", name: "ডেমরা, কোনাপাড়া", area: "DSCC-63, 64, 69-75 (অংশ)", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "250", size: "1280", unit: "1.8", far: "3.2"},
+            {id: "68", name: "সুবাড্ডা, আরাকুল, বেয়ারা", area: "সুবাড্ডা, কন্ডা, তেঘরিয়া (অংশ) ইউনিয়ন", type: "স্বতঃস্ফূর্ত উন্নয়ন", ppa: "200", size: "930", unit: "2.1", far: "2.7"}
+        ];
+
+/* To determine areaFAR, If I click on html select box that showing only blocks name, the full object will be extracted as a javascript object. the variable name of the object will be block.*/
+const farData = {
+    central_dhaka: {
+        A1: [1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 3.75, 4.25],
+        A2: [1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 3.75, 4.25],
+        A3: [1.25, 1.75, 2.0, 2.25, 3.25, 3.5, 4.0, 4.25, 4.75],
+        A4: [null, 2.0, 2.25, 2.5, 3.0, 3.5, 4.0, 4.5, 5.5],
+        A5: [null, null, null, null, 4.0, 4.5, 5.0, 6.0, 7.0],
+        A6: [1.5, 2.0, 2.25, 2.5, 3.0, 3.25, 3.75, 4.0, 4.25]
+    },
+    periphery_dhaka: {
+        A1: [1.0, 1.25, 1.5, 1.75, 2.25, 2.75, 3.25, 3.5, 4.0],
+        A2: [1.0, 1.25, 1.5, 1.75, 2.25, 2.75, 3.25, 3.5, 4.0],
+        A3: [1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 3.75, 4.25],
+        A4: [1.25, 1.75, 2.0, 2.25, 2.75, 3.25, 3.75, 4.25, 4.75],
+        A5: [null, null, null, null, 3.75, 4.25, 4.75, 5.75, 6.75],
+        A6: [1.5, 1.75, 2.0, 2.25, 2.75, 3.0, 3.5, 3.75, 4.0]
+    },
+    others: {
+        A1: [1.0, 1.25, 1.5, 1.75, 2.25, 2.75, 3.25, 3.5, 4.0],
+        A2: [1.0, 1.25, 1.5, 1.75, 2.25, 2.75, 3.25, 3.5, 4.0],
+        A3: [1.0, 1.25, 1.5, 1.75, 2.3, 2.8, 3.3, 3.5, 4.0],
+        A4: [1, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5],
+        A5: [null, null, null, null, 3.5, 4.0, 4.5, 5.5, 6.5],
+        A6: [1.5, 1.75, 2, 2.25, 2.75, 3.0, 3.5, 3.75, 4.0]
+    }
+};
+let block = null;
+const sel = document.getElementById('blockSelect');
+blocks.sort((a, b) => a.name.localeCompare(b.name)).forEach((b, i) => {
+    let o = document.createElement('option');
+    o.value = i;
+    o.textContent = b.name;
+    sel.appendChild(o);
+});
+const areaFarInput = document.getElementById('areaFarInput');
+sel.onchange = () => {
+    block = blocks[sel.value];
+    const blockInfo = document.getElementById('blockInfo');
+    if (block) {
+        blockInfo.innerHTML = `<b>Area FAR:</b> <span class="mono">${block.far}</span> &nbsp;|&nbsp; <b>এলাকা:</b> ${block.area}`;
+        blockInfo.classList.add('show');
+        areaFarInput.value = block.far; // auto-fill, user may still edit manually
+    } else {
+        blockInfo.innerHTML = '';
+        blockInfo.classList.remove('show');
+    }
+};
+
+document.querySelectorAll('.toggle input[type="checkbox"]').forEach(cb => {
+    const sync = () => cb.closest('.toggle').classList.toggle('checked', cb.checked);
+    cb.addEventListener('change', sync);
+    sync();
+});
+
+/* ---------- All blocks list modal ---------- */
+function renderBlocksTable(filterText) {
+    const tbody = document.getElementById('blocksTableBody');
+    const trimmed = (filterText || '').trim();
+    const rows = blocks.filter(b => !trimmed ||
+        b.name.includes(trimmed) || b.area.includes(trimmed) || String(b.id).includes(trimmed));
+    if (rows.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="table-empty">কোনো ব্লক পাওয়া যায়নি</td></tr>`;
+        return;
+    }
+    tbody.innerHTML = rows.map(b => `
+        <tr class="clickable" data-block-name="${b.name.replace(/"/g,'&quot;')}">
+            <td class="mono">${b.id}</td><td>${b.name}</td><td>${b.area}</td><td>${b.type}</td>
+            <td class="mono">${b.ppa}</td><td class="mono">${b.size}</td><td class="mono">${b.unit}</td><td class="mono">${b.far}</td>
+        </tr>
+    `).join('');
+    tbody.querySelectorAll('tr.clickable').forEach(tr => {
+        tr.addEventListener('click', () => {
+            const name = tr.getAttribute('data-block-name');
+            const idx = blocks.findIndex(b => b.name === name);
+            if (idx === -1) return;
+            sel.value = idx;
+            sel.onchange();
+            closeBlocksModal();
+        });
+    });
+}
+function openBlocksModal() {
+    document.getElementById('blocksFilterInput').value = '';
+    renderBlocksTable('');
+    document.getElementById('blocksModal').classList.add('active');
+}
+function closeBlocksModal() {
+    document.getElementById('blocksModal').classList.remove('active');
+}
+document.getElementById('closeBlocksModalBtn').addEventListener('click', closeBlocksModal);
+document.getElementById('blocksModal').addEventListener('click', (e) => {
+    if (e.target.id === 'blocksModal') closeBlocksModal();
+});
+document.getElementById('blocksFilterInput').addEventListener('input', (e) => renderBlocksTable(e.target.value));
+
+
+function plotFarCalc(sub, type, w) {
+    const r = farData[sub][type];
+    let f = 0;
+    if (w >= 1.8 && w < 2.5 && r[0] != null) f = r[0];
+    else if (w >= 2.5 && w < 3.66 && r[1] != null) f = r[1];
+    else if (w >= 3.66 && w < 4.88 && r[2] != null) f = r[2];
+    else if (w >= 4.88 && w < 6 && r[3] != null && r[4] != null) f = ((r[4] - r[3]) / 1.12) * (w - 4.88) + r[3];
+    else if (w >= 6 && w < 9 && r[4] != null && r[5] != null) f = ((r[5] - r[4]) / 3) * (w - 6) + r[4];
+    else if (w >= 9 && w < 12 && r[5] != null && r[6] != null) f = ((r[6] - r[5]) / 3) * (w - 9) + r[5];
+    else if (w >= 12 && w < 18 && r[6] != null && r[7] != null) f = ((r[7] - r[6]) / 6) * (w - 12) + r[6];
+    else if (w >= 18 && w < 24) {
+        if (r[7] != null && r[8] != null) f = ((r[8] - r[7]) / 6) * (w - 18) + r[7];
+        else f = r[7] || r[8] || 0;
+    } else if (w >= 24 && r[8] != null) f = r[8];
+    return f;
+}
+
+function incentive() {
+    let i = {};
+    const pk = +plotKatha.value,
+        rw = +document.getElementById('w1').value * 3.28084;
+    if (pk >= 3 && pk < 6) i.plot = 0.2;
+    else if (pk >= 6 && pk < 10) i.plot = 0.35;
+    else if (pk >= 10 && pk < 15) i.plot = 0.5;
+    else if (pk >= 15 && pk < 20) i.plot = 0.65;
+    else if (pk >= 20) i.plot = 0.75;
+    else i.plot = 0;
+    i.road = rw >= 30 ? Math.min((rw - 30) * 0.02, 1) : 0;
+    if (type.value !== 'A6') {
+        if (a6Option.value == 'units' && pk >= 10) i.a6 = 0.5;
+        else if (a6Option.value == 'floorSpace' && pk >= 20) i.a6 = 0.75;
+        else i.a6 = 0;
+    }
+    i.green = green.checked ? 0.5 : 0;
+    i.open = open.checked ? 0.5 : 0;
+    i.tod = +tod.value || 0;
+    i.tdr = +tdr.value || 0;
+    i.purchase = +purchase.value || 0;
+    i.school = school.checked ? 0.25 : 0;
+    i.play = play.checked ? 0.25 : 0;
+    let total = Object.values(i).reduce((a, b) => a + b, 0);
+    return {
+        breakdown: i,
+        total: +total.toFixed(2)
+    };
+}
+
+const incentiveLabels = {
+    plot: 'প্লট আয়তন ইনসেনটিভ',
+    road: 'রাস্তা প্রশস্তকরণ ইনসেনটিভ',
+    a6: 'A6 অপশন ইনসেনটিভ',
+    green: 'গ্রিন বিল্ডিং',
+    open: 'পাবলিক ওপেন স্পেস',
+    tod: 'TOD ইনসেনটিভ',
+    tdr: 'TDR ইনসেনটিভ',
+    purchase: 'FAR ক্রয় ইনসেনটিভ',
+    school: 'স্কুল',
+    play: 'খেলার মাঠ / পার্ক'
+};
+
+function toggleRoadWidening() {
+    const hasWidening =
+        document.getElementById("roadWideningProposal").value === "yes";
+
+    const w2Wrap = document.getElementById("w2FieldWrap");
+    const surrenderedWrap = document.getElementById("surrenderedLandFieldWrap");
+
+    if (hasWidening) {
+        // রাস্তা প্রশস্তকরণ থাকলে দুইটি ফিল্ড দেখাবে
+        w2Wrap.style.display = "block";
+        surrenderedWrap.style.display = "block";
+    } else {
+        // রাস্তা প্রশস্তকরণ না থাকলে দুইটি ফিল্ড লুকাবে
+        w2Wrap.style.display = "none";
+        surrenderedWrap.style.display = "none";
+
+        // সকল হিসাবের জন্য মান ০ হবে
+        document.getElementById("w2").value = "";
+        document.getElementById("surrenderedLand").value = 0;
+    }
+}
+
+function toggleA6Option() {
+
+    const isA6 = document.getElementById("type").value === "A6";
+
+    const areaFarWrap = document.getElementById("areaFarFieldWrap");
+    const a6OptionWrap = document.getElementById("a6OptionFieldWrap");
+
+    if (isA6) {
+        // Area FAR ইনপুট লুকাবে
+        areaFarWrap.style.display = "none";
+
+        // Area FAR এর মান 0 হবে
+        document.getElementById("areaFarInput").value = 0;
+
+        // A6 অপশন দেখাবে
+        a6OptionWrap.style.display = "block";
+    } else {
+        // অন্যান্য টাইপে Area FAR দেখাবে
+        areaFarWrap.style.display = "block";
+        a6OptionWrap.style.display = "block";
+    }
+}
+function calculateAll() {
+
+    const isA6 = type.value === 'A6';
+
+    // A6 ছাড়া Area FAR আবশ্যক
+    if (!isA6 && (areaFarInput.value === '' || isNaN(+areaFarInput.value))) {
+        return alert('অনুগ্রহ করে একটি ব্লক নির্বাচন করুন অথবা এরিয়া FAR সরাসরি লিখুন');
+    }
+
+    const hasWidening =
+        document.getElementById('roadWideningProposal').value === 'yes';
+
+    const f1 = plotFarCalc(subType.value, type.value, +w1.value);
+    const f2 = hasWidening ? plotFarCalc(subType.value, type.value, +w2.value) : 0;
+
+    const plot = hasWidening ? (f1 + f2) / 2 : f1;
+
+    // A6 হলে Area FAR = 0
+    const area = isA6 ? 0 : (+areaFarInput.value);
+
+    const base = isA6 ? plot : Math.min(plot, area);
+    const maximum = isA6 ? plot : Math.max(plot, area);
+
+    const inc = incentive();
+    const disv = +dis.value || 0;
+
+    const approved = isA6
+        ? plot
+        : Math.min(maximum, base + inc.total - disv);
+
+    document.getElementById('result').classList.add('show');
+
+    // ===== Area FAR Card Show/Hide =====
+    document.getElementById('areaFar').parentElement.style.display =
+        isA6 ? 'none' : '';
+
+    areaFar.textContent = area.toFixed(3);
+
+    w1Far.textContent = f1.toFixed(3);
+
+    document.getElementById('w2FarStatCard').style.display =
+        hasWidening ? '' : 'none';
+
+    w2Far.textContent = hasWidening ? f2.toFixed(3) : '0.000';
+
+    document.getElementById('plotFarLabel').textContent =
+        hasWidening ? 'প্লট FAR (গড়)' : 'প্লট FAR';
+
+    plotFar.textContent = plot.toFixed(3);
+    baseFar.textContent = base.toFixed(3);
+    maxFar.textContent = maximum.toFixed(3);
+    incFar.textContent = inc.total.toFixed(3);
+    disFar.textContent = disv.toFixed(3);
+    approvedFar.textContent = approved.toFixed(3);
+
+    document.getElementById('approvedFarNote').textContent = isA6
+        ? 'টাইপ A6 নির্বাচিত হওয়ায় Area FAR প্রযোজ্য নয় এবং Plot FAR-ই Approved FAR হিসেবে গণনা করা হয়েছে।'
+        : 'সর্বোচ্চ FAR ও ভিত্তি FARের মধ্যে ইনসেনটিভ সমন্বয়ের ফলাফল';
+
+    tbody.innerHTML = '';
+
+    Object.entries(inc.breakdown).forEach(([k, v]) => {
+        const label = incentiveLabels[k] || k;
+        tbody.innerHTML += `
+            <tr>
+                <td>${label}</td>
+                <td>${v.toFixed(2)}</td>
+            </tr>`;
+    });
+
+    window.areaFAR = area;
+    window.existingRoadFAR = f1;
+    window.proposedRoadFAR = f2;
+    window.plotFAR = plot;
+    window.baseFAR = base;
+    window.maximumFAR = maximum;
+    window.incentiveFAR = inc.total;
+    window.approvedFAR = approved;
+
+    document.getElementById('result').scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+    });
+}
+
+/* =========================================================
+   PART B2 — ইউনিট ও তলা সংখ্যা হিসাব (MGC ভিত্তিক)
+   ========================================================= */
+const mgcSlider = document.getElementById('mgcSlider');
+const mgcValueEl = document.getElementById('mgcValue');
+mgcSlider.addEventListener('input', () => {
+    mgcValueEl.textContent = mgcSlider.value + '%';
+    calculateBonus();
+});
+
+const KATHA_TO_SQFT = 720; // ১ কাঠা = ৭২০ বর্গফুট ধরা হয়েছে
+
+function calculateBonus() {
+
+    const isA6 = type.value === 'A6';
+
+    const warningEl = document.getElementById('bonusPrereqWarning');
+    const warningText = warningEl.querySelector('span');
+    const resultBox = document.getElementById('bonusResult');
+
+    if (typeof window.approvedFAR !== 'number' || isNaN(window.approvedFAR)) {
+        warningText.textContent = 'অনুগ্রহ করে প্রথমে "FAR ক্যালকুলেটর" ট্যাবে চূড়ান্ত FAR হিসাব করুন।';
+        warningEl.style.display = 'flex';
+        resultBox.classList.remove('show');
+        return;
+    }
+
+    const plotK = +plotKatha.value || 0;
+
+    if (plotK <= 0) {
+        warningText.textContent = 'অনুগ্রহ করে "FAR ক্যালকুলেটর" ট্যাবে প্লট আয়তন (কাঠা) দিন।';
+        warningEl.style.display = 'flex';
+        resultBox.classList.remove('show');
+        return;
+    }
+
+    // রাস্তা প্রশস্তকরণ না থাকলে সমর্পিত জমি স্বয়ংক্রিয়ভাবে ০
+    const hasWidening =
+        document.getElementById('roadWideningProposal').value === 'yes';
+
+    const surrSqft = hasWidening
+        ? (+document.getElementById('surrenderedLand').value || 0)
+        : 0;
+
+    const netPlotKatha = plotK;
+    const netPlotSqft = netPlotKatha * KATHA_TO_SQFT;
+
+    warningEl.style.display = 'none';
+
+    const approvedFAR = window.approvedFAR;
+    const mgc = (+mgcSlider.value) / 100;
+
+    // ১) অনুমোদিত FAR অনুযায়ী মেঝের ক্ষেত্রফল
+    const approvedFloorArea = netPlotSqft * approvedFAR;
+
+    // ২) প্রণোদনা মেঝের ক্ষেত্রফল
+    const incentiveFloorArea = surrSqft * 3;
+
+    // ৩) মোট অনুমোদিত মেঝের ক্ষেত্রফল
+    const totalFloorArea = approvedFloorArea + incentiveFloorArea;
+
+    // ৪) মোট তলার সংখ্যা
+    const totalFloors = Math.ceil(totalFloorArea / (mgc * netPlotSqft));
+
+    // ফলাফল দেখানো
+    document.getElementById('bonusApprovedFar').textContent = approvedFAR.toFixed(3);
+    document.getElementById('bonusPlotKatha').textContent = plotK.toFixed(2);
+    document.getElementById('bonusSurrLand').textContent = surrSqft.toFixed(2);
+    document.getElementById('netPlotKatha').textContent = netPlotKatha.toFixed(3);
+
+    document.getElementById('approvedFloorArea').textContent =
+        Math.round(approvedFloorArea).toLocaleString('en-US');
+
+    document.getElementById('incentiveFloorArea').textContent =
+        Math.round(incentiveFloorArea).toLocaleString('en-US');
+
+    document.getElementById('totalFloorArea').textContent =
+        Math.round(totalFloorArea).toLocaleString('en-US');
+
+    // ==========================
+    // A6 হলে ইউনিট সংখ্যা দেখাবে না
+    // ==========================
+    const unitCard = document.getElementById('maxUnits').parentElement;
+    const incentiveUnitCard = document.getElementById('maxUnitsIncentive').parentElement;
+
+    if (isA6) {
+
+        unitCard.style.display = 'none';
+        incentiveUnitCard.style.display = 'none';
+
+        document.getElementById('maxUnits').textContent = '';
+        document.getElementById('maxUnitsIncentive').textContent = '';
+
+    } else {
+
+        unitCard.style.display = '';
+        incentiveUnitCard.style.display = '';
+
+        if (block) {
+            const unitVal = +block.unit || 0;
+
+            // ৫) সর্বোচ্চ আবাসিক ইউনিট সংখ্যা
+            const maxUnits = Math.ceil(netPlotKatha * unitVal);
+
+            // ৬) প্রণোদনাসহ সর্বোচ্চ ইউনিট সংখ্যা
+            const maxUnitsIncentive = Math.ceil(maxUnits * 1.1);
+
+            document.getElementById('maxUnits').textContent = maxUnits;
+            document.getElementById('maxUnitsIncentive').textContent = maxUnitsIncentive;
+
+        } else {
+
+            document.getElementById('maxUnits').textContent = 'ব্লক নির্বাচিত নয়';
+            document.getElementById('maxUnitsIncentive').textContent = 'ব্লক নির্বাচিত নয়';
+        }
+    }
+
+    // মোট তলা (Ground + উপরের তলা)
+    document.getElementById('totalFloorsDisplay').textContent =
+        'G+' + Math.max(totalFloors - 1, 0);
+
+    resultBox.classList.add('show');
+}
+/* =========================================================
+   PART C — মৌজা → সাবজোন লুকআপ (mouza.html-এর লজিক, embedded JSON থেকে)
+   ========================================================= */
+let mouzaMap = new Map();
+let uniqueMouzaList = [];
+let dataLoaded = false;
+let allMouzaEntries = [];
+
+const searchInput = document.getElementById('searchInput');
+const suggestionsDiv = document.getElementById('suggestionsList');
+const statusArea = document.getElementById('statusArea');
+const modal = document.getElementById('resultModal');
+const modalMouzaName = document.getElementById('modalMouzaName');
+const modalBody = document.getElementById('modalBodyContent');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+function closeModal() { modal.classList.remove('active'); }
+function openModal() { modal.classList.add('active'); }
+closeModalBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+function loadMouzaData() {
+    try {
+        statusArea.classList.remove('error');
+        statusArea.innerHTML = `<i class="fas fa-spinner fa-pulse"></i> mouza.json (এম্বেডেড) থেকে তথ্য প্রস্তুত করা হচ্ছে...`;
+
+        const jsonText = document.getElementById('mouzaDataJson').textContent;
+        const jsonData = JSON.parse(jsonText);
+
+        if (!jsonData.RAJUK_Zonal_Database || !Array.isArray(jsonData.RAJUK_Zonal_Database)) {
+            throw new Error('JSON ফাইলের গঠন সঠিক নয়। RAJUK_Zonal_Database অ্যারে প্রয়োজন।');
+        }
+
+        const entries = [];
+        for (const zone of jsonData.RAJUK_Zonal_Database) {
+            const zoneNo = zone.zone_no || '?';
+            const zoneName = zone.zone_name || '';
+            const subZones = zone.sub_zones || [];
+            for (const sub of subZones) {
+                const subId = sub.sub_zone_id || '';
+                const boundary = sub.boundary || 'সীমানা তথ্য নেই';
+                const mouzas = sub.mouzas || [];
+                for (const m of mouzas) {
+                    entries.push({
+                        mouza_name: m.mouza_name.trim(),
+                        status: m.status === 'পূর্ণ' ? 'পূর্ণ' : (m.status === 'অংশ' ? 'অংশ' : m.status),
+                        zone_no: zoneNo,
+                        zone_name: zoneName,
+                        sub_zone_id: subId,
+                        boundary: boundary
+                    });
+                }
+            }
+        }
+
+        if (entries.length === 0) {
+            throw new Error('JSON ফাইলে কোনো মৌজা এন্ট্রি পাওয়া যায়নি।');
+        }
+
+        mouzaMap.clear();
+        for (const entry of entries) {
+            const name = entry.mouza_name;
+            if (!mouzaMap.has(name)) mouzaMap.set(name, []);
+            mouzaMap.get(name).push(entry);
+        }
+
+        uniqueMouzaList = Array.from(mouzaMap.keys()).sort((a, b) => a.localeCompare(b, 'bn'));
+        allMouzaEntries = entries.slice().sort((a, b) =>
+            a.zone_no.localeCompare(b.zone_no, 'bn') ||
+            a.sub_zone_id.localeCompare(b.sub_zone_id, 'bn') ||
+            a.mouza_name.localeCompare(b.mouza_name, 'bn'));
+
+        dataLoaded = true;
+        searchInput.disabled = false;
+        searchInput.placeholder = "যেমন: জোয়ারসাহারা, আব্দুল্লাহপুর, টঙ্গী ...";
+        document.getElementById('viewMouzaListBtn').disabled = false;
+        statusArea.innerHTML = `
+            <i class="fas fa-check-circle" style="color:#046a4e;"></i>
+            <span><strong>প্রস্তুত!</strong> মোট ${entries.length}টি মৌজা এন্ট্রি (${uniqueMouzaList.length}টি অনন্য মৌজা নাম) পাওয়া গেছে। বাংলায় মৌজা নাম টাইপ করে সার্চ করুন, অথবা নিচের বাটনে ক্লিক করে সম্পূর্ণ তালিকা দেখুন।</span>
+        `;
+    } catch (err) {
+        console.error(err);
+        statusArea.classList.add('error');
+        statusArea.innerHTML = `<i class="fas fa-triangle-exclamation"></i> <span><strong>ত্রুটি:</strong> ${err.message}</span>`;
+        searchInput.disabled = true;
+        searchInput.placeholder = "মৌজা তথ্য লোড ব্যর্থ";
+    }
+}
+
+/* ---------- All mouzas list modal ---------- */
+function renderMouzaListTable(filterText) {
+    const tbody = document.getElementById('mouzaListTableBody');
+    const trimmed = (filterText || '').trim();
+    const rows = allMouzaEntries.filter(e => !trimmed ||
+        e.mouza_name.includes(trimmed) || e.zone_name.includes(trimmed) ||
+        e.zone_no.includes(trimmed) || e.sub_zone_id.includes(trimmed));
+
+    if (rows.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" class="table-empty">কোনো মৌজা পাওয়া যায়নি</td></tr>`;
+        return;
+    }
+
+    let html = '';
+    let lastZone = null, lastSub = null;
+    rows.forEach(e => {
+        const zoneKey = e.zone_no + '|' + e.zone_name;
+        if (zoneKey !== lastZone) {
+            html += `<tr class="zone-group-row"><td colspan="4"><i class="fas fa-city"></i> জোন ${escapeHtml(e.zone_no)} — ${escapeHtml(e.zone_name)}</td></tr>`;
+            lastZone = zoneKey;
+            lastSub = null;
+        }
+        if (e.sub_zone_id !== lastSub) {
+            html += `<tr class="subzone-group-row"><td colspan="4">সাবজোন ${escapeHtml(e.sub_zone_id)}</td></tr>`;
+            lastSub = e.sub_zone_id;
+        }
+        const statusClass = e.status === 'পূর্ণ' ? 'status-full' : 'status-partial';
+        html += `<tr>
+            <td>${escapeHtml(e.mouza_name)}</td>
+            <td class="mono">${escapeHtml(e.zone_no)}</td>
+            <td class="mono">${escapeHtml(e.sub_zone_id)}</td>
+            <td><span class="status-badge ${statusClass}">${escapeHtml(e.status)}</span></td>
+        </tr>`;
+    });
+    tbody.innerHTML = html;
+}
+function openMouzaListModal() {
+    if (!dataLoaded) return;
+    document.getElementById('mouzaListFilterInput').value = '';
+    renderMouzaListTable('');
+    document.getElementById('mouzaListModal').classList.add('active');
+}
+function closeMouzaListModal() {
+    document.getElementById('mouzaListModal').classList.remove('active');
+}
+document.getElementById('closeMouzaListModalBtn').addEventListener('click', closeMouzaListModal);
+document.getElementById('mouzaListModal').addEventListener('click', (e) => {
+    if (e.target.id === 'mouzaListModal') closeMouzaListModal();
+});
+document.getElementById('mouzaListFilterInput').addEventListener('input', (e) => renderMouzaListTable(e.target.value));
+
+function showSuggestions(filterText) {
+    if (!dataLoaded) return;
+    const trimmed = filterText.trim();
+    if (trimmed === "") {
+        suggestionsDiv.classList.remove('show');
+        return;
+    }
+    const filtered = uniqueMouzaList.filter(name => name.includes(trimmed));
+    if (filtered.length === 0) {
+        suggestionsDiv.classList.remove('show');
+        return;
+    }
+    const limited = filtered.slice(0, 15);
+    suggestionsDiv.innerHTML = limited.map(name => `
+        <div class="suggestion-item" data-mouza="${escapeHtml(name)}">
+            <i class="fas fa-map-pin"></i> ${escapeHtml(name)}
+        </div>
+    `).join('');
+    suggestionsDiv.classList.add('show');
+
+    document.querySelectorAll('#suggestionsList .suggestion-item').forEach(el => {
+        el.addEventListener('click', () => {
+            const mouzaName = el.getAttribute('data-mouza');
+            searchInput.value = mouzaName;
+            suggestionsDiv.classList.remove('show');
+            showMouzaDetailsInModal(mouzaName);
+        });
+    });
+}
+
+function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        return m;
+    });
+}
+
+function showMouzaDetailsInModal(mouzaName) {
+    if (!dataLoaded) return;
+    const entries = mouzaMap.get(mouzaName);
+    if (!entries || entries.length === 0) {
+        modalBody.innerHTML = `<div class="no-results"><i class="fas fa-triangle-exclamation"></i> "${escapeHtml(mouzaName)}" সম্পর্কে কোনো তথ্য নেই।</div>`;
+        modalMouzaName.innerText = mouzaName;
+        openModal();
+        return;
+    }
+
+    modalMouzaName.innerText = mouzaName;
+    let html = `<div class="result-count"><i class="fas fa-layer-group"></i> এই মৌজা মোট <strong>${entries.length}</strong>টি সাবজোনে পড়েছে।</div>`;
+
+    entries.forEach(entry => {
+        const statusClass = entry.status === 'পূর্ণ' ? 'status-full' : 'status-partial';
+        const statusIcon = entry.status === 'পূর্ণ' ? 'fa-check-circle' : 'fa-adjust';
+        const statusText = entry.status === 'পূর্ণ' ? 'পূর্ণ মৌজা' : 'আংশিক মৌজা';
+
+        html += `
+            <div class="result-card">
+                <div class="zone-tag">
+                    <i class="fas fa-city"></i> জোন ${escapeHtml(entry.zone_no)} : ${escapeHtml(entry.zone_name)}
+                    <span class="subzone-id">সাবজোন ${escapeHtml(entry.sub_zone_id)}</span>
+                </div>
+                <div class="status-badge ${statusClass}">
+                    <i class="fas ${statusIcon}"></i> ${statusText}
+                </div>
+                <div class="boundary-box">
+                    <div class="boundary-label"><i class="fas fa-border-all"></i> সাবজোনের চৌহদ্দি (সীমানা)</div>
+                    <div>${escapeHtml(entry.boundary)}</div>
+                </div>
+            </div>
+        `;
+    });
+    modalBody.innerHTML = html;
+    openModal();
+}
+
+let debounceTimer;
+searchInput.addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    const val = e.target.value;
+    debounceTimer = setTimeout(() => showSuggestions(val), 150);
+});
+
+document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !suggestionsDiv.contains(e.target)) {
+        suggestionsDiv.classList.remove('show');
+    }
+});
+
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const val = searchInput.value.trim();
+        if (val && mouzaMap.has(val)) {
+            suggestionsDiv.classList.remove('show');
+            showMouzaDetailsInModal(val);
+        } else if (val) {
+            alert('মৌজা নামটি তালিকায় নেই। সাজেশন থেকে নির্বাচন করুন অথবা সঠিক বানান লিখুন।');
+        }
+    }
+});
+
+loadMouzaData();
+window.onload = function () {
+    init();
+    toggleRoadWidening();   // নতুন যোগ করুন
+};
+async function downloadPDF(){
+
+    if(typeof window.approvedFAR !== "number"){
+        alert("প্রথমে FAR হিসাব করুন।");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+
+    const report = document.createElement("div");
+
+    report.style.width="800px";
+    report.style.padding="35px";
+    report.style.background="white";
+    report.style.fontFamily="'Noto Sans Bengali',sans-serif";
+    report.style.color="#123";
+
+    const isA6 = type.value==="A6";
+    const hasWidening =
+        document.getElementById("roadWideningProposal").value==="yes";
+
+    report.innerHTML=`
+
+    <div style="border-bottom:5px solid #046a4e;padding-bottom:15px;margin-bottom:25px;">
+      <h1 style="color:#046a4e;margin:0;font-size:30px;">রাজউক FAR Calculation Report</h1>
+      <div style="margin-top:8px;font-size:15px;">
+        DAP Gazette 2025 ও ইমারত নির্মাণ বিধিমালা ২০২৫ অনুযায়ী
+      </div>
+    </div>
+
+    <h2 style="background:#046a4e;color:white;padding:8px 12px;border-radius:8px;">১. প্লটের তথ্য</h2>
+
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+      ${row("ব্লক", block ? block.name : "-")}
+      ${row("সাবটাইপ", subType.value)}
+      ${row("টাইপ", type.value)}
+      ${row("বিদ্যমান রাস্তার প্রস্থ (W1)", w1.value+" মিটার")}
+      ${row("রাস্তা প্রশস্তকরণ", hasWidening?"হ্যাঁ":"না")}
+      ${hasWidening ? row("প্রস্তাবিত রাস্তার প্রস্থ (W2)", w2.value+" মিটার"):""}
+      ${hasWidening ? row("সমর্পিত জমি", surrenderedLand.value+" বর্গফুট"):""}
+      ${row("প্লটের পরিমাণ", plotKatha.value+" কাঠা")}
+    </table>
+
+    <h2 style="background:#046a4e;color:white;padding:8px 12px;border-radius:8px;margin-top:30px;">২. FAR Summary</h2>
+
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+      ${!isA6 ? row("Area FAR", areaFar.textContent):""}
+      ${row("Plot FAR", plotFar.textContent)}
+      ${row("Base FAR", baseFar.textContent)}
+      ${row("Maximum FAR", maxFar.textContent)}
+      ${row("Incentive FAR", incFar.textContent)}
+      ${row("Disincentive FAR", disFar.textContent)}
+      ${rowHighlight("Approved FAR", approvedFar.textContent)}
+    </table>
+
+    <h2 style="background:#046a4e;color:white;padding:8px 12px;border-radius:8px;margin-top:30px;">৩. Incentive Breakdown</h2>
+
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        ${tbody.innerHTML.replace(/<td>/g,'<td style="padding:8px;border:1px solid #ddd;">')}
+    </table>
+
+    <h2 style="background:#046a4e;color:white;padding:8px 12px;border-radius:8px;margin-top:30px;">৪. ইউনিট ও তলা সংখ্যা</h2>
+
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+      ${row("Approved FAR", bonusApprovedFar.textContent)}
+      ${row("MGC", mgcValue.textContent)}
+      ${row("মোট মেঝের ক্ষেত্রফল", totalFloorArea.textContent+" বর্গফুট")}
+      ${!isA6 ? row("সর্বোচ্চ আবাসিক ইউনিট", maxUnits.textContent):""}
+      ${!isA6 ? row("প্রণোদনাসহ ইউনিট", maxUnitsIncentive.textContent):""}
+      ${rowHighlight("মোট তলার সংখ্যা", totalFloorsDisplay.textContent)}
+    </table>
+
+    <div style="margin-top:40px;padding-top:15px;border-top:2px solid #046a4e;font-size:12px;text-align:center;color:#555;">
+      Developed by MD NASIR UDDIN, AAO, RAJUK
+      <br>
+      Generated on : ${new Date().toLocaleString("bn-BD")}
+    </div>
+    `;
+
+    document.body.appendChild(report);
+
+    const canvas=await html2canvas(report,{
+        scale:2,
+        backgroundColor:"#ffffff"
+    });
+
+    document.body.removeChild(report);
+
+    const img=canvas.toDataURL("image/png");
+
+    const pdf=new jsPDF("p","mm","a4");
+
+    const pdfWidth=210;
+    const pdfHeight=(canvas.height*pdfWidth)/canvas.width;
+
+    let heightLeft=pdfHeight;
+    let position=0;
+
+    pdf.addImage(img,"PNG",0,position,pdfWidth,pdfHeight);
+    heightLeft-=297;
+
+    while(heightLeft>0){
+        position=heightLeft-pdfHeight;
+        pdf.addPage();
+        pdf.addImage(img,"PNG",0,position,pdfWidth,pdfHeight);
+        heightLeft-=297;
+    }
+
+    pdf.save("RAJUK_FAR_Report.pdf");
+}
+
+function row(title,value){
+    return `
+    <tr>
+      <td style="padding:8px;border:1px solid #ddd;background:#F5FAF8;font-weight:bold;">${title}</td>
+      <td style="padding:8px;border:1px solid #ddd;">${value}</td>
+    </tr>`;
+}
+
+function rowHighlight(title,value){
+    return `
+    <tr>
+      <td style="padding:10px;border:1px solid #046a4e;background:#046a4e;color:white;font-weight:bold;">${title}</td>
+      <td style="padding:10px;border:1px solid #046a4e;font-weight:bold;color:#046a4e;font-size:16px;">${value}</td>
+    </tr>`;
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
