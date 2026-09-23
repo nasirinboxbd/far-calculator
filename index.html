@@ -56,7 +56,8 @@
   --radius-sm:9px;
 }
 *{box-sizing:border-box}
-body{
+/*======
+  body{
   margin:0;
   font-family:'Noto Sans Bengali','Inter',sans-serif;
   color:var(--text);
@@ -68,18 +69,64 @@ body{
   padding:2rem 1rem 4rem;
   min-height:100vh;
 }
+  =========*/
+  body{
+    margin:0;
+    font-family:'Noto Sans Bengali','Inter',sans-serif;
+    color:var(--text);
+    min-height:100vh;
+    padding:2rem 1rem 4rem;
+
+    /* Fixed WhatsApp-style background */
+    background: url("town-planning-bg.png") center center / cover no-repeat fixed;
+    background-color:#eef5f1;
+
+    position:relative;
+}
+
+  /* Soft white overlay so text stays readable */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:rgba(255,255,255,0.82);
+    backdrop-filter:blur(1px);
+
+    z-index:-1;
+    pointer-events:none;
+}
+
+  .masthead{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+
+    padding:1rem 1rem 1.3rem;
+    margin-bottom:1rem;
+
+    background:rgba(255,255,255,0.55);
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.45);
+    border-radius:22px;
+}
 .mono{font-family:'JetBrains Mono',monospace}
 .shell{max-width:980px;margin:0 auto}
 
 /* ---------- Header ---------- */
-.masthead{
+/*=======
+  .masthead{
   display:flex;
   align-items:flex-end;
   justify-content:space-between;
   gap:1rem;
   flex-wrap:wrap;
   padding:0 .3rem 1.2rem;
-}
+} 
+*/
 .masthead .brand{display:flex;align-items:center;gap:.9rem}
 .brand-mark{
   width:52px;height:52px;border-radius:14px;
