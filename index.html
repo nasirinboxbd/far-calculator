@@ -77,26 +77,25 @@
     min-height:100vh;
     padding:2rem 1rem 4rem;
 
-    /* Fixed WhatsApp-style background */
-    background: url("town-planning-bg.png") center center / cover no-repeat fixed;
-    background-color:#eef5f1;
+    /* Background Image */
+    background-image: url("town-planning-bg.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-    position:relative;
+    background-color: #eef5f1;
 }
 
-  /* Soft white overlay so text stays readable */
+/* White transparent overlay */
 body::before{
     content:"";
     position:fixed;
     inset:0;
-
-    background:rgba(255,255,255,0.82);
-    backdrop-filter:blur(1px);
-
+    background:rgba(255,255,255,0.80);
     z-index:-1;
     pointer-events:none;
 }
-
   .masthead{
     display:flex;
     align-items:flex-end;
