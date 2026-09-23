@@ -89,7 +89,14 @@
 
     background-color: #eef5f1;
 }
-
+/* Keep all content above the background */
+.shell,
+.masthead,
+.dossier,
+footer.note{
+    position:relative;
+    z-index:2;
+}
 /* White transparent overlay */
 body::before{
     content:"";
