@@ -808,12 +808,24 @@ footer.note{
    PART A — TAB SWITCHING
    ========================================================= */
 function switchTab(tab){
-  document.getElementById('calcTab').classList.toggle('active', tab==='calc');
-  document.getElementById('mouzaTab').classList.toggle('active', tab==='mouza');
-  document.getElementById('bonusTab').classList.toggle('active', tab==='bonus');
-  document.getElementById('tabBtnCalc').classList.toggle('active', tab==='calc');
-  document.getElementById('tabBtnMouza').classList.toggle('active', tab==='mouza');
-  document.getElementById('tabBtnBonus').classList.toggle('active', tab==='bonus');
+
+    // সব ট্যাব বন্ধ
+    document.querySelectorAll(".tab-panel").forEach(panel=>{
+        panel.classList.remove("active");
+    });
+
+    // সব বাটন নিষ্ক্রিয়
+    document.querySelectorAll(".tab-btn").forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    // নির্বাচিত ট্যাব চালু
+    document.getElementById(tab + "Tab").classList.add("active");
+    document.getElementById("tabBtn" + tab.charAt(0).toUpperCase() + tab.slice(1))
+        .classList.add("active");
+
+    // PDF ট্যাবে গেলে স্ক্রল উপরে যাবে
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /* =========================================================
@@ -1544,8 +1556,33 @@ searchInput.addEventListener('keypress', (e) => {
 
 loadMouzaData();
 window.onload = function () {
-    init();
-    toggleRoadWidening();   // নতুন যোগ করুন
+
+    // A6 ও রাস্তা প্রশস্তকরণ অনুযায়ী ফিল্ড আপডেট
+    toggleA6Option();
+    toggleRoadWidening();
+
+    // MGC স্লাইডারের মান দেখানো
+    document.getElementById("mgcValue").textContent =
+        document.getElementById("mgcSlider").value + "%";
+
+    // Checkbox ডিজাইন আপডেট
+    document.querySelectorAll(".toggle input").forEach(input=>{
+        input.parentElement.classList.toggle("checked", input.checked);
+
+        input.addEventListener("change", function(){
+            this.parentElement.classList.toggle("checked", this.checked);
+        });
+    });
+
+    // Block dropdown তৈরি (যদি blocks ডাটা থাকে)
+    if (typeof populateBlockDropdown === "function") {
+        populateBlockDropdown();
+    }
+
+    // Mouza সার্চ চালু (যদি ফাংশন থাকে)
+    if (typeof initializeMouzaSearch === "function") {
+        initializeMouzaSearch();
+    }
 };
 async function downloadPDF(){
 
