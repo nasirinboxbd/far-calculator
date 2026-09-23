@@ -95,8 +95,13 @@ body::before{
     content:"";
     position:fixed;
     inset:0;
-    background:rgba(255,255,255,0.80);
-    z-index:-1;
+
+    /* Transparent overlay */
+    background:rgba(255,255,255,0.35);
+
+    backdrop-filter:blur(1px);
+
+    z-index:0;
     pointer-events:none;
 }
   .masthead{
