@@ -113,20 +113,26 @@ body::before{
     pointer-events:none;
 }
   .masthead{
+
     display:flex;
-    align-items:flex-end;
+    align-items:center;
     justify-content:space-between;
     gap:1rem;
     flex-wrap:wrap;
 
-    padding:1rem 1rem 1.3rem;
+    padding:1rem 1.2rem;
+
     margin-bottom:1rem;
 
-    background:rgba(255,255,255,0.55);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.60);
 
-    border:1px solid rgba(255,255,255,0.45);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.45);
+
     border-radius:22px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
 .mono{font-family:'JetBrains Mono',monospace}
 .shell{max-width:980px;margin:0 auto}
@@ -189,11 +195,20 @@ body::before{
   transform:translateY(1px);
 }
 .card-body{
-  background:var(--card);
-  border-radius:0 20px 20px 20px;
-  box-shadow:0 25px 50px -20px rgba(11,32,54,.28);
-  padding:2rem 1.9rem 2.2rem;
-  position:relative;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    border-radius:0 22px 22px 22px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+    padding:2rem 1.9rem 2.2rem;
+
+    position:relative;
 }
 .tab-panel{display:none;animation:fadeIn .25s ease}
 .tab-panel.active{display:block}
@@ -231,12 +246,20 @@ footer.note{
 <style>
 /* ---------- Steps (calculator) ---------- */
 .step{
-  border-radius:var(--radius-lg);
-  padding:1.4rem 1.5rem 1.6rem;
-  margin-bottom:1.3rem;
-  border:1px solid var(--line);
-  background:#fbfdfc;
-  position:relative;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.5);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    padding:1.5rem;
+
+    margin-bottom:1.3rem;
 }
 .step-head{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
 .step-num{
