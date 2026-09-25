@@ -988,11 +988,15 @@ footer.note{color:#4d6158}
     font-size:17px;
 }
 
+
 #visitCount{
-    font-family:"JetBrains Mono", monospace;
-    letter-spacing:.5px;
+    font-family: "JetBrains Mono", monospace;
+    transition: transform .3s ease;
 }
 
+#visitCount.pop{
+    transform: scale(1.2);
+}
 /* Mobile */
 @media(max-width:640px){
 
@@ -2465,32 +2469,30 @@ function rowHighlight(title,value){
 })();
 </script>
 <script>
-/* ===== Persistent Visitor Counter ===== */
+const COUNTER_KEY = "nasirinboxbd-rajuk-far-calculator-visits";
+const API_BASE = "https://countapi.mileshilliard.com/api/v1";
 
-const COUNTER_API =
-  "https://api.countapi.xyz/hit/nasirinboxbd/rajuk-far-calculator";
-
-async function loadVisitorCounter(){
-
+async function loadVisitorCounter() {
     const counter = document.getElementById("visitCount");
 
-    try{
+    try {
+        // Increment by 1 and return updated total
+        const res = await fetch(`${API_BASE}/hit/${COUNTER_KEY}`);
+        const data = await res.json();
 
-        const response = await fetch(COUNTER_API);
-        const data = await response.json();
+        counter.textContent = Number(data.value).toLocaleString("en-US");
 
-        counter.textContent =
-            Number(data.value).toLocaleString("en-US");
+        // Small animation
+        counter.classList.add("pop");
+        setTimeout(() => counter.classList.remove("pop"), 400);
 
-    }catch(error){
-
-        console.error("Visitor counter failed:", error);
+    } catch (err) {
+        console.error("Visitor counter failed:", err);
         counter.textContent = "--";
-
     }
 }
 
-loadVisitorCounter();
+window.addEventListener("load", loadVisitorCounter);
 </script>
 </body>
 </html>
