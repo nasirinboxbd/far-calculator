@@ -2405,73 +2405,15 @@ function rowHighlight(title,value){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-/* ========== BEAUTIFUL SPLASH SCREEN ========== */
+const splash = document.getElementById("splashScreen");
 
-(function(){
+document.addEventListener("DOMContentLoaded", () => {
+    requestAnimationFrame(() => {
+        splash.classList.add("hide");
 
-    const splash = document.getElementById("splashScreen");
-    const circle = document.getElementById("progressCircle");
-    const percent = document.getElementById("loadingPercent");
-    const fill = document.getElementById("loadingFill");
-
-    const circumference = 352;
-    let value = 0;
-    let finished = false;
-
-    function update(v){
-        percent.textContent = v + "%";
-        fill.style.width = v + "%";
-        circle.style.strokeDashoffset =
-            circumference - (circumference * v / 100);
-    }
-
-    const loader = setInterval(()=>{
-        if(value < 90){
-            value += Math.floor(Math.random()*4)+1;
-            if(value>90) value=90;
-            update(value);
-        }
-    },80);
-
-    function hideSplash(){
-
-        if(finished) return;
-        finished = true;
-
-        clearInterval(loader);
-
-        let final = value;
-
-        const finish = setInterval(()=>{
-
-            final++;
-
-            update(final);
-
-            if(final>=100){
-
-                clearInterval(finish);
-
-                setTimeout(()=>{
-                    splash.classList.add("hide");
-
-                    setTimeout(()=>{
-                        splash.remove();
-                    },900);
-
-                },350);
-            }
-
-        },18);
-    }
-
-    window.addEventListener("load", ()=>{
-        setTimeout(hideSplash, 500);
+        setTimeout(() => splash.remove(), 400);
     });
-
-    setTimeout(hideSplash, 6000);
-
-})();
+});
 </script>
 <script>
 const COUNTER_KEY = "nasirinboxbd-rajuk-far-calculator-visits";
