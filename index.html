@@ -640,122 +640,65 @@ footer.note{
 
   /* ===== Premium Visitor Counter ===== */
 
+/* ===== Compact Top Right Visitor Counter ===== */
+
 #visitor-counter{
     position:fixed;
-    top:18px;
-    left:18px;
-    z-index:999999;
+    top:14px;
+    right:14px;
+    z-index:99999;
 
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:6px;
 
-    padding:12px 16px;
+    padding:7px 12px;
 
-    border-radius:18px;
+    border-radius:999px;
 
-    background:rgba(15,76,129,.78);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-
-    border:1px solid rgba(255,255,255,.2);
-
+    background:rgba(4,106,78,.88);
     color:#fff;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
 
-    transition:.35s ease;
+    border:1px solid rgba(255,255,255,.18);
+
+    font-size:13px;
+    font-weight:700;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+    transition:.25s ease;
 }
 
 #visitor-counter:hover{
-    transform:translateY(-2px) scale(1.03);
+    transform:translateY(-2px);
 }
 
-.visitor-icon{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#00D4FF,#0096C7);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-}
-
-.visitor-info{
-    display:flex;
-    flex-direction:column;
-    line-height:1.2;
-}
-
-.visitor-label{
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    opacity:.85;
+#visitor-counter i{
+    color:#FFD54A;
+    font-size:13px;
 }
 
 #visit-count{
-    font-size:20px;
-    font-weight:700;
-    color:#FFD166;
+    min-width:34px;
+    text-align:right;
 }
 
-/* Mobile */
 @media (max-width:768px){
+
     #visitor-counter{
         top:10px;
-        left:10px;
-        padding:10px 12px;
-        gap:8px;
+        right:10px;
+        padding:6px 10px;
+        font-size:12px;
     }
 
-    .visitor-icon{
-        width:36px;
-        height:36px;
-        font-size:18px;
-    }
-
-    #visit-count{
-        font-size:17px;
+    #visitor-counter i{
+        font-size:12px;
     }
 }
-  .floating{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(255,255,255,.08);
-    animation:float 10s infinite ease-in-out;
-}
-
-.one{
-    width:220px;
-    height:220px;
-    top:-60px;
-    left:-60px;
-}
-
-.two{
-    width:180px;
-    height:180px;
-    right:-50px;
-    bottom:120px;
-    animation-delay:2s;
-}
-
-.three{
-    width:140px;
-    height:140px;
-    bottom:-30px;
-    left:40%;
-    animation-delay:4s;
-}
-
-@keyframes float{
-    50%{
-        transform:translateY(-35px) scale(1.1);
-    }
-}
-
   /* Splash Screen */
 
 #splash-screen{
@@ -832,32 +775,19 @@ footer.note{
     animation:loading 2.4s ease forwards;
     border-radius:30px;
 }
-
-.loader-container small{
-    display:block;
-    margin-top:20px;
-    opacity:.8;
+/* Smooth fade out */
+#splash-screen{
+    opacity:1;
+    visibility:visible;
+    transition:opacity .7s ease, visibility .7s ease;
 }
 
-@keyframes spin{
-    to{transform:rotate(360deg);}
+#splash-screen.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
 }
 
-@keyframes loading{
-    from{width:0;}
-    to{width:100%;}
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
 </style>
 </head>
 <body>
@@ -886,12 +816,10 @@ footer.note{
 
 </div>
   <!-- ===== Visitor Counter (Top Left) ===== -->
-<div id="visitor-counter">
-  <div class="visitor-icon">👁</div>
-  <div class="visitor-info">
-    <span class="visitor-label">Visitors</span>
-    <span id="visit-count">Loading...</span>
-  </div>
+<!-- Compact Visitor Counter -->
+<div id="visitor-counter" title="Total Visitors">
+    <i class="fas fa-eye"></i>
+    <span id="visit-count">0</span>
 </div>
 <div class="shell">
 
@@ -2186,66 +2114,29 @@ function rowHighlight(title,value){
     setTimeout(hideSplash, 4000);
 })();
 </script>
-/* ==========================================
-   Live Visitor Counter for GitHub Pages
-   API: countapi.mileshilliard.com
-========================================== */
+<script>
+/* ===== GitHub Pages Visitor Counter ===== */
 
 const COUNTER_KEY = "rajuk-far-calculator-bd-mdnasiruddin-homepage";
 
-async function updateVisitorCount() {
-
-    const counterElement = document.getElementById("visit-count");
-
-    try{
-
-        const response = await fetch(
+async function loadVisitorCounter() {
+    try {
+        const res = await fetch(
             `https://countapi.mileshilliard.com/api/v1/hit/${COUNTER_KEY}`
         );
 
-        const data = await response.json();
+        const data = await res.json();
 
-        animateCounter(data.value);
+        document.getElementById("visit-count").textContent =
+            Number(data.value).toLocaleString("en-US");
 
-    }catch(error){
-
-        console.error("Visitor Counter Error:", error);
-        counterElement.textContent = "--";
-
+    } catch (err) {
+        console.error("Visitor counter failed", err);
+        document.getElementById("visit-count").textContent = "--";
     }
-
 }
 
-/* Animated Number Counter */
-
-function animateCounter(target){
-
-    const counter = document.getElementById("visit-count");
-
-    let current = 0;
-
-    const increment = Math.max(1, Math.ceil(target / 80));
-
-    const timer = setInterval(()=>{
-
-        current += increment;
-
-        if(current >= target){
-
-            current = target;
-            clearInterval(timer);
-
-        }
-
-        counter.textContent = current.toLocaleString();
-
-    },20);
-
-}
-
-/* Run once page loads */
-
-window.addEventListener("load", updateVisitorCount);
+document.addEventListener("DOMContentLoaded", loadVisitorCounter);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
