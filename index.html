@@ -988,15 +988,11 @@ footer.note{color:#4d6158}
     font-size:17px;
 }
 
-
 #visitCount{
-    font-family: "JetBrains Mono", monospace;
-    transition: transform .3s ease;
+    font-family:"JetBrains Mono", monospace;
+    letter-spacing:.5px;
 }
 
-#visitCount.pop{
-    transform: scale(1.2);
-}
 /* Mobile */
 @media(max-width:640px){
 
@@ -1009,6 +1005,15 @@ footer.note{color:#4d6158}
     .visit-counter i{
         font-size:14px;
     }
+}
+
+#visitCount{
+    font-family: "JetBrains Mono", monospace;
+    transition: transform .3s ease;
+}
+
+#visitCount.pop{
+    transform: scale(1.2);
 }
 </style>
 
