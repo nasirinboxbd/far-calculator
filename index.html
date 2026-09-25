@@ -2158,26 +2158,34 @@ function rowHighlight(title,value){
       <td style="padding:10px;border:1px solid #046a4e;font-weight:bold;color:#046a4e;font-size:16px;">${value}</td>
     </tr>`;
 }
-</script>
-          // Splash Screen
-
-window.addEventListener("load",()=>{
-
-    setTimeout(()=>{
-
-        const splash=document.getElementById("splash-screen");
-
-        splash.style.opacity="0";
-        splash.style.visibility="hidden";
-
-        setTimeout(()=>{
-            splash.remove();
-        },900);
-
-    },2200);
-
-});
 <script>
+/* ===== Splash Screen (Fixed Version) ===== */
+
+(function () {
+    const splash = document.getElementById("splash-screen");
+
+    if (!splash) return;
+
+    function hideSplash() {
+        splash.classList.add("hide");
+
+        setTimeout(() => {
+            splash.remove();
+        }, 700);
+    }
+
+    // Hide when DOM is ready (doesn't wait for every image/font)
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(hideSplash, 1800);
+    });
+
+    // Backup: if page finishes loading earlier/later
+    window.addEventListener("load", hideSplash);
+
+    // Safety: never stay longer than 4 seconds
+    setTimeout(hideSplash, 4000);
+})();
+</script>
 /* ==========================================
    Live Visitor Counter for GitHub Pages
    API: countapi.mileshilliard.com
