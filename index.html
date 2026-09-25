@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <!-- চার্সেট ও ভিউপোর্ট -->
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <!-- ========================================================= -->
 <!-- COMPLETE SEO + SOCIAL MEDIA META TAGS FOR RAJUK CALCULATOR -->
 <!-- ========================================================= -->
@@ -34,7 +35,7 @@
 <meta name="revisit-after" content="7 days">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="https://nasirinboxbd.github.io/far-calculator/">
+<link rel="canonical" href="https://nasirinboxbd.github.io/far/">
 
 <!-- Theme -->
 <meta name="theme-color" content="#046a4e">
@@ -65,9 +66,9 @@
 
 <meta property="og:description" content="Calculate Approved FAR, Area FAR, Plot FAR, Incentive FAR, MGC, Maximum Floors, Residential Units and Search RAJUK Mouza & Sub-Zone according to DAP Gazette 2025.">
 
-<meta property="og:url" content="https://nasirinboxbd.github.io/far-calculator/">
+<meta property="og:url" content="https://nasirinboxbd.github.io/far/">
 
-<meta property="og:image" content="https://nasirinboxbd.github.io/far-calculator/thumbnail.png">
+<meta property="og:image" content="https://nasirinboxbd.github.io/far/thumbnail.png">
 
 <meta property="og:image:width" content="1200">
 
@@ -87,7 +88,7 @@
 
 <meta name="twitter:description" content="Free RAJUK FAR Calculator with Mouza Search, Sub Zone Search, MGC Calculator and Maximum Floor Calculator.">
 
-<meta name="twitter:image" content="https://nasirinboxbd.github.io/far-calculator/thumbnail.png">
+<meta name="twitter:image" content="https://nasirinboxbd.github.io/far/thumbnail.png">
 
 <!-- ========================================================= -->
 <!-- GEO SEO -->
@@ -131,7 +132,7 @@
 
   "description":"RAJUK FAR Calculator based on DAP Gazette 2025 and Building Construction Rules 2025. Includes Approved FAR, Plot FAR, Area FAR, Incentive FAR, Maximum Floors, Residential Units and Mouza/Sub-Zone Search.",
 
-  "url":"https://nasirinboxbd.github.io/far-calculator/"
+  "url":"https://nasirinboxbd.github.io/far/"
 }
 </script>
     <!-- Favicons -->
@@ -148,7 +149,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-  
 :root{
   --ink:#0b2036;
   --ink-soft:#132c47;
@@ -637,189 +637,409 @@ footer.note{
   .ref-btn{font-size:.76rem;padding:.5rem .8rem}
   .calc-btn{font-size:.98rem;padding:.9rem}
 }
-
-  /* ===== Premium Visitor Counter ===== */
-
-/* ===== Compact Top Right Visitor Counter ===== */
-
-#visitor-counter{
-    position:fixed;
-    top:14px;
-    right:14px;
-    z-index:99999;
-
-    display:flex;
-    align-items:center;
-    gap:6px;
-
-    padding:7px 12px;
-
-    border-radius:999px;
-
-    background:rgba(4,106,78,.88);
-    color:#fff;
-
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    font-size:13px;
-    font-weight:700;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.18);
-
-    transition:.25s ease;
+</style>
+<style id="ui-refresh">
+/* ===== UI REFRESH: refined palette, glass cards, mobile-first bottom nav ===== */
+:root{
+  --forest:#067a5a; --forest-dark:#04543e; --forest-tint:#e6f6ef;
+  --gold:#c8931f; --ink:#0c2238;
+  --shadow-sm:0 2px 8px rgba(11,32,54,.06);
+  --shadow-md:0 10px 30px -10px rgba(11,32,54,.18);
+  --shadow-lg:0 30px 60px -25px rgba(4,84,62,.35);
+  --safe-b:env(safe-area-inset-bottom,0px);
 }
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+*{-webkit-tap-highlight-color:transparent}
+body{background-color:#e9f3ee;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{background:linear-gradient(180deg,rgba(236,246,241,.72),rgba(255,255,255,.55));backdrop-filter:blur(2px)}
+:focus-visible{outline:3px solid rgba(6,122,90,.45);outline-offset:2px;border-radius:10px}
 
-#visitor-counter:hover{
-    transform:translateY(-2px);
+/* Header */
+.masthead{
+  background:linear-gradient(135deg,#04543e 0%,#067a5a 55%,#0b8f6b 100%);
+  border:none;color:#fff;border-radius:26px;padding:1.3rem 1.5rem;margin-bottom:1rem;
+  box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
 }
+.masthead::after{content:"";position:absolute;right:-60px;top:-80px;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.22),transparent 70%);pointer-events:none}
+.masthead>*{position:relative;z-index:1}
+.brand-mark{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);box-shadow:none;backdrop-filter:blur(6px)}
+.brand h1{color:#fff;font-size:1.5rem;letter-spacing:0}
+.brand p{color:rgba(255,255,255,.82)}
+.masthead .badge{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);color:#fff}
 
-#visitor-counter i{
-    color:#FFD54A;
-    font-size:13px;
+/* Reference bar */
+.ref-bar{background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border:1px solid rgba(200,147,31,.3);
+  border-left:4px solid var(--gold);border-radius:18px;box-shadow:var(--shadow-sm);margin:0 0 1.1rem}
+.ref-note{color:#6b4708;font-weight:500;font-size:.83rem}
+.ref-btn{border-radius:999px;border-width:1.5px;border-color:var(--gold);color:#8a5d0a}
+.ref-btn:hover{background:var(--gold);color:#fff}
+
+/* Tabs -> segmented pill control */
+.tab-row{padding:.35rem;margin-bottom:1rem;gap:.3rem;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.7);border-radius:999px;box-shadow:var(--shadow-sm)}
+.tab-btn{background:transparent;border-radius:999px;padding:.7rem 1.25rem;flex:1;justify-content:center;
+  font-weight:600;color:var(--text-soft);transition:all .2s ease}
+.tab-btn:hover{background:var(--forest-tint);color:var(--forest-dark)}
+.tab-btn.active{background:linear-gradient(135deg,var(--forest),var(--forest-dark));color:#fff;transform:none;
+  box-shadow:0 8px 18px -8px rgba(4,84,62,.65)}
+
+/* Main card */
+.card-body{border-radius:26px;background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.8);
+  box-shadow:var(--shadow-md);padding:1.6rem}
+.mouza-intro{background:var(--forest-tint);border-radius:14px;padding:.85rem 1rem;color:#33574a;margin:0 0 1.2rem}
+
+/* Step cards */
+.step{background:#fff;border:1px solid var(--line);border-left-width:1px!important;border-radius:20px;
+  box-shadow:var(--shadow-sm);padding:1.3rem 1.3rem 1.4rem;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--forest)}
+.step:nth-of-type(1)::before{background:var(--ink)}
+.step:nth-of-type(3)::before{background:var(--gold)}
+.step:nth-of-type(3) .step-num{background:var(--gold)}
+.step-num{width:38px;height:38px;border-radius:12px;box-shadow:0 6px 14px -6px rgba(0,0,0,.35)}
+.step-head h3{font-size:1.02rem}
+
+/* Form controls */
+.field label{font-size:.8rem;color:#2c3f37;font-weight:600;line-height:1.4}
+.field input,.field select,#searchInput,.table-filter input{
+  min-height:48px;border-radius:14px;border:1.5px solid #d5e1db;background-color:#fbfdfc;font-size:1rem;
+  transition:border-color .15s,box-shadow .2s,background .15s}
+.field select{appearance:none;-webkit-appearance:none;padding-right:2.4rem;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23067a5a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center}
+.field input:focus,.field select:focus,#searchInput:focus{border-color:var(--forest);background-color:#fff;
+  box-shadow:0 0 0 4px rgba(6,122,90,.14)}
+.toggle{border-radius:14px;min-height:48px;background:#fbfdfc;border:1.5px solid #d5e1db;font-weight:600;transition:all .15s}
+.toggle.checked{background:var(--forest-tint);border-color:var(--forest);color:var(--forest-dark);box-shadow:0 0 0 3px rgba(6,122,90,.1)}
+.ghost-btn{border-radius:14px;min-height:48px}
+
+/* MGC slider */
+#mgcSlider{-webkit-appearance:none;appearance:none;height:10px;border-radius:999px;outline:none;margin:.6rem 0 .2rem;
+  background:linear-gradient(90deg,var(--forest) var(--pct,50%),#dbe7e1 var(--pct,50%))}
+#mgcSlider::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;
+  border:4px solid var(--forest);box-shadow:0 4px 12px rgba(4,84,62,.35);cursor:grab}
+#mgcSlider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--forest);box-shadow:0 4px 12px rgba(4,84,62,.35)}
+#mgcSlider::-moz-range-track{height:10px;border-radius:999px;background:#dbe7e1}
+#mgcSlider::-moz-range-progress{height:10px;border-radius:999px;background:var(--forest)}
+.mgc-labels{font-family:'JetBrains Mono',monospace;font-size:.78rem}
+.mgc-value{font-size:1.15rem;padding:.3rem 1rem;background:var(--forest);color:#fff;box-shadow:0 8px 16px -8px rgba(4,84,62,.6)}
+
+/* Primary button */
+.calc-btn{border-radius:18px;min-height:56px;background:linear-gradient(135deg,#0b8f6b,var(--forest-dark));
+  box-shadow:0 18px 32px -14px rgba(4,84,62,.7)}
+.calc-btn:hover{filter:brightness(1.06)}
+
+/* Results */
+.result-hero{border-radius:24px;padding:1.9rem 1.5rem;
+  background:radial-gradient(circle at 85% 0%,rgba(11,143,107,.55),transparent 55%),linear-gradient(150deg,#0c2238,#123a52);
+  box-shadow:0 24px 40px -20px rgba(12,34,56,.7)}
+.stat-card{border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow-sm);padding:1rem;transition:transform .15s,box-shadow .15s}
+.stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.stat-card.accent{background:linear-gradient(160deg,var(--forest-tint),#fff);border-color:#bfe3d2}
+.breakdown{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1rem}
+.breakdown table{overflow:hidden}
+
+/* Search / suggestions / modal */
+.suggestions-box{border-radius:16px;box-shadow:var(--shadow-md)}
+.modal-container{border-radius:26px}
+.modal-header{background:linear-gradient(135deg,#04543e,#067a5a)}
+.result-card{border-radius:18px}
+
+footer.note{color:#4d6158}
+
+/* ===== Tablet / Mobile ===== */
+@media(max-width:640px){
+  body{padding:.8rem .7rem calc(6.2rem + var(--safe-b))!important;background-attachment:scroll}
+  .masthead{padding:1rem 1.1rem;border-radius:22px;flex-wrap:nowrap}
+  .brand{gap:.7rem}
+  .brand h1{font-size:1.12rem;line-height:1.3}
+  .brand p{display:none}
+  .masthead .badge{display:none}
+  .ref-bar{padding:.8rem 1rem}
+  .ref-links{width:100%}
+  .ref-btn{flex:1;justify-content:center;white-space:normal;text-align:center;min-height:44px}
+
+  /* Bottom navigation */
+  .tab-row{position:fixed;left:.6rem;right:.6rem;bottom:calc(.6rem + var(--safe-b));z-index:900;margin:0;
+    padding:.35rem;gap:.2rem;justify-content:space-between;overflow:visible;border-radius:22px;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(16px);
+    box-shadow:0 12px 34px -8px rgba(11,32,54,.35);border:1px solid rgba(255,255,255,.9)}
+  .tab-btn{flex-direction:column;gap:.25rem;padding:.55rem .15rem;border-radius:16px;font-size:.66rem;
+    line-height:1.25;white-space:normal;text-align:center;min-height:56px;justify-content:center;font-weight:600}
+  .tab-btn i{font-size:1.1rem}
+  .tab-btn.active{box-shadow:0 8px 16px -8px rgba(4,84,62,.7)}
+
+  .card-body{padding:1rem .85rem 1.3rem;border-radius:22px}
+  .step{padding:1.1rem 1rem 1.2rem 1.15rem;border-radius:18px}
+  .step-head span{font-size:.75rem}
+  .field-grid{gap:.9rem}
+  .field input,.field select,#searchInput,.table-filter input{font-size:16px} /* stops iOS zoom-on-focus */
+  .stat-grid{grid-template-columns:1fr 1fr;gap:.6rem}
+  .stat-card{padding:.8rem}
+  .stat-card .v{font-size:1.15rem}
+  .result-hero .value{font-size:2.3rem}
+  .breakdown{padding:.7rem;overflow-x:auto}
+  #mgcSlider::-webkit-slider-thumb{width:34px;height:34px}
+
+  /* Modals become bottom sheets */
+  .modal-overlay{align-items:flex-end;padding:0}
+  .modal-container,.modal-container.wide{max-width:100%;max-height:92vh;border-radius:26px 26px 0 0;
+    transform:translateY(40px)}
+  .modal-overlay.active .modal-container{transform:translateY(0)}
+  .modal-body{padding:1rem 1rem calc(1.2rem + var(--safe-b))}
 }
-
-#visit-count{
-    min-width:34px;
-    text-align:right;
+@media(max-width:380px){
+  .stat-grid{grid-template-columns:1fr}
+  .tab-btn{font-size:.62rem}
 }
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-@media (max-width:768px){
+/* ================= SPLASH SCREEN ================= */
 
-    #visitor-counter{
-        top:10px;
-        right:10px;
-        padding:6px 10px;
-        font-size:12px;
-    }
-
-    #visitor-counter i{
-        font-size:12px;
-    }
-}
-  /* Splash Screen */
-
-#splash-screen{
+#splashScreen{
     position:fixed;
     inset:0;
-    background:linear-gradient(135deg,#0F4C81,#00B4D8,#0077B6);
+    z-index:99999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at top right,#15a46b55,transparent 35%),
+      radial-gradient(circle at bottom left,#ffd56a40,transparent 35%),
+      linear-gradient(135deg,#03392c,#046a4e,#067a5a);
+    transition:opacity .8s ease, visibility .8s ease;
+}
+
+#splashScreen.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+#splashScreen::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background-image:
+      radial-gradient(circle,rgba(255,255,255,.08) 2px,transparent 2px);
+    background-size:90px 90px;
+    animation:floatBg 18s linear infinite;
+}
+
+@keyframes floatBg{
+    from{transform:translate(0,0);}
+    to{transform:translate(-120px,-80px);}
+}
+
+.splash-content{
+    position:relative;
+    text-align:center;
+    color:white;
+    padding:30px;
+    max-width:420px;
+}
+
+.splash-logo{
+    width:110px;
+    height:110px;
+    margin:auto;
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    z-index:999999;
-    overflow:hidden;
-    transition:opacity .8s ease,visibility .8s;
+    font-size:52px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    border:2px solid rgba(255,255,255,.25);
+    animation:pulse 2s infinite;
+    box-shadow:0 0 40px rgba(255,215,100,.3);
 }
 
-.loader-container{
-    text-align:center;
-    color:white;
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.08);}
 }
 
-.logo-circle{
+.splash-content h1{
+    margin-top:22px;
+    margin-bottom:8px;
+    font-size:32px;
+    font-weight:800;
+}
+
+.splash-content p{
+    color:#d7f7eb;
+    margin-bottom:30px;
+    font-size:15px;
+}
+
+.loader-ring{
     position:relative;
     width:130px;
     height:130px;
     margin:auto;
 }
 
-.spinner{
+.loader-ring svg{
+    transform:rotate(-90deg);
+}
+
+.loader-ring circle{
+    fill:none;
+    stroke-width:8;
+}
+
+.loader-ring circle:first-child{
+    stroke:rgba(255,255,255,.15);
+}
+
+#progressCircle{
+    stroke:#ffd25d;
+    stroke-linecap:round;
+    stroke-dasharray:352;
+    stroke-dashoffset:352;
+    transition:stroke-dashoffset .15s linear;
+}
+
+.loader-ring span{
     position:absolute;
     inset:0;
-    border:6px solid rgba(255,255,255,.2);
-    border-top:6px solid #ffffff;
-    border-radius:50%;
-    animation:spin 1.2s linear infinite;
-}
-
-.inner-logo{
-    position:absolute;
-    inset:18px;
-    background:white;
-    border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
-    color:#0077B6;
-    font-size:44px;
-    box-shadow:0 0 30px rgba(255,255,255,.5);
-}
-
-.loader-container h1{
-    margin-top:30px;
-    font-size:34px;
+    align-items:center;
+    font-size:24px;
     font-weight:700;
-    animation:fadeUp 1s ease;
 }
 
-.loader-container p{
-    opacity:.9;
-    margin-bottom:25px;
+.loading-text{
+    margin-top:22px;
+    font-size:15px;
+    letter-spacing:.5px;
+    animation:blink 1.4s infinite;
 }
 
-.progress-bar{
-    width:260px;
-    height:8px;
+@keyframes blink{
+    0%,100%{opacity:1;}
+    50%{opacity:.5;}
+}
+
+.loading-bar{
+    width:100%;
+    height:7px;
+    margin-top:18px;
     border-radius:30px;
-    background:rgba(255,255,255,.2);
+    background:rgba(255,255,255,.18);
     overflow:hidden;
-    margin:auto;
 }
 
-.progress-fill{
+.loading-fill{
     width:0%;
     height:100%;
-    background:white;
-    animation:loading 2.4s ease forwards;
     border-radius:30px;
-}
-/* Smooth fade out */
-#splash-screen{
-    opacity:1;
-    visibility:visible;
-    transition:opacity .7s ease, visibility .7s ease;
+    background:linear-gradient(90deg,#FFD54F,#FFF176,#FFD54F);
+    box-shadow:0 0 12px rgba(255,213,79,.7);
+    transition:width .15s linear;
 }
 
-#splash-screen.hide{
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
+@media(max-width:600px){
+    .splash-content h1{
+        font-size:24px;
+    }
+
+    .splash-logo{
+        width:90px;
+        height:90px;
+        font-size:44px;
+    }
 }
 
+
+/* ===== Visitor Counter ===== */
+
+.visit-counter{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    background:rgba(255,255,255,.18);
+    color:#fff;
+
+    padding:8px 14px;
+    border-radius:999px;
+
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.25);
+
+    font-weight:700;
+    font-size:15px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.18);
+    transition:.3s;
+}
+
+.visit-counter:hover{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,.28);
+}
+
+.visit-counter i{
+    color:#FFD54F;
+    font-size:17px;
+}
+
+#visitCount{
+    font-family:"JetBrains Mono", monospace;
+    letter-spacing:.5px;
+}
+
+/* Mobile */
+@media(max-width:640px){
+
+    .visit-counter{
+        padding:6px 10px;
+        font-size:13px;
+        gap:6px;
+    }
+
+    .visit-counter i{
+        font-size:14px;
+    }
+}
 </style>
+
 </head>
 <body>
-  <!-- Splash Screen -->
-<div id="splash-screen">
-<div class="floating one"></div>
-<div class="floating two"></div>
-<div class="floating three"></div>
-    <div class="loader-container">
 
-        <div class="logo-circle">
-            <div class="spinner"></div>
-            <div class="inner-logo">🏗</div>
-        </div>
+  <!-- ================= SPLASH SCREEN ================= -->
+<div id="splashScreen">
+  <div class="splash-content">
 
-        <h1>RAJUK FAR Calculator</h1>
-        <p>DAP Gazette 2025</p>
-
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
-        </div>
-
-        <small>Loading Planning Tools...</small>
-
+    <div class="splash-logo">
+      <i class="fas fa-drafting-compass"></i>
     </div>
 
-</div>
-  <!-- ===== Visitor Counter (Top Left) ===== -->
-<!-- Compact Visitor Counter -->
-<div id="visitor-counter" title="Total Visitors">
-    <i class="fas fa-eye"></i>
-    <span id="visit-count">0</span>
+    <h1>RAJUK FAR Calculator</h1>
+    <p>DAP Gazette 2025 • Building Construction Rules 2025</p>
+
+    <div class="loader-ring">
+      <svg width="130" height="130">
+        <circle cx="65" cy="65" r="56"></circle>
+        <circle cx="65" cy="65" r="56" id="progressCircle"></circle>
+      </svg>
+
+      <span id="loadingPercent">0%</span>
+    </div>
+
+    <div class="loading-text">
+      Loading Calculator Resources...
+    </div>
+
+    <div class="loading-bar">
+      <div class="loading-fill" id="loadingFill"></div>
+    </div>
+
+  </div>
 </div>
 <div class="shell">
 
@@ -832,6 +1052,10 @@ footer.note{
       </div>
     </div>
     <span class="badge mono">DAP · RAJUK</span>
+    <div id="visitCounter" class="visit-counter">
+    <i class="fas fa-eye"></i>
+    <span id="visitCount">0</span>
+</div>
   </div>
 
   <div class="ref-bar">
@@ -1042,14 +1266,14 @@ footer.note{
         <div class="step">
           <div class="step-head">
             <div class="step-num"><i class="fas fa-sliders-h"></i></div>
-            <div><h3>Maximum Ground Coverage (MGC)</h3><span>স্লাইডার টেনে MGC নির্ধারণ করুন (সর্বনিম্ন ২০% — সর্বোচ্চ ৭৫%)</span></div>
+            <div><h3>Maximum Ground Coverage (MGC)</h3><span id="mgcRangeNote">স্লাইডার টেনে MGC নির্ধারণ করুন (সর্বনিম্ন ও সর্বোচ্চ সীমা প্লটের আয়তন ও টাইপ অনুযায়ী নির্ধারিত হবে)</span></div>
           </div>
           <div class="mgc-slider-wrap">
-            <input type="range" id="mgcSlider" min="20" max="75" step="1" value="50">
+            <input type="range" id="mgcSlider" min="20" max="75" step="0.5" value="50">
             <div class="mgc-labels">
-              <span>20%</span>
+              <span id="mgcMinLabel">20%</span>
               <span class="mgc-value" id="mgcValue">50%</span>
-              <span>75%</span>
+              <span id="mgcMaxLabel">75%</span>
             </div>
           </div>
         </div>
@@ -1199,6 +1423,9 @@ function switchTab(tab){
     document.getElementById(tab + "Tab").classList.add("active");
     document.getElementById("tabBtn" + tab.charAt(0).toUpperCase() + tab.slice(1))
         .classList.add("active");
+
+    // ইউনিট ও তলা ট্যাবে গেলে MGC স্লাইডারের সীমা হালনাগাদ
+    if (tab === "bonus" && typeof syncMGCSlider === "function") syncMGCSlider();
 
     // PDF ট্যাবে গেলে স্ক্রল উপরে যাবে
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1572,8 +1799,82 @@ const mgcSlider = document.getElementById('mgcSlider');
 const mgcValueEl = document.getElementById('mgcValue');
 mgcSlider.addEventListener('input', () => {
     mgcValueEl.textContent = mgcSlider.value + '%';
+    mgcFill();
     calculateBonus();
 });
+
+/* স্লাইডারের রঙিন অংশ (fill) হালনাগাদ */
+function mgcFill(){
+    const mn = +mgcSlider.min, mx = +mgcSlider.max, v = +mgcSlider.value;
+    const pct = mx > mn ? ((v - mn) / (mx - mn)) * 100 : 100;
+    mgcSlider.style.setProperty('--pct', pct + '%');
+}
+
+/* ---------- MGC সর্বনিম্ন/সর্বোচ্চ সীমা নির্ধারণ ----------
+   occupancyType : টাইপ (A1–A6)
+   landKatha     : প্রস্তাবিত রাস্তার জন্য সমর্পিত জমি বাদে নিট প্লট আয়তন (কাঠা) */
+function getMGC(occupancyType, landKatha){
+
+    if(occupancyType === "A6"){
+        return { minMGC:52, maxMGC:75 };
+    }
+
+    const rules = [
+        {min:0,  max:2,  minMGC:52.5, maxMGC:70},
+        {min:2,  max:3,  minMGC:50,   maxMGC:67.5},
+        {min:3,  max:4,  minMGC:48.5, maxMGC:65},
+        {min:4,  max:6,  minMGC:46.5, maxMGC:62.5},
+        {min:6,  max:10, minMGC:45,   maxMGC:60},
+        {min:10, max:14, minMGC:0,    maxMGC:55},
+        {min:14, max:20, minMGC:0,    maxMGC:50},
+        {min:20, max:40, minMGC:0,    maxMGC:45},
+        {min:40, max:Number.POSITIVE_INFINITY, minMGC:0, maxMGC:40}
+    ];
+
+    for(const r of rules){
+        if(landKatha > r.min && landKatha <= r.max){
+            return { minMGC:r.minMGC, maxMGC:r.maxMGC };
+        }
+    }
+
+    return { minMGC:0, maxMGC:null };
+}
+
+/* স্লাইডারের min/max আপডেট করে; বর্তমান মান সীমার বাইরে গেলে সীমার মধ্যে আনে */
+function syncMGCSlider(){
+
+    const occupancy = document.getElementById('type').value;
+    const netPlotKatha = +document.getElementById('plotKatha').value || 0;
+
+    // নিট প্লট আয়তন না থাকলে সীমা পরিবর্তন করা হবে না
+    if (netPlotKatha <= 0) return;
+
+    const result = getMGC(occupancy, netPlotKatha);
+
+    // minMGC = 0 মানে সর্বনিম্ন সীমা নেই; শূন্য দিয়ে ভাগ এড়াতে স্লাইডারে ন্যূনতম ১% ধরা হয়েছে
+    const sliderMin = Math.max(result.minMGC, 1);
+    const sliderMax = (result.maxMGC === null) ? 75 : result.maxMGC;
+
+    mgcSlider.min = sliderMin;
+    mgcSlider.max = sliderMax;
+    mgcSlider.step = 0.5;
+
+    let v = parseFloat(mgcSlider.value);
+    if (isNaN(v)) v = sliderMax;
+    v = Math.min(Math.max(v, sliderMin), sliderMax);
+    mgcSlider.value = v;
+
+    document.getElementById('mgcMinLabel').textContent =
+        (result.minMGC > 0 ? result.minMGC : 'সীমা নেই') + (result.minMGC > 0 ? '%' : '');
+    document.getElementById('mgcMaxLabel').textContent = sliderMax + '%';
+    mgcValueEl.textContent = mgcSlider.value + '%';
+    mgcFill();
+
+    document.getElementById('mgcRangeNote').textContent =
+        'স্লাইডার টেনে MGC নির্ধারণ করুন (' +
+        (result.minMGC > 0 ? 'সর্বনিম্ন ' + result.minMGC + '%' : 'সর্বনিম্ন সীমা নেই') +
+        ' — সর্বোচ্চ ' + sliderMax + '%)';
+}
 
 const KATHA_TO_SQFT = 720; // ১ কাঠা = ৭২০ বর্গফুট ধরা হয়েছে
 
@@ -1613,6 +1914,9 @@ function calculateBonus() {
     const netPlotSqft = netPlotKatha * KATHA_TO_SQFT;
 
     warningEl.style.display = 'none';
+
+    // টাইপ ও নিট প্লট আয়তন অনুযায়ী MGC সীমা হালনাগাদ
+    syncMGCSlider();
 
     const approvedFAR = window.approvedFAR;
     const mgc = (+mgcSlider.value) / 100;
@@ -1940,6 +2244,7 @@ window.onload = function () {
     // MGC স্লাইডারের মান দেখানো
     document.getElementById("mgcValue").textContent =
         document.getElementById("mgcSlider").value + "%";
+    mgcFill();
 
     // Checkbox ডিজাইন আপডেট
     document.querySelectorAll(".toggle input").forEach(input=>{
@@ -2086,59 +2391,106 @@ function rowHighlight(title,value){
       <td style="padding:10px;border:1px solid #046a4e;font-weight:bold;color:#046a4e;font-size:16px;">${value}</td>
     </tr>`;
 }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-/* ===== Splash Screen (Fixed Version) ===== */
+/* ========== BEAUTIFUL SPLASH SCREEN ========== */
 
-(function () {
-    const splash = document.getElementById("splash-screen");
+(function(){
 
-    if (!splash) return;
+    const splash = document.getElementById("splashScreen");
+    const circle = document.getElementById("progressCircle");
+    const percent = document.getElementById("loadingPercent");
+    const fill = document.getElementById("loadingFill");
 
-    function hideSplash() {
-        splash.classList.add("hide");
+    const circumference = 352;
+    let value = 0;
+    let finished = false;
 
-        setTimeout(() => {
-            splash.remove();
-        }, 700);
+    function update(v){
+        percent.textContent = v + "%";
+        fill.style.width = v + "%";
+        circle.style.strokeDashoffset =
+            circumference - (circumference * v / 100);
     }
 
-    // Hide when DOM is ready (doesn't wait for every image/font)
-    document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(hideSplash, 1800);
+    const loader = setInterval(()=>{
+        if(value < 90){
+            value += Math.floor(Math.random()*4)+1;
+            if(value>90) value=90;
+            update(value);
+        }
+    },80);
+
+    function hideSplash(){
+
+        if(finished) return;
+        finished = true;
+
+        clearInterval(loader);
+
+        let final = value;
+
+        const finish = setInterval(()=>{
+
+            final++;
+
+            update(final);
+
+            if(final>=100){
+
+                clearInterval(finish);
+
+                setTimeout(()=>{
+                    splash.classList.add("hide");
+
+                    setTimeout(()=>{
+                        splash.remove();
+                    },900);
+
+                },350);
+            }
+
+        },18);
+    }
+
+    window.addEventListener("load", ()=>{
+        setTimeout(hideSplash, 500);
     });
 
-    // Backup: if page finishes loading earlier/later
-    window.addEventListener("load", hideSplash);
+    setTimeout(hideSplash, 6000);
 
-    // Safety: never stay longer than 4 seconds
-    setTimeout(hideSplash, 4000);
 })();
 </script>
 <script>
-/* ===== GitHub Pages Visitor Counter ===== */
+/* ===== Persistent Visitor Counter ===== */
 
-const COUNTER_KEY = "rajuk-far-calculator-bd-mdnasiruddin-homepage";
+const COUNTER_API =
+  "https://api.countapi.xyz/hit/nasirinboxbd/rajuk-far-calculator";
 
-async function loadVisitorCounter() {
-    try {
-        const res = await fetch(
-            `https://countapi.mileshilliard.com/api/v1/hit/${COUNTER_KEY}`
-        );
+async function loadVisitorCounter(){
 
-        const data = await res.json();
+    const counter = document.getElementById("visitCount");
 
-        document.getElementById("visit-count").textContent =
+    try{
+
+        const response = await fetch(COUNTER_API);
+        const data = await response.json();
+
+        counter.textContent =
             Number(data.value).toLocaleString("en-US");
 
-    } catch (err) {
-        console.error("Visitor counter failed", err);
-        document.getElementById("visit-count").textContent = "--";
+    }catch(error){
+
+        console.error("Visitor counter failed:", error);
+        counter.textContent = "--";
+
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadVisitorCounter);
+loadVisitorCounter();
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </body>
 </html>
